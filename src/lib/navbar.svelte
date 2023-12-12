@@ -9,7 +9,7 @@
     </div>
   </div>
   <div class="service-list bg-sky-600 flex px-16">
-    {#each services as service}
+    {#each Object.keys(services) as service}
       <button type="button"
         on:focus={() => { ser= service;}}
         class="text-base flex-1 xl:mx-5 xl:my-2.5 text-black bg-white rounded-md">
@@ -17,11 +17,11 @@
       </button>
     {/each}
   </div>
-  <div>
-    {#if ser}
-      <Login service={ser} on:blur={() => {ser= null;}} />
-    {/if}
-  </div>
+  {#if ser}
+    <div>
+      <Login service={services[ser]} on:blur={() => {ser= "";}} />
+    </div>
+  {/if}
 </nav>
 
 <script>
@@ -30,8 +30,19 @@
   import { faPhone } from '@fortawesome/free-solid-svg-icons'
 
   /**
-   * @type { string? }
+   * @type { string }
    */
-  let ser= null;
-  let services= ["SEO", "PPC", "Reputation Management","Social media","Web Development","Marketing Automation","Industried","About DMA"];
+  let ser= "";
+  /**
+   * @type { Object<string, Array<string>> }
+   */
+  let services= {
+    "SEO": ["Free SEO Analysis", "SEO Services", "Content Marketing Services", "Local SEO", "Ecommerce SEO", "Link Building Services", "Specialized SEO Services"],
+    "PPC": ["Free PPC Analysis", "PPC Management Services", "Remarketing", "Mobile PPC", "Specialized PPC Services"],
+    "Reputation Management": ["Free Reputation Management Analysis", "Reputation Management Services", "Review Management Services", "Specialized Reputation Management Services"],
+    "Social media": ["Free Social Media Analysis", "Social Media Optimization Services", "Specialized Social Services"],
+    "Web Development": ["Free Website Analysis", "Web Design Services", "Web Development Services", "Mobile Development Services", "Website Maintenance Services", "Specialized Development Services"],
+    "Marketing Automation": ["Free Marketing Automation Analysis", "Marketing Automation Services", "Specialized Marketing Automation Services"],
+    "Industries": ["Luxury Communities", "Franchise", "E-Commerce", "Crypto", "Assisted Living", "Other Industries"]
+  };
 </script>

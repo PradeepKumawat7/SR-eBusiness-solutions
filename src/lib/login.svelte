@@ -1,4 +1,7 @@
 <script>
+	/**
+	 * @type { Array<string> }
+	 */
 	export let service;
 </script>
 
@@ -7,7 +10,13 @@
 	method="post"
 	class="text-lg bg-white grid grid-cols-2 text-black"
 >
-	<div></div>
+	<div class={"grid "+ (service.length >=4? "grid-cols-2": "grid-cols-1")}>
+		{#each service as box}
+			<button class="h-16 text-base w-80 bg-white mt-2 ml-5 hover:font-bold font-normal">
+				{box}
+			</button>
+			{/each}
+	</div>
 	<div class="grid grid-cols-2">
 		<div>
 			<label for="name">Name: </label>
@@ -18,7 +27,6 @@
 			<label for="email">Email: </label>
 			<input type="email" name="email" id="email" />
 		</div>
-
 		<div>
 			<label for="website">website (Optional): </label>
 			<input type="url" name="website" id="website" />
