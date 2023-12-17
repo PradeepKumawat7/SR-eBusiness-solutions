@@ -3,39 +3,42 @@
 	 * @type { Object<string, { head: string, description: string, points: Array<string>}> }
 	 */
 	export let service;
-	let show= false;
+	/**
+	 * @type { Object<string,boolean> }
+	 */
+	let show= {};
 </script>
 
 <form
-	action="http://10.50.8.137:8080"
-	method="post"
-	class="text-lg bg-white grid grid-cols-2 text-black"
+  class="text-lg bg-white grid grid-cols-2 text-black"
 >
-	<div class={"grid "+ (Object.keys(service).length >=4? "grid-cols-2": "grid-cols-1")} >
-		{#each Object.keys(service) as box}
-		<div class="grid grid-cols-1">
-			<button on:mouseenter={() => {/*show = true*/}} class="descipt h-16 text-base w-100 bg-white mt-2 ml-5 hover:font-bold font-normal">
+<div class={"grid "+ (Object.keys(service).length >=4? "grid-cols-2": "grid-cols-1")} >
+	{#each Object.keys(service) as box}
+		<div class="grid grid-cols-1" on:blur={() => { show[box]= false; }}>
+			<button on:focus={() => { show[box]= true; }}
+				class="descipt h-16 text-base w-100 bg-white mt-2 ml-5 hover:font-bold font-normal">
 				{box}
 			</button>
-				<!-- svelte-ignore a11y-no-static-element-interactions -->
-				<!-- svelte-ignore a11y-mouse-events-have-key-events -->
-				<div class="desc-div mt-0 text-sm bg-white ml-5 font-normal w-100" style="padding-left: 1rem;">
-					<div class="font-bold text-center text-base">{ service[box].head }</div>
-					<div class="text-center">{ service[box].description }</div>
-					{#if service[box].points.length > 4}
-						<ul class="grid grid-cols-2">
-							{#each service[box].points as point}
-								<li style="list-style-type: disc;">{ point }</li>
-							{/each}
-						</ul>
-						{:else}
-						<ul>
-							{#each service[box].points as point}
-								<li style="list-style-type: disc;">{ point }</li>
-							{/each}
-						</ul>
-					{/if}
-				</div>
+			<!-- svelte-ignore a11y-no-static-element-interactions -->
+			<!-- svelte-ignore a11y-mouse-events-have-key-events -->
+			<div class='desc-div mt-0 text-sm bg-white ml-5 ${show[box] ? "block" : "h-0"} overflow-hidden font-normal w-100'
+				style="padding-left: 1rem;">
+				<div class="font-bold text-center text-base">{ service[box].head }</div>
+				<div class="text-center">{ service[box].description }</div>
+				{#if service[box].points.length > 4}
+					<ul class="grid grid-cols-2 text-center">
+					{#each service[box].points as point}
+						<li style="list-style-type: disc;">{ point }</li>
+					{/each}
+					</ul>
+				{:else}
+					<ul>
+					{#each service[box].points as point}
+						<li style="list-style-type: disc;">{ point }</li>
+					{/each}
+					</ul>
+				{/if}
+			</div>
 			</div>
 		{/each}
 	</div>
@@ -297,10 +300,7 @@
 		border-width: 0px;
 		@apply w-60;
 	}
-	.descript:hover + div{
-		@apply h-auto;
-	}
-	.descript:not(:hover) + div{
-		@apply h-0 hidden;
+	div.desc-div {
+		transition-duration: 1s;
 	}
 </style>
