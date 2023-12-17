@@ -14,13 +14,12 @@
 	<div class={"grid "+ (Object.keys(service).length >=4? "grid-cols-2": "grid-cols-1")} >
 		{#each Object.keys(service) as box}
 		<div class="grid grid-cols-1">
-			<button on:mouseenter={() => show = true} class="h-16 text-base w-100 bg-white mt-2 ml-5 hover:font-bold font-normal">
+			<button on:mouseenter={() => {/*show = true*/}} class="descipt h-16 text-base w-100 bg-white mt-2 ml-5 hover:font-bold font-normal">
 				{box}
 			</button>
-			{#if show}
 				<!-- svelte-ignore a11y-no-static-element-interactions -->
 				<!-- svelte-ignore a11y-mouse-events-have-key-events -->
-				<div class="h-auto mt-0 text-sm bg-white ml-5 font-normal w-100" style="padding-left: 1rem;">
+				<div class="desc-div mt-0 text-sm bg-white ml-5 font-normal w-100" style="padding-left: 1rem;">
 					<div class="font-bold text-center text-base">{ service[box].head }</div>
 					<div class="text-center">{ service[box].description }</div>
 					{#if service[box].points.length > 4}
@@ -37,7 +36,6 @@
 						</ul>
 					{/if}
 				</div>
-			{/if}
 			</div>
 		{/each}
 	</div>
@@ -298,5 +296,11 @@
 	input {
 		border-width: 0px;
 		@apply w-60;
+	}
+	.descript:hover + div{
+		@apply h-auto;
+	}
+	.descript:not(:hover) + div{
+		@apply h-0 hidden;
 	}
 </style>
