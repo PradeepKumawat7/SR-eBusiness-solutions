@@ -1,8 +1,9 @@
 <script>
 	/**
-	 * @type { Object<string, { head: string, description?: string, points?: Array<string>}> }
+	 * @type { Object<string, { head: string, description: string, points: Array<string>}> }
 	 */
 	export let service;
+	let show= false;
 </script>
 
 <form
@@ -10,12 +11,35 @@
 	method="post"
 	class="text-lg bg-white grid grid-cols-2 text-black"
 >
-	<div class={"grid "+ (Object.keys(service).length >=4? "grid-cols-2": "grid-cols-1")}>
+	<div class={"grid "+ (Object.keys(service).length >=4? "grid-cols-2": "grid-cols-1")} >
 		{#each Object.keys(service) as box}
-			<button class="h-16 text-base w-80 bg-white mt-2 ml-5 hover:font-bold font-normal">
+		<div class="grid grid-cols-1">
+			<button on:mouseenter={() => show = true} class="h-16 text-base w-100 bg-white mt-2 ml-5 hover:font-bold font-normal">
 				{box}
 			</button>
-			{/each}
+			{#if show}
+				<!-- svelte-ignore a11y-no-static-element-interactions -->
+				<!-- svelte-ignore a11y-mouse-events-have-key-events -->
+				<div class="h-auto mt-0 text-sm bg-white ml-5 font-normal w-100" style="padding-left: 1rem;">
+					<div class="font-bold text-center text-base">{ service[box].head }</div>
+					<div class="text-center">{ service[box].description }</div>
+					{#if service[box].points.length > 4}
+						<ul class="grid grid-cols-2">
+							{#each service[box].points as point}
+								<li style="list-style-type: disc;">{ point }</li>
+							{/each}
+						</ul>
+						{:else}
+						<ul>
+							{#each service[box].points as point}
+								<li style="list-style-type: disc;">{ point }</li>
+							{/each}
+						</ul>
+					{/if}
+				</div>
+			{/if}
+			</div>
+		{/each}
 	</div>
 	<div class="grid grid-cols-2">
 		<div>
