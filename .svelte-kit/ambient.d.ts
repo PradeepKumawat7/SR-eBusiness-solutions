@@ -80,7 +80,6 @@ declare module '$env/static/private' {
 	export const SESSION_MANAGER: string;
 	export const GTK_EXE_PREFIX: string;
 	export const HOMEBREW_CELLAR: string;
-	export const GTK3_MODULES: string;
 	export const NODE: string;
 	export const npm_package_name: string;
 	export const XDG_MENU_PREFIX: string;
@@ -214,7 +213,6 @@ declare module '$env/dynamic/private' {
 		SESSION_MANAGER: string;
 		GTK_EXE_PREFIX: string;
 		HOMEBREW_CELLAR: string;
-		GTK3_MODULES: string;
 		NODE: string;
 		npm_package_name: string;
 		XDG_MENU_PREFIX: string;
