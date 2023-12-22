@@ -44,10 +44,10 @@
 				>
 					{box}
 				</button>
-				{/each}
-			</div>
-			<!-- svelte-ignore a11y-mouse-events-have-key-events -->
-			<!-- svelte-ignore a11y-no-static-element-interactions -->
+			{/each}
+		</div>
+		<!-- svelte-ignore a11y-mouse-events-have-key-events -->
+		<!-- svelte-ignore a11y-no-static-element-interactions -->
 		<div class="grid grid-cols-1">
 			{#each Object.keys(service) as box}
 				{#if show[box]}

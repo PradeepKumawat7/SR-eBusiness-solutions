@@ -1,3 +1,10 @@
+<script>
+	/**
+	 * @type {{head: string, description: string, points: Array<string>}}
+	 */
+	export let point;
+</script>
+
 <div
 	class="desc-div mt-0 text-base bg-white ml-5 ${point
 		? 'block'
@@ -12,9 +19,3 @@
 		{/each}
 	</ul>
 </div>
-<script>
-    /**
-     * @type {{head: string, description: string, points: Array<string>}}
-     */
-    export let point;
-</script>

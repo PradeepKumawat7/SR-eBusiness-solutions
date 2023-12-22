@@ -7,7 +7,7 @@
 	 * @type { string }
 	 */
 	let ser = '';
-  import { services } from '$lib';
+	import { services } from '$lib';
 </script>
 
 <nav class="w-full bg-blue-800 text-white xl:text-3xl font-bold">
