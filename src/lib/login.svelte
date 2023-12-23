@@ -324,7 +324,4 @@
 		border-width: 0px;
 		@apply w-60;
 	}
-	div.desc-div {
-		transition-duration: 1s;
-	}
 </style>
