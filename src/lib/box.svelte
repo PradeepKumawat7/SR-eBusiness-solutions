@@ -6,9 +6,9 @@
 </script>
 
 <div
-	class="desc-div mt-0 text-base bg-white ml-5 ${point
+	class="desc-div mt-0 text-base bg-white ${point
 		? 'block'
-		: 'h-0'} overflow-hidden font-normal w-100"
+		: 'h-0'} overflow-hidden font-normal w-[40vw]"
 	style="padding-left: 1rem;"
 >
 	<div class="font-bold text-center text-2xl">{point.head}</div>

@@ -41,7 +41,7 @@
 						show[box] = true;
 					}}
 					class="descipt xl:h-16 lg:h-16
-					sm:h-8 2sm:h-8 text-base 2xl:w-100 lg:w-500 sm:w-100 xl:w-100 lg:w-60 bg-white mt-2 ml-5 hover:font-bold font-normal"
+					sm:h-8 2sm:h-8 text-base 2xl:w-48 lg:w-48 sm:w-48 xl:w-48 bg-white mt-2 ml-5 hover:font-bold font-normal"
 				>
 					{box}
 				</button>
@@ -55,7 +55,7 @@
 					<div
 						role="button"
 						tabindex="0"
-						class="descipt bg-white mt-2 ml-5 w-96 md:w-96 lg:w-96 xl:w-96"
+						class="descipt bg-white mt-2 w-96 md:w-96 lg:w-96 xl:w-96"
 						on:focus={() => handleMouseOver(box)}
 						on:mouseover={() => handleMouseOver(box)}
 						on:mouseout={() => handleMouseOut(box)}
