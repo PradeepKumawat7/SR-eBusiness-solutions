@@ -34,14 +34,14 @@
 
 <form class="text-lg bg-white grid grid-cols-3 text-black">
 	<div class="col-span-2 grid xl:grid-cols-2 bg-slate-300">
-		<div class="grid grid-cols-1">
+		<div class="grid grid-cols-1 w-56">
 			{#each Object.keys(service) as box}
 				<button
 					on:focus={() => {
 						show[box] = true;
 					}}
 					class="descipt xl:h-16 lg:h-16
-					sm:h-8 2sm:h-8 text-base 2xl:w-48 lg:w-48 sm:w-48 xl:w-48 bg-white mt-2 ml-5 hover:font-bold font-normal"
+					sm:h-8 2sm:h-8 text-base 2xl:w-56 lg:w-56 sm:w-48 xl:w-56 bg-white mt-2 ml-5 hover:font-bold font-normal"
 				>
 					{box}
 				</button>
@@ -55,11 +55,10 @@
 					<div
 						role="button"
 						tabindex="0"
-						class="descipt bg-white mt-2 w-96 md:w-96 lg:w-96 xl:w-96"
+						class="descipt bg-white mt-2 w-[30rem] flex flex-row"
 						on:focus={() => handleMouseOver(box)}
-						on:mouseover={() => handleMouseOver(box)}
-						on:mouseout={() => handleMouseOut(box)}
-						on:blur={() => handleBlur(box)}
+						on:mouseenter={() => handleMouseOver(box)}
+						on:mouseleave={() => handleMouseOut(box)}
 					>
 						<Box point={service[box]} />
 					</div>

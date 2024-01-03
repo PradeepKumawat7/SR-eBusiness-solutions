@@ -26,6 +26,7 @@
  * ```
  */
 declare module '$env/static/private' {
+	export const GJS_DEBUG_TOPICS: string;
 	export const LESSOPEN: string;
 	export const USER: string;
 	export const npm_config_user_agent: string;
@@ -41,29 +42,32 @@ declare module '$env/static/private' {
 	export const HOME: string;
 	export const CHROME_DESKTOP: string;
 	export const LOCPATH_VSCODE_SNAP_ORIG: string;
-	export const OLDPWD: string;
 	export const TERM_PROGRAM_VERSION: string;
 	export const DESKTOP_SESSION: string;
 	export const GTK_PATH: string;
 	export const npm_package_json: string;
 	export const _ble_util_fd_stdin: string;
 	export const GTK_IM_MODULE_FILE: string;
+	export const GIO_LAUNCHED_DESKTOP_FILE: string;
 	export const GNOME_SHELL_SESSION_MODE: string;
 	export const HOMEBREW_PREFIX: string;
 	export const GTK_MODULES: string;
 	export const GSETTINGS_SCHEMA_DIR_VSCODE_SNAP_ORIG: string;
 	export const VSCODE_GIT_ASKPASS_MAIN: string;
 	export const VSCODE_GIT_ASKPASS_NODE: string;
+	export const MANAGERPID: string;
 	export const npm_config_userconfig: string;
 	export const npm_config_local_prefix: string;
 	export const SYSTEMD_EXEC_PID: string;
 	export const DBUS_SESSION_BUS_ADDRESS: string;
 	export const npm_config_engine_strict: string;
 	export const COLORTERM: string;
+	export const GIO_LAUNCHED_DESKTOP_FILE_PID: string;
 	export const COLOR: string;
 	export const INFOPATH: string;
 	export const GTK_IM_MODULE: string;
 	export const LOGNAME: string;
+	export const JOURNAL_STREAM: string;
 	export const _: string;
 	export const npm_config_prefix: string;
 	export const npm_config_npm_version: string;
@@ -80,11 +84,12 @@ declare module '$env/static/private' {
 	export const PATH: string;
 	export const SESSION_MANAGER: string;
 	export const GTK_EXE_PREFIX: string;
+	export const INVOCATION_ID: string;
 	export const HOMEBREW_CELLAR: string;
 	export const NODE: string;
 	export const npm_package_name: string;
 	export const XDG_MENU_PREFIX: string;
-	export const GNOME_TERMINAL_SCREEN: string;
+	export const BAMF_DESKTOP_FILE_HINT: string;
 	export const _ble_util_fd_null: string;
 	export const XDG_RUNTIME_DIR: string;
 	export const GDK_BACKEND: string;
@@ -98,7 +103,6 @@ declare module '$env/static/private' {
 	export const XAUTHORITY: string;
 	export const LS_COLORS: string;
 	export const VSCODE_GIT_IPC_HANDLE: string;
-	export const GNOME_TERMINAL_SERVICE: string;
 	export const TERM_PROGRAM: string;
 	export const npm_lifecycle_script: string;
 	export const SSH_AGENT_LAUNCHER: string;
@@ -115,6 +119,7 @@ declare module '$env/static/private' {
 	export const GTK_PATH_VSCODE_SNAP_ORIG: string;
 	export const GTK_IM_MODULE_FILE_VSCODE_SNAP_ORIG: string;
 	export const GPG_AGENT_INFO: string;
+	export const GJS_DEBUG_OUTPUT: string;
 	export const VSCODE_GIT_ASKPASS_EXTRA_ARGS: string;
 	export const QT_IM_MODULE: string;
 	export const npm_config_globalconfig: string;
@@ -127,7 +132,6 @@ declare module '$env/static/private' {
 	export const HOMEBREW_REPOSITORY: string;
 	export const npm_command: string;
 	export const MANPATH: string;
-	export const VTE_VERSION: string;
 	export const INIT_CWD: string;
 	export const EDITOR: string;
 	export const NODE_ENV: string;
@@ -160,6 +164,7 @@ declare module '$env/static/public' {
  */
 declare module '$env/dynamic/private' {
 	export const env: {
+		GJS_DEBUG_TOPICS: string;
 		LESSOPEN: string;
 		USER: string;
 		npm_config_user_agent: string;
@@ -175,29 +180,32 @@ declare module '$env/dynamic/private' {
 		HOME: string;
 		CHROME_DESKTOP: string;
 		LOCPATH_VSCODE_SNAP_ORIG: string;
-		OLDPWD: string;
 		TERM_PROGRAM_VERSION: string;
 		DESKTOP_SESSION: string;
 		GTK_PATH: string;
 		npm_package_json: string;
 		_ble_util_fd_stdin: string;
 		GTK_IM_MODULE_FILE: string;
+		GIO_LAUNCHED_DESKTOP_FILE: string;
 		GNOME_SHELL_SESSION_MODE: string;
 		HOMEBREW_PREFIX: string;
 		GTK_MODULES: string;
 		GSETTINGS_SCHEMA_DIR_VSCODE_SNAP_ORIG: string;
 		VSCODE_GIT_ASKPASS_MAIN: string;
 		VSCODE_GIT_ASKPASS_NODE: string;
+		MANAGERPID: string;
 		npm_config_userconfig: string;
 		npm_config_local_prefix: string;
 		SYSTEMD_EXEC_PID: string;
 		DBUS_SESSION_BUS_ADDRESS: string;
 		npm_config_engine_strict: string;
 		COLORTERM: string;
+		GIO_LAUNCHED_DESKTOP_FILE_PID: string;
 		COLOR: string;
 		INFOPATH: string;
 		GTK_IM_MODULE: string;
 		LOGNAME: string;
+		JOURNAL_STREAM: string;
 		_: string;
 		npm_config_prefix: string;
 		npm_config_npm_version: string;
@@ -214,11 +222,12 @@ declare module '$env/dynamic/private' {
 		PATH: string;
 		SESSION_MANAGER: string;
 		GTK_EXE_PREFIX: string;
+		INVOCATION_ID: string;
 		HOMEBREW_CELLAR: string;
 		NODE: string;
 		npm_package_name: string;
 		XDG_MENU_PREFIX: string;
-		GNOME_TERMINAL_SCREEN: string;
+		BAMF_DESKTOP_FILE_HINT: string;
 		_ble_util_fd_null: string;
 		XDG_RUNTIME_DIR: string;
 		GDK_BACKEND: string;
@@ -232,7 +241,6 @@ declare module '$env/dynamic/private' {
 		XAUTHORITY: string;
 		LS_COLORS: string;
 		VSCODE_GIT_IPC_HANDLE: string;
-		GNOME_TERMINAL_SERVICE: string;
 		TERM_PROGRAM: string;
 		npm_lifecycle_script: string;
 		SSH_AGENT_LAUNCHER: string;
@@ -249,6 +257,7 @@ declare module '$env/dynamic/private' {
 		GTK_PATH_VSCODE_SNAP_ORIG: string;
 		GTK_IM_MODULE_FILE_VSCODE_SNAP_ORIG: string;
 		GPG_AGENT_INFO: string;
+		GJS_DEBUG_OUTPUT: string;
 		VSCODE_GIT_ASKPASS_EXTRA_ARGS: string;
 		QT_IM_MODULE: string;
 		npm_config_globalconfig: string;
@@ -261,7 +270,6 @@ declare module '$env/dynamic/private' {
 		HOMEBREW_REPOSITORY: string;
 		npm_command: string;
 		MANPATH: string;
-		VTE_VERSION: string;
 		INIT_CWD: string;
 		EDITOR: string;
 		NODE_ENV: string;
