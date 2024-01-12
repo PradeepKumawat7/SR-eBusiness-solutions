@@ -32,16 +32,15 @@
 	let show = {};
 </script>
 
-<form class="text-lg bg-white grid grid-cols-3 text-black">
-	<div class="col-span-2 grid xl:grid-cols-2 bg-slate-300">
-		<div class="grid grid-cols-1 w-56">
+<form class="grid grid-cols-3 text-lg text-black bg-white">
+	<div class="grid col-span-2 xl:grid-cols-2 bg-slate-300">
+		<div class="grid w-56 grid-cols-1">
 			{#each Object.keys(service) as box}
 				<button
 					on:focus={() => {
 						show[box] = true;
 					}}
-					class="descipt xl:h-16 lg:h-16
-					sm:h-8 2sm:h-8 text-base 2xl:w-56 lg:w-56 sm:w-48 xl:w-56 bg-white mt-2 ml-5 hover:font-bold font-normal"
+					class="mt-2 ml-5 text-base font-normal bg-white descipt xl:h-16 lg:h-16 sm:h-8 2sm:h-8 2xl:w-56 lg:w-56 sm:w-48 xl:w-56 hover:font-bold"
 				>
 					{box}
 				</button>
@@ -85,7 +84,7 @@
 		<!-- country codes (ISO 3166) and Dial codes. -->
 		<div>
 			<label for="country-code">Country Code</label>
-			<select name="countryCode" id="country-code" class=" w-64">
+			<select name="countryCode" id="country-code" class="w-64">
 				<option data-countryCode="GB" class="text-sm" value="44" Selected>UK (+44)</option>
 				<option data-countryCode="US" class="text-sm" value="1">USA (+1)</option>
 				<optgroup label="Other countries" class="text-sm">
