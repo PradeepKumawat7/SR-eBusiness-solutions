@@ -5,7 +5,7 @@
 	let serviceList = Object.keys(services);
 </script>
 
-<footer class="bg-gray-200 text-black absolute bottom-0 w-[100%]">
+<footer class="bg-gray-200 text-black mt-10 bottom-0 w-[100%]">
 	<div class="container px-4 mx-auto">
 		<div class="block w-full h-16 text-2xl font-extrabold text-center">CompanyName</div>
 		<div class="grid grid-cols-2">

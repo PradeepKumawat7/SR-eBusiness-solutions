@@ -31,6 +31,8 @@
 	"dependencies": {
 		"@fortawesome/free-brands-svg-icons": "^6.5.1",
 		"@fortawesome/free-solid-svg-icons": "^6.5.1",
+		"nodemailer": "^6.9.8",
+		"svelte-email": "^0.0.4",
 		"svelte-fa": "^3.0.4"
 	}
 }

@@ -13,7 +13,7 @@ export const server_loads = [];
 export const dictionary = {
 		"/": [2],
 		"/about-us": [3],
-		"/contact-us": [4]
+		"/contact-us": [~4]
 	};
 
 export const hooks = {

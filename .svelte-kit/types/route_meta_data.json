@@ -1,5 +1,7 @@
 {
 	"/": [],
 	"/about-us": [],
-	"/contact-us": []
+	"/contact-us": [
+		"src/routes/contact-us/+page.server.js"
+	]
 }
