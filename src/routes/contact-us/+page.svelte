@@ -1,4 +1,8 @@
 <script>
+	import Fa from 'svelte-fa';
+	import { faPhone } from '@fortawesome/free-solid-svg-icons';
+	import { faMessage } from '@fortawesome/free-solid-svg-icons';
+	import { email, phone } from '$lib/store';
 	/**
 	 * @type { { name: string, email: string, phone: string, message: string, countryCode: string, companyName: string, website: string } }
 	 */
@@ -23,7 +27,7 @@
 					<div class="flex flex-row">
 						<div class="grid grid-cols-2">
 							<label for="name">Name: </label><br />
-							<input type="text" name="name" id="name" bind:value={data.name} />
+							<input type="text" name="name" id="name" required bind:value={data.name} />
 						</div>
 						<div class="grid grid-cols-2">
 							<label for="companyName">Company Name: </label><br />
@@ -32,6 +36,7 @@
 								name="companyName"
 								bind:value={data.companyName}
 								id="companyName"
+								required
 							/>
 						</div>
 					</div>
@@ -39,7 +44,7 @@
 					<div class="flex flex-row">
 						<div class="grid grid-cols-2">
 							<label for="email">Email: </label><br />
-							<input type="email" name="email" id="email" bind:value={data.email} />
+							<input type="email" name="email" id="email" required bind:value={data.email} />
 						</div>
 						<script src="https://gist.github.com/andyj/7108917.js"></script>
 						<!-- country codes (ISO 3166) and Dial codes. -->
@@ -51,8 +56,8 @@
 								id="country-code"
 								class="w-64"
 							>
-								<option data-countryCode="GB" class="text-sm" value="44" Selected>UK (+44)</option>
-								<option data-countryCode="US" class="text-sm" value="1">USA (+1)</option>
+								<option data-countryCode="GB" class="text-sm" value="44">UK (+44)</option>
+								<option data-countryCode="US" class="text-sm" value="1" selected>USA (+1)</option>
 								<optgroup label="Other countries" class="text-sm">
 									<option data-countryCode="DZ" value="213">Algeria (+213)</option>
 									<option data-countryCode="AD" value="376">Andorra (+376)</option>
@@ -280,16 +285,16 @@
 							<label for="phone">Phone</label><br />
 							<input
 								type="number"
-								pattern="236-363-2368"
-								placeholder="236-363-2368"
+								placeholder="2363632368"
 								bind:value={data.phone}
 								name="phone"
 								id="phone"
+								required
 							/>
 						</div>
 						<div class="grid grid-cols-2">
 							<label for="website">Website</label><br />
-							<input type="url" name="website" id="Website" bind:value={data.website} />
+							<input type="url" name="website" id="Website" required bind:value={data.website} />
 						</div>
 					</div>
 					<br />
@@ -300,6 +305,7 @@
 							name="message"
 							id="message"
 							rows="5"
+							required
 							bind:value={data.message}
 						></textarea>
 					</div>
@@ -314,12 +320,36 @@
 			</div>
 		</div>
 		<div>
-			<h1 class="text-3xl font-bold">Contact Us</h1>
+			<div class="text-left">
+				<div class="text-left w-[40rem]">
+					<h1 class="">Contact Us</h1>
+					<p class="text-2xl">
+						Our website making aim is ,we want to make website for show the client that we provide
+						digital marketing service and our website looking good or show our services. client can
+						contact with us for taking services
+					</p>
+					<ul style="list-style-type: none;" class="grid grid-cols-2">
+						<li>
+							<div>
+								<Fa icon={faPhone} />Phone Number <a href="tel:+91-{$phone}">+91-{$phone}</a>
+							</div>
+						</li>
+						<li>
+							<div>
+								<Fa icon={faMessage} />Email Us <a href="mailto:{$email}">{$email}</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
 
 <style>
+	h1 {
+		@apply text-5xl font-bold text-purple-950;
+	}
 	input {
 		@apply w-60 h-10 border-gray-500 border-2;
 	}
@@ -331,5 +361,14 @@
 	}
 	.form-box {
 		box-shadow: 10px 10px 20px rgba(30, 30, 30, 0.2);
+	}
+	#message {
+		resize: none;
+	}
+	ul {
+		@apply mt-10;
+	}
+	li > div {
+		@apply text-3xl font-bold text-purple-950;
 	}
 </style>

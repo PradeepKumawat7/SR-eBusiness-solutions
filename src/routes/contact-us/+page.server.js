@@ -21,7 +21,7 @@ export const actions = {
     <ul>
         <li>Name: ${data.name}</li>
         <li>Email: ${data.email}</li>
-        <li>Phone: ${data.countryCode}-${data.phone}</li>
+        <li><a href="tel:${data.countryCode}-${data.phone}">Phone: ${data.countryCode}-${data.phone}</a></li>
         <li>Company Name: ${data.companyName}</li>
         <li>Website: ${data.website}</li>
         <p>Message: ${data.message}</p>
