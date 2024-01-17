@@ -1,6 +1,5 @@
 <script>
 	import { goto } from '$app/navigation';
-	import { page } from '$app/stores';
 	import { services } from '$lib';
 	let serviceList = Object.keys(services);
 </script>
@@ -22,15 +21,6 @@
 			<div>
 				<div class="mb-1 text-2xl font-bold">About</div>
 				<ul>
-					<li class="text-base hover:font-semibold">
-						<button
-							on:click={() => {
-								goto('/about-us');
-							}}
-						>
-							About Us
-						</button>
-					</li>
 					<li class="text-base hover:font-semibold">Our Team</li>
 					<li class="text-base hover:font-semibold">
 						<button
@@ -38,7 +28,7 @@
 								goto('/contact-us');
 							}}
 						>
-							Contact Us
+							About Us and Contact Us
 						</button>
 					</li>
 				</ul>

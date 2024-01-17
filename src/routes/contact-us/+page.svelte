@@ -1,7 +1,7 @@
 <script>
 	import Fa from 'svelte-fa';
-	import { faPhone } from '@fortawesome/free-solid-svg-icons';
-	import { faMessage } from '@fortawesome/free-solid-svg-icons';
+	import { faE, faPhone } from '@fortawesome/free-solid-svg-icons';
+	import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 	import { email, phone } from '$lib/store';
 	/**
 	 * @type { { name: string, email: string, phone: string, message: string, countryCode: string, companyName: string, website: string } }
@@ -321,25 +321,36 @@
 		</div>
 		<div>
 			<div class="text-left">
-				<div class="text-left w-[40rem]">
-					<h1 class="">Contact Us</h1>
-					<p class="text-2xl">
-						Our website making aim is ,we want to make website for show the client that we provide
-						digital marketing service and our website looking good or show our services. client can
-						contact with us for taking services
-					</p>
-					<ul style="list-style-type: none;" class="grid grid-cols-2">
-						<li>
-							<div>
-								<Fa icon={faPhone} />Phone Number <a href="tel:+91-{$phone}">+91-{$phone}</a>
-							</div>
-						</li>
-						<li>
-							<div>
-								<Fa icon={faMessage} />Email Us <a href="mailto:{$email}">{$email}</a>
-							</div>
-						</li>
-					</ul>
+				<div class="text-left w-[50rem]">
+					<div class="p-10 section-part h-[21rem] hover:h-[23rem] hover:p-14">
+						<h1>About Us</h1>
+						<p class="mt-5 text-2xl">
+							Our website making aim is, we want to make website for show the client that we provide
+							digital marketing service and our website looking good or show our services. client
+							can contact with us for taking services. Our aim good looking website which show our
+							service to customer and customer can connect with us
+						</p>
+					</div>
+					<div
+						class="h-[18rem] hover:h-[20rem] hover:p-8 hover:w-[47rem] hover:pl-12 p-5 pl-10 mt-10 section-part"
+						id="contact"
+					>
+						<h1>Contact Us</h1>
+						<ul style="list-style-type: none;" class="grid grid-cols-2">
+							<li>
+								<div>
+									<Fa class="float-left mr-2" icon={faPhone} />Phone Number
+									<a href="tel:+91-{$phone}">+91-{$phone}</a>
+								</div>
+							</li>
+							<li>
+								<div>
+									<Fa class="float-left mr-2" icon={faEnvelope} />Email Us
+									<a href="mailto:{$email}">{$email}</a>
+								</div>
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -347,6 +358,18 @@
 </div>
 
 <style>
+	.section-part {
+		border-left: 5px solid skyblue;
+		box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+		width: 45rem;
+		transition: transform 0.1s;
+	}
+	.section-part:hover {
+		width: 50rem;
+	}
+	.section-part:not(:hover) {
+		width: 42rem;
+	}
 	h1 {
 		@apply text-5xl font-bold text-purple-950;
 	}
@@ -369,6 +392,6 @@
 		@apply mt-10;
 	}
 	li > div {
-		@apply text-3xl font-bold text-purple-950;
+		@apply text-2xl font-bold text-purple-950;
 	}
 </style>
