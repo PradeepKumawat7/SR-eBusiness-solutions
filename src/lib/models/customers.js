@@ -6,7 +6,7 @@ const {
  * Initializes and defines the 'customers' model class.
  *
  * @param {Object} sequelize - The Sequelize instance.
- * @param {Object} DataTypes - The data types module.
+ * @param {import("sequelize").DataTypes} DataTypes - The data types module.
  * @return {Object} The 'customers' model class.
  */
 module.exports = (sequelize, DataTypes) => {

@@ -39,8 +39,24 @@ module.exports = {
         type: Sequelize.DATE
       }
     });
+    await queryInterface.createTable("admin", {
+      name: {
+        allowNull: false,
+        primaryKey: true,
+        type: Sequelize.STRING
+      },
+      password: {
+        allowNull: false,
+        type: Sequelize.STRING
+      },
+      email: {
+        allowNull: false,
+        type: Sequelize.STRING
+      }
+    })
   },
   async down(queryInterface, Sequelize) {
     await queryInterface.dropTable('customers');
+    await queryInterface.dropTable("admin");
   }
 };
