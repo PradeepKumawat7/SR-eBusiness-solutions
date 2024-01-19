@@ -2,7 +2,7 @@
 /**
  * @param {import("@sveltejs/kit").Redirect} redirect
  */
-export async function load(redirect) {
+export async function load({ redirect }) {
     return {
         redirect: "/"
     };

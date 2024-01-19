@@ -1,5 +1,8 @@
 import { Model } from 'sequelize';
-export default (sequelize, DataTypes) => {
+/**
+ * @returns {import("sequelize").ModelCtor<Model>}
+ */
+export function Admin(sequelize, DataTypes) {
   class admins extends Model {
     /**
      * Helper method for defining associations.
