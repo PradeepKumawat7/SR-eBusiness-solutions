@@ -55,6 +55,10 @@ module.exports = {
       }
     })
   },
+  /**
+   * @param {import("sequelize").QueryInterface} queryInterface
+   * @param {import("sequelize").Sequelize} Sequelize
+   */
   async down(queryInterface, Sequelize) {
     await queryInterface.dropTable('customers');
     await queryInterface.dropTable("admin");

@@ -1,7 +1,4 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+import { Model } from 'sequelize';
 /**
  * Initializes and defines the 'customers' model class.
  *
@@ -9,7 +6,7 @@ const {
  * @param {import("sequelize").DataTypes} DataTypes - The data types module.
  * @return {Object} The 'customers' model class.
  */
-module.exports = (sequelize, DataTypes) => {
+export default (sequelize, DataTypes) => {
   class customers extends Model {
     /**
      * Helper method for defining associations.

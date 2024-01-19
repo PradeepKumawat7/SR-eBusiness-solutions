@@ -1,19 +1,17 @@
 import { Sequelize } from "sequelize";
-import DataTypes from "sequelize/lib/data-types"
-import admin from "$lib/models/admin";
+// import Admin from "../../../models/admins"
 
 (async function () {
-    const sequelize = new Sequelize('$lib/db.sqlite', 'root', '@J1i16a12', {
+    const sequelize = new Sequelize('../../../db.sqlite', 'root', '@J1i16a12', {
         dialect: "sqlite"
     });
+    sequelize.sync({ force: true });
 
     try {
-        await sequelize.authenticate();
-        let Admin = admin(sequelize, DataTypes);
-        console.log(typeof (Admin));
-        console.log(sequelize.model("admin"));
+        let jaipal = await sequelize.query("Insert into admins(id, name, email, password) values(1, 'Jaipal', 'jaipalbhanwariya001@gmail.com', 'J1i16a12')");
+        console.log(jaipal);
         console.log("Connection has been established successfully.");
     } catch (error) {
-        console.error("Unable to connect to the database:", error);
+        console.error(error);
     }
 })()

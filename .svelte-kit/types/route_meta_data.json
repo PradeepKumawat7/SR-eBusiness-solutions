@@ -6,6 +6,7 @@
 		"src/routes/contact-us/+page.server.js"
 	],
 	"/database": [
+		"src/routes/database/+page.js",
 		"src/routes/database/+page.server.js"
 	]
 }
