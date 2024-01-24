@@ -1,17 +1,11 @@
 import { Model } from 'sequelize';
 /**
- * @returns {import("sequelize").ModelCtor<Model>}
+ * @param {import("sequelize").Sequelize} sequelize
+ * @param {import("sequelize").DataTypes} DataTypes
+ * @returns {import("sequelize").Model<any, any>}
  */
 export function Admin(sequelize, DataTypes) {
   class admins extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
-      // define association here
-    }
   }
   admins.init({
     name: DataTypes.STRING,
