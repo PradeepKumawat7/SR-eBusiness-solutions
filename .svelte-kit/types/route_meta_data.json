@@ -4,7 +4,9 @@
 	"/admin": [
 		"src/routes/admin/+page.js"
 	],
-	"/admin/login": [],
+	"/admin/login": [
+		"src/routes/admin/login/+page.server.js"
+	],
 	"/contact-us": [
 		"src/routes/contact-us/+page.server.js"
 	],
