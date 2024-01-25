@@ -1,6 +1,5 @@
 <script>
 	import Box from './box.svelte';
-
 	/**
 	 * @type { Object<string, { head: string, description: string, points: Array<string>}> }
 	 */

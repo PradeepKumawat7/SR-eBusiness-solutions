@@ -24,7 +24,8 @@ export default (sequelize, DataTypes) => {
     countryCode: DataTypes.STRING,
     phone: DataTypes.STRING,
     website: DataTypes.STRING,
-    message: DataTypes.STRING
+    service: DataTypes.STRING,
+    subservice: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'customers',

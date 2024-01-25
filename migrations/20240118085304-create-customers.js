@@ -27,7 +27,10 @@ export default {
       website: {
         type: Sequelize.STRING
       },
-      message: {
+      service: {
+        type: Sequelize.STRING
+      },
+      subservice: {
         type: Sequelize.STRING
       },
       createdAt: {
