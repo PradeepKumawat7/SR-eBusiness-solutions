@@ -1,7 +1,10 @@
 {
 	"/": [],
 	"/about-us": [],
-	"/admin": [],
+	"/admin": [
+		"src/routes/admin/+page.js"
+	],
+	"/admin/login": [],
 	"/contact-us": [
 		"src/routes/contact-us/+page.server.js"
 	],
