@@ -37,10 +37,8 @@ export const actions = {
          */
         let first = data[0][0];
         if ((email.toLowerCase() == first.email.toLowerCase()) && (password == first.password)) {
-            console.log("pass");
             return { success: 1 };
         } else {
-            console.log("fail");
             return { success: 0 };
         }
     }

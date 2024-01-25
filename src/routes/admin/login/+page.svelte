@@ -30,9 +30,7 @@
 			},
 			body: formData
 		});
-		const out = await res.json();
 		console.log(out);
-		let result = JSON.parse(out.data)[1];
 		disabled = false;
 		console.log(result);
 		if (result == 1) {
