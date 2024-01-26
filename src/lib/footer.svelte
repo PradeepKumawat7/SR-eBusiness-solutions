@@ -6,7 +6,7 @@
 
 <footer class="bg-gray-200 text-black mt-10 bottom-0 w-[100%]">
 	<div class="container px-4 mx-auto">
-		<div class="block w-full h-16 text-2xl font-extrabold text-center">CompanyName</div>
+		<div class="flex w-full h-16 text-2xl font-extrabold justify-items-center">CompanyName</div>
 		<div class="grid grid-cols-2">
 			<div>
 				<div class="mb-1 text-xl font-bold">Name</div>
@@ -29,6 +29,15 @@
 							}}
 						>
 							About Us and Contact Us
+						</button>
+					</li>
+					<li class="text-base hover:font-semibold">
+						<button
+							on:click={() => {
+								goto('/admin/login');
+							}}
+						>
+							Admin login
 						</button>
 					</li>
 				</ul>

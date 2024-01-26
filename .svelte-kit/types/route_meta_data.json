@@ -4,6 +4,9 @@
 	"/admin": [
 		"src/routes/admin/+page.js"
 	],
+	"/admin/dashboard": [
+		"src/routes/admin/dashboard/+page.js"
+	],
 	"/admin/login": [
 		"src/routes/admin/login/+page.server.js"
 	],

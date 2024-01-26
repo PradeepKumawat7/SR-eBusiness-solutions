@@ -1,4 +1,6 @@
 <script>
+	import { goto } from '$app/navigation';
+	import { page } from '$app/stores';
 	import '../../../app.css';
 	let adminConfirm = false,
 		declared = false;
@@ -30,12 +32,13 @@
 			},
 			body: formData
 		});
-		console.log(out);
+		let out = await res.json();
+		const result = JSON.parse(out.data)[1];
 		disabled = false;
-		console.log(result);
 		if (result == 1) {
 			adminConfirm = true;
 			declared = true;
+			goto('/admin/dashboard');
 		} else {
 			declared = true;
 			adminConfirm = false;
@@ -43,7 +46,9 @@
 	}
 </script>
 
-<div>
+<div
+	on:focus={() => (declared && adminConfirm ? goto('/admin/dashboard') : goto($page.url.pathname))}
+>
 	<div class="w-full h-[50vh]">
 		<div class="div-center">
 			<h1>Login</h1>
@@ -52,15 +57,15 @@
 			<form on:submit|preventDefault={handleSubmit}>
 				<div class="form-group">
 					<label for="name" class="form-label">Name</label>
-					<input type="text" id="name" bind:value={name} />
+					<input type="text" name="name" required bind:value={name} />
 				</div>
 				<div class="form-group">
 					<label for="email" class="form-label">Email</label>
-					<input type="email" name="email" bind:value={email} />
+					<input type="email" name="email" required bind:value={email} />
 				</div>
 				<div class="form-group">
 					<label for="password" class="form-label">Password</label>
-					<input type="password" name="password" bind:value={password} />
+					<input type="password" name="password" required bind:value={password} />
 				</div>
 				<div class="div-center">
 					<button
@@ -77,9 +82,17 @@
 		</div>
 		{#if declared}
 			{#if adminConfirm}
-				<h1>You are admin</h1>
+				<div
+					class="px-10 pt-10 mt-10 text-lg text-center border-4 div-center border-b-none border-r-none border-t-blue-400 border-l-blue-400 h-auto pb-10 mx-[10%]"
+				>
+					<h1>Authentication Success<br />Redictecting to Dashboard</h1>
+				</div>
 			{:else}
-				<h1>You are not admin</h1>
+				<div
+					class="px-10 pt-10 mt-10 text-lg text-center border-4 div-center border-b-none border-r-none border-t-blue-400 border-l-blue-400 h-auto pb-10 mx-[10%]"
+				>
+					<h1>Authentication Failed<br />Try Again</h1>
+				</div>
 			{/if}
 		{/if}
 	</div>
