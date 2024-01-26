@@ -2,7 +2,7 @@
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import '../../../app.css';
-	let adminConfirm = false,
+	let adminConfirm = true,
 		declared = false;
 
 	let disabled = false;
@@ -33,22 +33,23 @@
 			body: formData
 		});
 		let out = await res.json();
-		const result = JSON.parse(out.data)[1];
-		disabled = false;
-		if (result == 1) {
-			adminConfirm = true;
-			declared = true;
-			goto('/admin/dashboard');
+		if (Object.prototype.toString.call(out) == '[object Object]' && out.data != null) {
+			// "[object Object]")
+			const result = JSON.parse(out.data)[1];
+			disabled = false;
+			if (result != 1) {
+				adminConfirm = false;
+				declared = true;
+			}
 		} else {
+			disabled = false;
 			declared = true;
-			adminConfirm = false;
+			adminConfirm = true;
 		}
 	}
 </script>
 
-<div
-	on:focus={() => (declared && adminConfirm ? goto('/admin/dashboard') : goto($page.url.pathname))}
->
+<div>
 	<div class="w-full h-[50vh]">
 		<div class="div-center">
 			<h1>Login</h1>

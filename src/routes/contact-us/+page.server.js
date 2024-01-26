@@ -15,17 +15,18 @@ export const actions = {
             companyName: formData.get('companyName'),
             website: formData.get('website')
         };
-        let html = `<h1>Digital Market</h1>
-    <p>You have a new contact request</p>
-    <h3>Contact Details</h3>
-    <ul>
-        <li>Name: ${data.name}</li>
-        <li>Email: ${data.email}</li>
-        <li><a href="tel:${data.countryCode}-${data.phone}">Phone: ${data.countryCode}-${data.phone}</a></li>
-        <li>Company Name: ${data.companyName}</li>
-        <li>Website: ${data.website}</li>
-        <p>Message: ${data.message}</p>
-    </ul>`;
+        let html = `
+        <h1>Digital Market</h1>
+        <p>You have a new contact request</p>
+        <h3>Contact Details</h3>
+        <ul>
+            <li>Name: ${data.name}</li>
+            <li>Email: ${data.email}</li>
+            <li><a href="tel:${data.countryCode}-${data.phone}">Phone: ${data.countryCode}-${data.phone}</a></li>
+            <li>Company Name: ${data.companyName}</li>
+            <li>Website: ${data.website}</li>
+            <p>Message: ${data.message}</p>
+        </ul>`;
         const emailContent = {
             from: 'jaipalbhanwariya001@gmail.com',
             to: 'jaipalbhanwariya6@gmail.com',
