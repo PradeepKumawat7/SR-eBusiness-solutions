@@ -4,9 +4,17 @@
 	let serviceList = Object.keys(services);
 </script>
 
-<footer class="bg-gray-200 text-black mt-10 bottom-0 w-[100%]">
+<footer
+	class="bg-gray-200 text-black {typeof window !== 'undefined' &&
+	window.innerHeight - visualViewport.height > 300
+		? 'mt-[70vh]'
+		: 'mt-[10vh]'}
+		w-[100%] fixed"
+>
 	<div class="container px-4 mx-auto">
-		<div class="flex w-full h-16 text-2xl font-extrabold justify-items-center">CompanyName</div>
+		<div class="z-0 w-full h-16 text-2xl font-extrabold div-center">
+			<div>CompanyName</div>
+		</div>
 		<div class="grid grid-cols-2">
 			<div>
 				<div class="mb-1 text-xl font-bold">Name</div>
@@ -50,6 +58,9 @@
 	footer {
 		box-shadow: 0 -5px 100px 0 rgba(0, 0, 0, 0.2);
 		@apply text-center;
+	}
+	.div-center {
+		@apply flex justify-center;
 	}
 	button {
 		appearance: none;

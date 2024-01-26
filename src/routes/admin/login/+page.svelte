@@ -1,6 +1,5 @@
 <script>
 	import { goto } from '$app/navigation';
-	import { page } from '$app/stores';
 	import '../../../app.css';
 	let adminConfirm = true,
 		declared = false;
@@ -33,7 +32,7 @@
 			body: formData
 		});
 		let out = await res.json();
-		if (Object.prototype.toString.call(out) == '[object Object]' && out.data != null) {
+		if (!(out.type === 'redirect')) {
 			// "[object Object]")
 			const result = JSON.parse(out.data)[1];
 			disabled = false;
@@ -45,10 +44,14 @@
 			disabled = false;
 			declared = true;
 			adminConfirm = true;
+			goto('/admin/dashboard');
 		}
 	}
 </script>
 
+<svelte:head>
+	<title>Admin Login</title>
+</svelte:head>
 <div>
 	<div class="w-full h-[50vh]">
 		<div class="div-center">
@@ -66,7 +69,13 @@
 				</div>
 				<div class="form-group">
 					<label for="password" class="form-label">Password</label>
-					<input type="password" name="password" required bind:value={password} />
+					<input
+						type="password"
+						name="password"
+						required
+						autocapitalize="true"
+						bind:value={password}
+					/>
 				</div>
 				<div class="div-center">
 					<button
@@ -84,13 +93,13 @@
 		{#if declared}
 			{#if adminConfirm}
 				<div
-					class="px-10 pt-10 mt-10 text-lg text-center border-4 div-center border-b-none border-r-none border-t-blue-400 border-l-blue-400 h-auto pb-10 mx-[10%]"
+					class="admin-auth px-10 pt-10 mt-10 text-lg text-center border-4 div-center border-b-none border-r-none border-t-blue-400 border-l-blue-400 h-auto pb-10 mx-[10%]"
 				>
 					<h1>Authentication Success<br />Redictecting to Dashboard</h1>
 				</div>
 			{:else}
 				<div
-					class="px-10 pt-10 mt-10 text-lg text-center border-4 div-center border-b-none border-r-none border-t-blue-400 border-l-blue-400 h-auto pb-10 mx-[10%]"
+					class="admin-auth px-10 pt-10 mt-10 text-lg text-center border-4 div-center border-b-none border-r-none border-t-blue-400 border-l-blue-400 h-auto pb-10 mx-[10%]"
 				>
 					<h1>Authentication Failed<br />Try Again</h1>
 				</div>
@@ -100,6 +109,9 @@
 </div>
 
 <style scoped>
+	.admin-auth {
+		z-index: 0;
+	}
 	.div-center {
 		display: flex;
 		justify-content: center; /* Centers children horizontally */

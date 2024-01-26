@@ -4,6 +4,9 @@
 	console.log($adminAuth);
 </script>
 
+<svelte:head>
+	<title>Dashboard</title>
+</svelte:head>
 {#if !$adminAuth}
 	<div
 		class="w-1/2 p-10 mt-10 mb-10 text-3xl font-bold text-gray-700 border-2 border-gray-500 rounded div-center md"
