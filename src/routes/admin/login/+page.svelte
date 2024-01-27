@@ -1,5 +1,6 @@
 <script>
 	import { goto } from '$app/navigation';
+	import { adminAuth } from '$lib/store';
 	import '../../../app.css';
 	let adminConfirm = true,
 		declared = false;
@@ -33,7 +34,6 @@
 		});
 		let out = await res.json();
 		if (!(out.type === 'redirect')) {
-			// "[object Object]")
 			const result = JSON.parse(out.data)[1];
 			disabled = false;
 			if (result != 1) {
@@ -42,9 +42,13 @@
 			}
 		} else {
 			disabled = false;
+			adminAuth.set(true);
 			declared = true;
 			adminConfirm = true;
-			goto('/admin/dashboard');
+			console.log($adminAuth);
+			setTimeout(() => {
+				goto('/admin/dashboard');
+			}, 1000);
 		}
 	}
 </script>

@@ -4,6 +4,8 @@
 	import '../app.css';
 </script>
 
-<Navbar />
-<slot />
-<Footer />
+<div class="overflow-x-hidden overflow-y-scroll text-gray-800 bg-gray-100">
+	<Navbar />
+	<slot />
+	<Footer />
+</div>

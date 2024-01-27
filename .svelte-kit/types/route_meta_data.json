@@ -5,7 +5,7 @@
 		"src/routes/admin/+page.js"
 	],
 	"/admin/dashboard": [
-		"src/routes/admin/dashboard/+page.js"
+		"src/routes/admin/dashboard/+page.server.js"
 	],
 	"/admin/login": [
 		"src/routes/admin/login/+page.server.js"

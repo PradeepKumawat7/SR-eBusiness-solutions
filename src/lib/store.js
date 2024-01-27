@@ -15,4 +15,4 @@ export const months = readable(["01", "02", "03", "04", "05", "06", "07", "08", 
 /**
  * @type {import("svelte/store").Writable<boolean>}
  */
-export const adminAuth = writable(false);
+export const adminAuth = writable(true);

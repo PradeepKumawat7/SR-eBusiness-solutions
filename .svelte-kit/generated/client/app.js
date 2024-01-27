@@ -18,7 +18,7 @@ export const dictionary = {
 		"/": [2],
 		"/about-us": [3],
 		"/admin": [4],
-		"/admin/dashboard": [5],
+		"/admin/dashboard": [~5],
 		"/admin/login": [~6],
 		"/contact-us": [~7],
 		"/database": [~8]

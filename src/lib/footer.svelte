@@ -8,8 +8,8 @@
 	class="bg-gray-200 text-black {typeof window !== 'undefined' &&
 	window.innerHeight - visualViewport.height > 300
 		? 'mt-[70vh]'
-		: 'mt-[10vh]'}
-		w-[100%] fixed"
+		: 'mt-0]'}
+		w-[100%] absolute"
 >
 	<div class="container px-4 mx-auto">
 		<div class="z-0 w-full h-16 text-2xl font-extrabold div-center">
