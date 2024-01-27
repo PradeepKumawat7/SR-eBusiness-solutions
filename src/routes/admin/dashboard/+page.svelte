@@ -6,7 +6,6 @@
 	 * @type { { data: { id:number, name: string, email: string, phone: string, service: string, subService: string, createdAt: string, updatedAt: string, countryCode: string, companyName: string, website: string }[] } }
 	 */
 	export let data;
-	console.log(data.data);
 </script>
 
 <svelte:head>
@@ -14,7 +13,7 @@
 </svelte:head>
 {#if !$adminAuth}
 	<div
-		class="div-center md mb-10 mt-10 w-1/2 rounded border-2 border-gray-500 p-10 text-3xl font-bold text-gray-700"
+		class="w-1/2 p-10 mt-10 mb-10 text-3xl font-bold text-gray-700 border-2 border-gray-500 rounded div-center md"
 	>
 		You have not logged in yet<br />
 		Redirecting to <code>/admin/login</code>
@@ -22,7 +21,7 @@
 {:else}
 	<div class="mb-20">
 		<div
-			class="justify-content-center div-center md mb-10 ml-[25%] mt-10 flex w-1/2 rounded border-2 border-gray-500 p-10 text-3xl font-bold text-gray-700"
+			class="div-center mb-10 ml-[25%] mt-10 flex w-1/2 rounded border-2 border-gray-500 p-10 text-center text-3xl font-bold text-gray-700"
 		>
 			<h1>Customers</h1>
 		</div>
