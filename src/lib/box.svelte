@@ -6,12 +6,12 @@
 </script>
 
 <div
-	class="desc-div mt-0 text-base bg-white ${point
+	class="desc-div mt-0 bg-white text-base ${point
 		? 'block'
-		: 'h-0'} overflow-hidden font-normal w-[40vw]"
+		: 'h-0'} w-[40vw] overflow-hidden font-normal"
 	style="padding-left: 1rem;"
 >
-	<div class="font-bold text-center text-2xl">{point.head}</div>
+	<div class="text-center text-2xl font-bold">{point.head}</div>
 	<div class="text-center text-lg">{point.description}</div>
 	<ul class="grid grid-cols-2 text-center">
 		{#each point.points as pointLi}

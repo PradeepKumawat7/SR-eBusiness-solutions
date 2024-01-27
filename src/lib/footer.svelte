@@ -9,10 +9,10 @@
 	window.innerHeight - visualViewport.height > 300
 		? 'mt-[70vh]'
 		: 'mt-0]'}
-		w-[100%] absolute"
+		absolute w-[100%]"
 >
-	<div class="container px-4 mx-auto">
-		<div class="z-0 w-full h-16 text-2xl font-extrabold div-center">
+	<div class="container mx-auto px-4">
+		<div class="div-center z-0 h-16 w-full text-2xl font-extrabold">
 			<div>CompanyName</div>
 		</div>
 		<div class="grid grid-cols-2">

@@ -57,11 +57,11 @@
 	<title>Admin Login</title>
 </svelte:head>
 <div>
-	<div class="w-full h-[50vh]">
+	<div class="h-[50vh] w-full">
 		<div class="div-center">
 			<h1>Login</h1>
 		</div>
-		<div class="mt-5 div-center">
+		<div class="div-center mt-5">
 			<form on:submit|preventDefault={handleSubmit}>
 				<div class="form-group">
 					<label for="name" class="form-label">Name</label>
@@ -84,7 +84,7 @@
 				<div class="div-center">
 					<button
 						type="submit"
-						class={`px-4 py-2 font-bold text-white rounded hover:bg-blue-700 ${
+						class={`rounded px-4 py-2 font-bold text-white hover:bg-blue-700 ${
 							disabled ? 'bg-blue-300' : 'bg-blue-500'
 						}`}
 						{disabled}
@@ -97,13 +97,13 @@
 		{#if declared}
 			{#if adminConfirm}
 				<div
-					class="admin-auth px-10 pt-10 mt-10 text-lg text-center border-4 div-center border-b-none border-r-none border-t-blue-400 border-l-blue-400 h-auto pb-10 mx-[10%]"
+					class="admin-auth div-center border-b-none border-r-none mx-[10%] mt-10 h-auto border-4 border-l-blue-400 border-t-blue-400 px-10 pb-10 pt-10 text-center text-lg"
 				>
 					<h1>Authentication Success<br />Redictecting to Dashboard</h1>
 				</div>
 			{:else}
 				<div
-					class="admin-auth px-10 pt-10 mt-10 text-lg text-center border-4 div-center border-b-none border-r-none border-t-blue-400 border-l-blue-400 h-auto pb-10 mx-[10%]"
+					class="admin-auth div-center border-b-none border-r-none mx-[10%] mt-10 h-auto border-4 border-l-blue-400 border-t-blue-400 px-10 pb-10 pt-10 text-center text-lg"
 				>
 					<h1>Authentication Failed<br />Try Again</h1>
 				</div>
@@ -121,17 +121,17 @@
 		justify-content: center; /* Centers children horizontally */
 	}
 	.form-group {
-		@apply grid grid-cols-2 gap-2 my-2 p-2 border-2 border-gray-500 rounded-md;
+		@apply my-2 grid grid-cols-2 gap-2 rounded-md border-2 border-gray-500 p-2;
 	}
 	.form-label {
 		align-items: center;
-		@apply text-xl font-medium text-gray-700 flex;
+		@apply flex text-xl font-medium text-gray-700;
 	}
 
 	input {
-		@apply px-4 py-2 border-2 border-gray-300 rounded-md;
+		@apply rounded-md border-2 border-gray-300 px-4 py-2;
 	}
 	input:focus {
-		@apply outline-none border-blue-500;
+		@apply border-blue-500 outline-none;
 	}
 </style>

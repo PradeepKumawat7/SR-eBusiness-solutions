@@ -1,6 +1,6 @@
 <script>
 	import Fa from 'svelte-fa';
-	import { faE, faPhone } from '@fortawesome/free-solid-svg-icons';
+	import { faPhone } from '@fortawesome/free-solid-svg-icons';
 	import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 	import { email, phone } from '$lib/store';
 	/**
@@ -18,10 +18,10 @@
 </script>
 
 <div class="mt-10 text-center">
-	<div class="flex text-center lg:flex-row xs:flex-col">
-		<div class="align-middle w-[45%]">
+	<div class="xs:flex-col flex text-center lg:flex-row">
+		<div class="w-[45%] align-middle">
 			<div
-				class="form-box border-4 border-b-none border-r-none border-t-blue-400 border-l-blue-400 px-10 pt-10 text-lg h-auto pb-10 mx-[10%]"
+				class="form-box border-b-none border-r-none mx-[10%] h-auto border-4 border-l-blue-400 border-t-blue-400 px-10 pb-10 pt-10 text-lg"
 			>
 				<form method="POST">
 					<div class="flex flex-row">
@@ -301,7 +301,7 @@
 					<div class="grid grid-cols-2">
 						<label for="message">How can I help you?</label><br />
 						<textarea
-							class="text-base border-2 border-gray-500 w-[34rem] focus:border-0"
+							class="w-[34rem] border-2 border-gray-500 text-base focus:border-0"
 							name="message"
 							id="message"
 							rows="5"
@@ -312,7 +312,7 @@
 					<br />
 					<div class="grid justify-center" style="align-items: center;">
 						<button
-							class="w-40 px-4 py-2 text-lg font-bold text-white bg-blue-500 rounded hover:bg-blue-600"
+							class="w-40 rounded bg-blue-500 px-4 py-2 text-lg font-bold text-white hover:bg-blue-600"
 							>Submit</button
 						>
 					</div>
@@ -321,8 +321,8 @@
 		</div>
 		<div>
 			<div class="text-left">
-				<div class="text-left w-[50rem]">
-					<div class="p-10 section-part h-[21rem] hover:h-[23rem] hover:p-14">
+				<div class="w-[50rem] text-left">
+					<div class="section-part h-[21rem] p-10 hover:h-[23rem] hover:p-14">
 						<h1>About Us</h1>
 						<p class="mt-5 text-2xl">
 							Our website making aim is, we want to make website for show the client that we provide
@@ -332,7 +332,7 @@
 						</p>
 					</div>
 					<div
-						class="h-[18rem] hover:h-[20rem] hover:p-8 hover:w-[47rem] hover:pl-12 p-5 pl-10 mt-10 section-part"
+						class="section-part mt-10 h-[18rem] p-5 pl-10 hover:h-[20rem] hover:w-[47rem] hover:p-8 hover:pl-12"
 						id="contact"
 					>
 						<h1>Contact Us</h1>
@@ -374,13 +374,13 @@
 		@apply text-5xl font-bold text-purple-950;
 	}
 	input {
-		@apply w-60 h-10 border-gray-500 border-2;
+		@apply h-10 w-60 border-2 border-gray-500;
 	}
 	input:focus {
-		@apply w-60 h-10 border-gray-500 border-0;
+		@apply h-10 w-60 border-0 border-gray-500;
 	}
 	label {
-		@apply text-lg w-auto text-left;
+		@apply w-auto text-left text-lg;
 	}
 	.form-box {
 		box-shadow: 10px 10px 20px rgba(30, 30, 30, 0.2);

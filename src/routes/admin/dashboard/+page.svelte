@@ -14,7 +14,7 @@
 </svelte:head>
 {#if !$adminAuth}
 	<div
-		class="w-1/2 p-10 mt-10 mb-10 text-3xl font-bold text-gray-700 border-2 border-gray-500 rounded div-center md"
+		class="div-center md mb-10 mt-10 w-1/2 rounded border-2 border-gray-500 p-10 text-3xl font-bold text-gray-700"
 	>
 		You have not logged in yet<br />
 		Redirecting to <code>/admin/login</code>
@@ -22,7 +22,7 @@
 {:else}
 	<div class="mb-20">
 		<div
-			class="w-1/2 p-10 flex justify-content-center ml-[25%] mt-10 mb-10 text-3xl font-bold text-gray-700 border-2 border-gray-500 rounded div-center md"
+			class="justify-content-center div-center md mb-10 ml-[25%] mt-10 flex w-1/2 rounded border-2 border-gray-500 p-10 text-3xl font-bold text-gray-700"
 		>
 			<h1>Customers</h1>
 		</div>
@@ -63,12 +63,12 @@
 
 <style>
 	table {
-		@apply w-[80%] mx-[10%] text-lg;
+		@apply mx-[10%] w-[80%] text-lg;
 	}
 	th {
-		@apply bg-red-600 text-white font-bold border-2 border-stone-700;
+		@apply border-2 border-stone-700 bg-red-600 font-bold text-white;
 	}
 	td {
-		@apply text-center bg-gray-200 border-2 border-stone-700;
+		@apply border-2 border-stone-700 bg-gray-200 text-center;
 	}
 </style>

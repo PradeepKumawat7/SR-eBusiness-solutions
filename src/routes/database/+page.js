@@ -1,9 +1,4 @@
-// Inside your route component (e.g., routes/database.svelte)
-/**
- * @param {import("@sveltejs/kit").Redirect} redirect
- */
-export async function load({ redirect }) {
-    return {
-        redirect: "/"
-    };
+import { redirect } from '@sveltejs/kit';
+export async function load() {
+	throw redirect(302, '/');
 }

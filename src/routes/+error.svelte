@@ -3,7 +3,7 @@
 </script>
 
 <div class="flex justify-center">
-	<div class="h-[50vh] mt-10 text-center error-div border-4 border-red-500 w-[60%]">
+	<div class="error-div mt-10 h-[50vh] w-[60%] border-4 border-red-500 text-center">
 		{#if $page.status == 404}
 			<h1>404</h1>
 			<h2>Page not found</h2>
