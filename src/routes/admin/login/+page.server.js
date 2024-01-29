@@ -33,13 +33,11 @@ export const actions = {
 		 * @type {any}
 		 */
 		let data = await seq.query('SELECT * FROM admins;');
-		let data2 = await seq.query('SELECT * FROM customers;');
 
 		/**
 		 * @type {{email: string, password: string}}
 		 */
 		let first = data[0][0];
-		console.log(data2);
 		if (
 			email.toLowerCase() == first.email.toLowerCase() &&
 			password == first.password &&

@@ -1,6 +1,5 @@
 {
 	"/": [],
-	"/about-us": [],
 	"/admin": [
 		"src/routes/admin/+page.js"
 	],
@@ -16,5 +15,12 @@
 	"/database": [
 		"src/routes/database/+page.js",
 		"src/routes/database/+page.server.js"
+	],
+	"/database/create": [
+		"src/routes/database/create/+page.js",
+		"src/routes/database/create/+page.server.js"
+	],
+	"/database/delete": [
+		"src/routes/database/delete/+page.server.js"
 	]
 }

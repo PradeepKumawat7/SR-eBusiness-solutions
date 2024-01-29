@@ -1,5 +1,6 @@
 <script>
 	import Box from './box.svelte';
+	import { services } from '$lib';
 	/**
 	 * @type { Object<string, { head: string, description: string, points: Array<string>}> }
 	 */
@@ -23,6 +24,7 @@
 	 * @type { Object<string,boolean> }
 	 */
 	let show = {};
+	let selectService = '';
 </script>
 
 <form class="grid grid-cols-3 bg-white text-lg text-black">
@@ -60,23 +62,27 @@
 	<div class="grid grid-cols-2">
 		<div>
 			<label for="name">Name: </label>
-			<input type="text" name="name" id="name" />
+			<input type="text" name="name" id="name" required />
+		</div>
+		<div>
+			<label for="companyName">Company Name: </label>
+			<input type="text" name="companyName" id="companyName" required />
 		</div>
 
 		<div>
 			<label for="email">Email: </label>
-			<input type="email" name="email" id="email" />
+			<input type="email" name="email" id="email" required />
 		</div>
 		<div>
-			<label for="website">website (Optional): </label>
-			<input type="url" name="website" id="website" />
+			<label for="website">website: </label>
+			<input type="url" name="website" id="website" required />
 		</div>
 
 		<script src="https://gist.github.com/andyj/7108917.js"></script>
 		<!-- country codes (ISO 3166) and Dial codes. -->
 		<div>
 			<label for="country-code">Country Code</label>
-			<select name="countryCode" id="country-code" class="w-64">
+			<select name="countryCode" id="country-code" class="w-64" required>
 				<option data-countryCode="GB" class="text-sm" value="44" Selected>UK (+44)</option>
 				<option data-countryCode="US" class="text-sm" value="1">USA (+1)</option>
 				<optgroup label="Other countries" class="text-sm">
@@ -299,8 +305,28 @@
 		</div>
 		<div>
 			<label for="phone">Phone No.</label>
-			<input type="number" name="phone" id="phone" />
+			<input type="number" name="phone" id="phone" required />
 		</div>
+		<div>
+			<label for="service">Service: </label>
+			<select name="service" bind:value={selectService} id="select" class="w-64" required>
+				{#each Object.keys(services) as service}
+					<option value={service}>{service}</option>
+				{/each}
+			</select>
+		</div>
+		{#if selectService && services[selectService]}
+			<div>
+				<label for="subservice">Sub Service: </label>
+				<select name="subservice" id="subservice" class="w-64">
+					{#if services && selectService}
+						{#each Object.keys(services[selectService] || {}) as subservice}
+							<option value={subservice}>{subservice}</option>
+						{/each}
+					{/if}
+				</select>
+			</div>
+		{/if}
 	</div>
 </form>
 

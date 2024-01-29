@@ -4,15 +4,9 @@
 	let serviceList = Object.keys(services);
 </script>
 
-<footer
-	class="bg-gray-200 text-black {typeof window !== 'undefined' &&
-	window.innerHeight - visualViewport.height > 300
-		? 'mt-[70vh]'
-		: 'mt-0]'}
-		absolute w-[100%]"
->
+<footer class="absolute h-fit w-[100%] border-t-8 border-t-blue-500 bg-gray-200 text-black">
 	<div class="container mx-auto px-4">
-		<div class="div-center z-0 h-16 w-full text-2xl font-extrabold">
+		<div class="div-center bg-grey-200 z-0 w-full text-2xl font-extrabold">
 			<div>CompanyName</div>
 		</div>
 		<div class="grid grid-cols-2">
