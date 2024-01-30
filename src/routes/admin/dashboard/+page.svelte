@@ -23,11 +23,7 @@
 	</div>
 {:else}
 	<div class="mb-20">
-		<div
-			class="div-center mb-10 ml-[25%] mt-10 flex w-1/2 rounded border-2 border-gray-500 p-10 text-center text-3xl font-bold text-gray-700"
-		>
-			<h1>Customers</h1>
-		</div>
+		<h1 class="my-10 text-center">Customers</h1>
 		<table>
 			<thead>
 				<tr>
@@ -62,7 +58,7 @@
 								class="h-16 w-16"
 								on:click={() => {
 									confirm('Are you sure to delete this customer?')
-										? goto('/database/delete?id=' + Customer.id)
+										? goto('/database/delete/' + Customer.id)
 										: null;
 								}}
 							>

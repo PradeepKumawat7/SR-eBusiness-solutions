@@ -45,6 +45,10 @@ export const actions = {
 		});
 
 		// Send the email
+		/**
+		 * @type {any}
+		 * @returns
+		 */
 		transporter.sendMail(emailContent, (error, info) => {
 			if (error) {
 				console.error('Error:', error);

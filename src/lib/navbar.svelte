@@ -2,15 +2,15 @@
 	import Fa from 'svelte-fa';
 	import Login from '$lib/login.svelte';
 	import { faPhone } from '@fortawesome/free-solid-svg-icons';
+	import { showNav } from '$lib';
 
 	/**
 	 * @type { string }
 	 */
 	let ser = '';
 	/**
-	 * @type { boolean }
+	 * @type { import('svelte/store').Writable<boolean> }
 	 */
-	let show = false;
 	import { services } from '$lib';
 </script>
 
@@ -30,19 +30,27 @@
 				type="button"
 				on:focus={() => {
 					ser = service;
-					show = true;
+					$showNav = true;
 				}}
 				class="my-2.5 h-12 flex-1 rounded-md bg-white text-black sm:mx-1 sm:flex-1 sm:text-sm md:mx-1.5 md:text-base lg:mx-5"
 			>
 				{service}
 			</button>
 		{/each}
+		<button
+			type="button"
+			on:focus={() => {
+				$showNav = false;
+			}}
+			class="my-2.5 h-12 flex-1 rounded-md bg-white text-black sm:mx-1 sm:flex-1 sm:text-sm md:mx-1.5 md:text-base lg:mx-5"
+			>Close navbar</button
+		>
 	</div>
-	{#if ser && show}
-		<div role="button" tabindex="0" on:mouseleave={() => (show = false)}>
+	{#if ser && $showNav}
+		<div role="button" tabindex="0">
 			<Login
 				service={services[ser]}
-				on:blur={() => {
+				on:mouseout={() => {
 					ser = '';
 				}}
 			/>

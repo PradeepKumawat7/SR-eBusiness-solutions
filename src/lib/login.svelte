@@ -1,6 +1,7 @@
 <script>
 	import Box from './box.svelte';
 	import { services } from '$lib';
+	import { showNav } from '$lib';
 	/**
 	 * @type { Object<string, { head: string, description: string, points: Array<string>}> }
 	 */
@@ -27,7 +28,11 @@
 	let selectService = '';
 </script>
 
-<form class="grid grid-cols-3 bg-white text-lg text-black">
+<form
+	class="grid grid-cols-3 bg-white text-lg text-black"
+	method="POST"
+	action="/database/create?/create"
+>
 	<div class="col-span-2 grid bg-slate-300 xl:grid-cols-2">
 		<div class="grid w-56 grid-cols-1">
 			{#each Object.keys(service) as box}
@@ -59,7 +64,7 @@
 			{/each}
 		</div>
 	</div>
-	<div class="grid grid-cols-2">
+	<div class="grid grid-cols-3">
 		<div>
 			<label for="name">Name: </label>
 			<input type="text" name="name" id="name" required />
@@ -78,8 +83,6 @@
 			<input type="url" name="website" id="website" required />
 		</div>
 
-		<script src="https://gist.github.com/andyj/7108917.js"></script>
-		<!-- country codes (ISO 3166) and Dial codes. -->
 		<div>
 			<label for="country-code">Country Code</label>
 			<select name="countryCode" id="country-code" class="w-64" required>
@@ -309,24 +312,46 @@
 		</div>
 		<div>
 			<label for="service">Service: </label>
-			<select name="service" bind:value={selectService} id="select" class="w-64" required>
+			<select
+				name="service"
+				bind:value={selectService}
+				on:mouseenter={() => {
+					showNav.set(true);
+				}}
+				id="select"
+				class="w-64"
+				required
+			>
 				{#each Object.keys(services) as service}
-					<option value={service}>{service}</option>
+					<option value={service} on:mouseenter={() => showNav.set(true)}>{service}</option>
 				{/each}
 			</select>
 		</div>
 		{#if selectService && services[selectService]}
 			<div>
 				<label for="subservice">Sub Service: </label>
-				<select name="subservice" id="subservice" class="w-64">
+				<select
+					name="subservice"
+					id="subservice"
+					class="w-64"
+					required
+					on:mouseenter={() => showNav.set(true)}
+				>
 					{#if services && selectService}
 						{#each Object.keys(services[selectService] || {}) as subservice}
-							<option value={subservice}>{subservice}</option>
+							<option value={subservice} on:mouseenter={() => showNav.set(true)}
+								>{subservice}</option
+							>
 						{/each}
 					{/if}
 				</select>
 			</div>
 		{/if}
+		<div>
+			<button type="submit" class="rounded bg-blue-400 px-4 py-2 font-bold text-white"
+				>Submit</button
+			>
+		</div>
 	</div>
 </form>
 
@@ -339,6 +364,9 @@
 	}
 	input {
 		border-width: 0px;
-		@apply w-60;
+		@apply w-40;
+	}
+	select {
+		@apply w-40;
 	}
 </style>

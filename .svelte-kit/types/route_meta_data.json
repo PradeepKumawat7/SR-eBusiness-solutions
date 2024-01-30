@@ -20,7 +20,7 @@
 		"src/routes/database/create/+page.js",
 		"src/routes/database/create/+page.server.js"
 	],
-	"/database/delete": [
-		"src/routes/database/delete/+page.server.js"
+	"/database/delete/[id]": [
+		"src/routes/database/delete/[id]/+page.server.js"
 	]
 }

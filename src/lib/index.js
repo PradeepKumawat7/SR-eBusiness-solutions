@@ -1,4 +1,7 @@
 // place files you want to import through the `$lib` alias in this folder.
+
+import { writable } from 'svelte/store';
+
 /**
  * @type { Object<string, Object<string, { head: string, description: string, points: Array<string>}>> }
  */
@@ -364,3 +367,4 @@ export let services = {
 		}
 	}
 };
+export const showNav = writable(false);

@@ -4,10 +4,10 @@
 	let serviceList = Object.keys(services);
 </script>
 
-<footer class="absolute h-fit w-[100%] border-t-8 border-t-blue-500 bg-gray-200 text-black">
-	<div class="container mx-auto px-4">
-		<div class="div-center bg-grey-200 z-0 w-full text-2xl font-extrabold">
-			<div>CompanyName</div>
+<footer class="h-[21rem] w-[100%] bg-gray-200 text-black">
+	<div class="container mx-auto h-full px-4">
+		<div class="div-center bg-grey-200 w-full text-2xl font-extrabold">
+			<div class="mt-4">CompanyName</div>
 		</div>
 		<div class="grid grid-cols-2">
 			<div>
@@ -24,6 +24,9 @@
 				<div class="mb-1 text-2xl font-bold">About</div>
 				<ul>
 					<li class="text-base hover:font-semibold">Our Team</li>
+					<li class="text-base hover:font-semibold">
+						<button on:click={() => goto('/')}>Home</button>
+					</li>
 					<li class="text-base hover:font-semibold">
 						<button
 							on:click={() => {

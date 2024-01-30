@@ -23,7 +23,7 @@ export const dictionary = {
 		"/contact-us": [~6],
 		"/database": [~7],
 		"/database/create": [~8],
-		"/database/delete": [~9]
+		"/database/delete/[id]": [~9]
 	};
 
 export const hooks = {
