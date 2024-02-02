@@ -5,8 +5,8 @@
 </script>
 
 <footer class="h-[21rem] w-[100%] bg-gray-200 text-black">
-	<div class="container mx-auto h-full px-4">
-		<div class="div-center bg-grey-200 w-full text-2xl font-extrabold">
+	<div class="h-full px-4 mx-auto">
+		<div class="w-full text-2xl font-extrabold div-center bg-grey-200">
 			<div class="mt-4">CompanyName</div>
 		</div>
 		<div class="grid grid-cols-2">
@@ -54,7 +54,7 @@
 <style>
 	footer {
 		box-shadow: 0 -5px 100px 0 rgba(0, 0, 0, 0.2);
-		@apply text-center;
+		@apply text-center mt-5;
 	}
 	.div-center {
 		@apply flex justify-center;

@@ -29,3 +29,5 @@ export const months = readable([
  * @type {import("svelte/store").Writable<boolean>}
  */
 export const adminAuth = writable(true);
+
+export const adminMail = readable("example@example.com" ?? "jaipalbhanwariya6@gmail.com");

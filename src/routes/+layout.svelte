@@ -4,7 +4,7 @@
 	import '../app.css';
 </script>
 
-<div class="overflow-x-hidden overflow-y-scroll bg-gray-100 text-gray-800">
+<div class="overflow-x-hidden text-gray-800 bg-gray-100">
 	<Navbar />
 	<slot />
 	<Footer />

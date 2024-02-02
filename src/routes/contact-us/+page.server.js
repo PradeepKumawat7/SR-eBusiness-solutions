@@ -33,8 +33,6 @@ export const actions = {
 			text: 'This is a test email.',
 			html: html
 		};
-		console.log(emailContent);
-
 		// Create a transporter
 		const transporter = nodemailer.createTransport({
 			service: 'gmail',

@@ -14,8 +14,8 @@
 	import { services } from '$lib';
 </script>
 
-<nav class="w-full bg-blue-800 text-3xl font-bold text-white">
-	<div class="navbar-display flex h-16 flex-row pt-3 align-middle">
+<nav class="w-full text-3xl font-bold text-white bg-blue-950">
+	<div class="flex flex-row h-16 pt-3 align-middle navbar-display">
 		<div class=" w-[60%] pl-5 text-left">Name</div>
 		<div class="h-16 w-[33vw] align-middle">
 			<button type="button" class="float-right mt-2 text-lg">
@@ -24,7 +24,7 @@
 			</button>
 		</div>
 	</div>
-	<div class="service-list 2sm:grid 2sm:grid-cols-3 flex bg-sky-600 sm:px-8 lg:px-16">
+	<div class="flex service-list 2sm:grid 2sm:grid-cols-3 bg-sky-600 sm:px-8 lg:px-16">
 		{#each Object.keys(services) as service}
 			<button
 				type="button"
