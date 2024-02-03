@@ -4,8 +4,10 @@
 	import '../app.css';
 </script>
 
-<div class="overflow-x-hidden text-gray-800 bg-gray-100">
+<div class="overflow-x-hidden bg-gray-700">
 	<Navbar />
-	<slot />
+	<div>
+		<slot />
+	</div>
 	<Footer />
 </div>

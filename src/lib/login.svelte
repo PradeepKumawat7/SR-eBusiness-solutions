@@ -29,18 +29,20 @@
 </script>
 
 <form
-	class="grid grid-cols-3 bg-white text-lg text-black"
+	class="grid grid-cols-3 text-lg text-white"
 	method="POST"
 	action="/database/create?/create"
 >
-	<div class="col-span-2 grid bg-slate-300 xl:grid-cols-2">
-		<div class="grid w-56 grid-cols-1">
+	<div class="grid col-span-2 bg-blue-950 xl:grid-cols-2 form-div">
+		<div class="grid w-auto {
+			Object.keys(service).length > 4 ? 'grid-cols-2' : 'grid-cols-1'
+			}">
 			{#each Object.keys(service) as box}
 				<button
 					on:focus={() => {
 						show[box] = true;
 					}}
-					class="descipt 2sm:h-8 ml-5 mt-2 bg-white text-base font-normal hover:font-bold sm:h-8 sm:w-48 lg:h-16 lg:w-56 xl:h-16 xl:w-56 2xl:w-56"
+					class="mt-2 ml-5 text-base font-normal text-black bg-blue-50 descipt 2sm:h-8 hover:font-bold sm:h-8 sm:w-48 lg:h-16 lg:w-56 xl:h-16 xl:w-56 2xl:w-56"
 				>
 					{box}
 				</button>
@@ -53,7 +55,7 @@
 					<div
 						role="button"
 						tabindex="0"
-						class="descipt mt-2 flex w-[30rem] flex-row bg-white"
+						class="descipt mt-2 flex w-[30rem] flex-row bg-cyan-600"
 						on:focus={() => handleMouseOver(box)}
 						on:mouseenter={() => handleMouseOver(box)}
 						on:mouseleave={() => handleMouseOut(box)}
@@ -64,7 +66,7 @@
 			{/each}
 		</div>
 	</div>
-	<div class="grid grid-cols-3">
+	<div class="grid grid-cols-3 bg-blue-950">
 		<div>
 			<label for="name">Name: </label>
 			<input type="text" name="name" id="name" required />
@@ -348,7 +350,7 @@
 			</div>
 		{/if}
 		<div>
-			<button type="submit" class="rounded bg-blue-400 px-4 py-2 font-bold text-white"
+			<button type="submit" class="px-4 py-2 font-bold text-white bg-blue-400 rounded"
 				>Submit</button
 			>
 		</div>
@@ -356,17 +358,14 @@
 </form>
 
 <style>
-	form {
-		@apply bg-slate-300;
-	}
-	form div div {
+	form>div>div {
 		@apply my-5 pl-10;
 	}
 	input {
 		border-width: 0px;
-		@apply w-40;
+		@apply w-40 text-black;
 	}
 	select {
-		@apply w-40;
+		@apply w-40 text-black;
 	}
 </style>

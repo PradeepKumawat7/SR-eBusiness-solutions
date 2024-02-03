@@ -1,6 +1,4 @@
 <script>
-	import { onMount } from 'svelte';
-
 	let bgImage = [
 		`url("//images.ctfassets.net/bete4dit0n31/6NudlSgngBxw7uJR5osHKa/e90823f58ffa4dfd46fd33a3ed3659ee/industry-1.webp")`,
 		`url("//images.ctfassets.net/bete4dit0n31/3bTyxyXMHiuTiotaL2HEjh/7066fd0a0d0b9b5d8b8a833be0954eee/Industry-02.webp")`,
@@ -25,7 +23,7 @@
 </svelte:head>
 <div class="w-full overflow-hidden">
 	<section
-		class="mx-auto my-5 hidden w-[60%] flex-col items-stretch justify-center overflow-hidden lg:flex lg:flex-row"
+		class="mx-auto my-5 hidden w-[90%] flex-col items-stretch justify-center overflow-hidden lg:flex lg:flex-row"
 	>
 		{#each bgImage as image, index}
 			<div
@@ -77,18 +75,18 @@
 		{/each}
 	</section>
 </div>
-<section class="scroll-anime">
+<section class="mb-10 scroll-anime">
 	<div>
 		<h1 class="text-3xl font-bold">Services we can help you with.</h1>
-		<p>
+		<p class="mt-20 text-lg">
 			Leveraging digital marketing for any business requires a broad set of talent, tools, and
 			strength in numbers. Let our team take care of the heavy lifting while we work with you
 			to identify which services will benefit you the most and how we can maximize your reach
 			with each marketing channel.
 		</p>
 	</div>
-	<div>
-		<p class="text-xl font-bold">Services we can help you with.</p>
+	<div class="text-xl">
+		<p class="text-3xl font-bold">Services we can help you with.</p>
 		<br />
 		<ul class="grid grid-cols-2" style="list-style-type: disc;">
 			<li>SEO Services</li>
@@ -122,10 +120,10 @@
 		align-content: start;
 		transition: all 1s;
 		height: 50vh;
-		width: 60vw;
+		width: 90vw;
 		grid-template-columns: repeat(2, 1fr);
 		color: aliceblue;
-		@apply ml-[20vw] bg-blue-900 pt-10;
+		@apply ml-[5vw] bg-blue-950 pt-10;
 	}
 	.scroll-anime div {
 		@apply pl-10 pt-5 text-left;

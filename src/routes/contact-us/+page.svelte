@@ -2,7 +2,7 @@
 	import Fa from 'svelte-fa';
 	import { faPhone } from '@fortawesome/free-solid-svg-icons';
 	import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-	import { email, phone } from '$lib/store';
+	import { adminMail, phone } from '$lib/store';
 	/**
 	 * @type { { name: string, email: string, phone: string, message: string, countryCode: string, companyName: string, website: string } }
 	 */
@@ -18,7 +18,7 @@
 </script>
 
 <div class="mt-10 text-center">
-	<div class="xs:flex-col flex text-center lg:flex-row">
+	<div class="flex text-center xs:flex-col lg:flex-row">
 		<div class="w-[45%] align-middle">
 			<div
 				class="form-box border-b-none border-r-none mx-[10%] h-auto border-4 border-l-blue-400 border-t-blue-400 px-10 pb-10 pt-10 text-lg"
@@ -46,15 +46,13 @@
 							<label for="email">Email: </label><br />
 							<input type="email" name="email" id="email" required bind:value={data.email} />
 						</div>
-						<script src="https://gist.github.com/andyj/7108917.js"></script>
-						<!-- country codes (ISO 3166) and Dial codes. -->
 						<div class="grid grid-cols-2">
 							<label for="country-code">Country Code</label><br />
 							<select
 								name="countryCode"
 								bind:value={data.countryCode}
 								id="country-code"
-								class="w-64"
+								class="w-64 bg-gray-300"
 							>
 								<option data-countryCode="GB" class="text-sm" value="44">UK (+44)</option>
 								<option data-countryCode="US" class="text-sm" value="1" selected>USA (+1)</option>
@@ -312,7 +310,7 @@
 					<br />
 					<div class="grid justify-center" style="align-items: center;">
 						<button
-							class="w-40 rounded bg-blue-500 px-4 py-2 text-lg font-bold text-white hover:bg-blue-600"
+							class="w-40 px-4 py-2 text-lg font-bold text-white bg-blue-500 rounded hover:bg-blue-600"
 							>Submit</button
 						>
 					</div>
@@ -346,7 +344,7 @@
 							<li>
 								<div>
 									<Fa class="float-left mr-2" icon={faEnvelope} />Email Us
-									<a href="mailto:{$email}">{$email}</a>
+									<a href="mailto:{$adminMail}">{$adminMail}</a>
 								</div>
 							</li>
 						</ul>
@@ -362,13 +360,11 @@
 		border-left: 5px solid skyblue;
 		box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
 		width: 45rem;
-		transition: transform 0.1s;
+		transition: transform 0.4s;
 	}
 	.section-part:hover {
-		width: 50rem;
-	}
-	.section-part:not(:hover) {
-		width: 42rem;
+		transform: scale(1.05);
+		transform-origin: -25% -25%;
 	}
 	h1 {
 		@apply text-5xl font-bold text-purple-950;

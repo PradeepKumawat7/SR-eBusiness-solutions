@@ -6,16 +6,22 @@
 </script>
 
 <div
-	class="desc-div mt-0 bg-white text-base ${point
+	class="desc-div text-white mt-0 bg-blue-925 text-base ${point
 		? 'block'
-		: 'h-0'} w-[40vw] overflow-hidden font-normal"
+		: 'h-0'} w-[40vw] pl-4 overflow-hidden font-normal"
 	style="padding-left: 1rem;"
 >
-	<div class="text-center text-2xl font-bold">{point.head}</div>
-	<div class="text-center text-lg">{point.description}</div>
+	<div class="text-2xl font-bold text-center">{point.head}</div>
+	<div class="mx-5 mt-2 mb-4 text-lg text-center">{point.description}</div>
 	<ul class="grid grid-cols-2 text-center">
 		{#each point.points as pointLi}
-			<li style="list-style-type: disc;">{pointLi}</li>
+			<li>{pointLi}</li>
 		{/each}
 	</ul>
 </div>
+<style>
+	.bg-blue-925 {
+		--tw-bg-opacity: 1;
+		background-color: rgb(15 50 120 / var(--tw-bg-opacity));
+	}
+</style>
