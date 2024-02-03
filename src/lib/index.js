@@ -154,7 +154,11 @@ export let services = {
 			head: 'Our Review Management Services',
 			description:
 				'Get help from our expert online customer service team to help manage your reviews and look after your word-of-mouth marketing.',
-			points: ['Google Review Management', 'Yelp Review Management', 'Facebook Review Management']
+			points: [
+				'Google Review Management',
+				'Yelp Review Management',
+				'Facebook Review Management'
+			]
 		},
 		'Specialized Reputation Management Services': {
 			head: 'Our Specialized Reputation Management Services',
@@ -198,7 +202,11 @@ export let services = {
 			head: 'Our Specialized Social Services',
 			description:
 				'An expert team that tackles the social media edge-cases that can break or boost your brand. Use social media to its full potential.',
-			points: ['Influencer Marketing', 'Crisis Management', 'Comprehensive Social Media Audit']
+			points: [
+				'Influencer Marketing',
+				'Crisis Management',
+				'Comprehensive Social Media Audit'
+			]
 		}
 	},
 	'Web Development': {

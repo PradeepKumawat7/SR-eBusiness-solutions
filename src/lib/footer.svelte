@@ -1,22 +1,22 @@
 <script>
 	import { goto } from '$app/navigation';
 	import { services } from '$lib';
-	import { faGithub, faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons"
-	import Fa from "svelte-fa";
+	import { faGithub, faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
+	import Fa from 'svelte-fa';
 	let serviceList = Object.keys(services);
 </script>
 
 <footer class="h-[21rem] w-[100%] text-white">
-	<div class="grid h-full grid-cols-4 px-4 mx-auto">
+	<div class="mx-auto grid h-full grid-cols-4 px-4">
 		<div style="display: flex; align-items: center; justify-content: center">
 			<h1>Logo</h1>
 		</div>
 		<div style="margin-top: 3rem">
-			<div class="mt-4 mb-[1rem] text-2xl font-bold">Connect With Us</div>
-			<ul style="list-style-type: none;"  class="dev-comp-info">
+			<div class="mb-[1rem] mt-4 text-2xl font-bold">Connect With Us</div>
+			<ul style="list-style-type: none;" class="dev-comp-info">
 				<li class="div-center">
 					<Fa icon={faGithub} size="lg" />
-					<div>Github</div>
+					<div><a href="https://github.com/BhJaipal/digital-marketing">Github</a></div>
 				</li>
 				<li class="div-center">
 					<Fa icon={faFacebook} size="lg" color="blue" />
@@ -32,12 +32,12 @@
 					<div class="insta-logo">
 						<Fa icon={faInstagram} size="lg" class="insta-logo" primaryColor="white" />
 					</div>
-					<div>@jaipalbh7 (Developer)</div>
+					<div><a href="https://instagram.com/jaipalbh7">@jaipalbh7 (Developer)</a></div>
 				</li>
 			</ul>
 		</div>
 		<div>
-			<div class="mt-4 mb-1 text-2xl font-bold ">Services</div>
+			<div class="mb-1 mt-4 text-2xl font-bold">Services</div>
 			<ul>
 				{#each serviceList as service}
 					<li class="my-3 text-base hover:font-semibold">
@@ -86,7 +86,7 @@
 		appearance: none;
 	}
 	.div-center {
-		@apply my-2.5 text-lg font-normal flex justify-center;
+		@apply my-2.5 flex justify-center text-lg font-normal;
 	}
 	.div-center div {
 		@apply ml-2.5;
@@ -97,6 +97,6 @@
 	.insta-logo {
 		background-color: transparent;
 		background-image: linear-gradient(to bottom right, #f9ce34, #ee2a7b, #6228d7);
-		@apply p-1 rounded-lg;
+		@apply rounded-lg p-1;
 	}
 </style>

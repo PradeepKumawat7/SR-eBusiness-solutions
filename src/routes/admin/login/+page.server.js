@@ -37,12 +37,19 @@ export const actions = {
 		/**
 		 * @type {{email: string, password: string}}
 		 */
-		let first = data[0][0];
-		if (
-			email.toLowerCase() == first.email.toLowerCase() &&
-			password == first.password &&
-			name.toLowerCase() == first.name.toLowerCase()
-		) {
+		let first = data[0];
+		let success = 0;
+		for (let index = 0; index < first.length; index++) {
+			if (
+				email.toLowerCase() == first[index].email.toLowerCase() &&
+				password == first[index].password &&
+				name.toLowerCase() == first[index].name.toLowerCase()
+			) {
+				success = 1;
+				break;
+			}
+		}
+		if (success) {
 			throw redirect(302, '/admin/dashboard');
 		} else {
 			return { success: 0 };

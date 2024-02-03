@@ -15,7 +15,6 @@
 	];
 	let names = ['Luxury Communities', 'Franchise', 'Ecommerce', 'Crypto', 'Others'];
 	let show = [false, false, false, false, false];
-
 </script>
 
 <svelte:head>
@@ -75,7 +74,7 @@
 		{/each}
 	</section>
 </div>
-<section class="mb-10 scroll-anime">
+<section class="scroll-anime mb-10">
 	<div>
 		<h1 class="text-3xl font-bold">Services we can help you with.</h1>
 		<p class="mt-20 text-lg">

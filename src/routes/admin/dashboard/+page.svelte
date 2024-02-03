@@ -16,7 +16,7 @@
 </svelte:head>
 {#if !$adminAuth}
 	<div
-		class="w-1/2 p-10 mt-10 mb-10 text-3xl font-bold text-gray-700 border-2 border-gray-500 rounded div-center md"
+		class="div-center md mb-10 mt-10 w-1/2 rounded border-2 border-gray-500 p-10 text-3xl font-bold text-gray-700"
 	>
 		You have not logged in yet<br />
 		Redirecting to <code>/admin/login</code>
@@ -48,14 +48,18 @@
 						<td>{Customer.email}</td>
 						<td>{Customer.companyName}</td>
 						<td>{Customer.website}</td>
-						<td>{(Number(Customer.countryCode) > 0) ? '+' + Customer.countryCode : Customer.countryCode}-{Customer.phone}</td>
+						<td
+							>{Number(Customer.countryCode) > 0
+								? '+' + Customer.countryCode
+								: Customer.countryCode}-{Customer.phone}</td
+						>
 						<td>{Customer.service}</td>
 						<td>{Customer.subservice}</td>
 						<td>{Customer.createdAt}</td>
 						<td>{Customer.updatedAt}</td>
 						<td class="p-0">
 							<button
-								class="w-16 h-16"
+								class="h-16 w-16"
 								on:click={() => {
 									confirm('Are you sure to delete this customer?')
 										? goto('/database/delete/' + Customer.id)

@@ -28,21 +28,15 @@
 	let selectService = '';
 </script>
 
-<form
-	class="grid grid-cols-3 text-lg text-white"
-	method="POST"
-	action="/database/create?/create"
->
-	<div class="grid col-span-2 bg-blue-950 xl:grid-cols-2 form-div">
-		<div class="grid w-auto {
-			Object.keys(service).length > 4 ? 'grid-cols-2' : 'grid-cols-1'
-			}">
+<form class="grid grid-cols-3 text-lg text-white" method="POST" action="/database/create?/create">
+	<div class="form-div col-span-2 grid bg-blue-950 xl:grid-cols-2">
+		<div class="grid w-auto {Object.keys(service).length > 4 ? 'grid-cols-2' : 'grid-cols-1'}">
 			{#each Object.keys(service) as box}
 				<button
 					on:focus={() => {
 						show[box] = true;
 					}}
-					class="mt-2 ml-5 text-base font-normal text-black bg-blue-50 descipt 2sm:h-8 hover:font-bold sm:h-8 sm:w-48 lg:h-16 lg:w-56 xl:h-16 xl:w-56 2xl:w-56"
+					class="descipt 2sm:h-8 ml-5 mt-2 bg-blue-50 text-base font-normal text-black hover:font-bold sm:h-8 sm:w-48 lg:h-16 lg:w-56 xl:h-16 xl:w-56 2xl:w-56"
 				>
 					{box}
 				</button>
@@ -95,7 +89,8 @@
 					<option data-countryCode="AD" value="376">Andorra (+376)</option>
 					<option data-countryCode="AO" value="244">Angola (+244)</option>
 					<option data-countryCode="AI" value="1264">Anguilla (+1264)</option>
-					<option data-countryCode="AG" value="1268">Antigua &amp; Barbuda (+1268)</option>
+					<option data-countryCode="AG" value="1268">Antigua &amp; Barbuda (+1268)</option
+					>
 					<option data-countryCode="AR" value="54">Argentina (+54)</option>
 					<option data-countryCode="AM" value="374">Armenia (+374)</option>
 					<option data-countryCode="AW" value="297">Aruba (+297)</option>
@@ -125,7 +120,9 @@
 					<option data-countryCode="CA" value="1">Canada (+1)</option>
 					<option data-countryCode="CV" value="238">Cape Verde Islands (+238)</option>
 					<option data-countryCode="KY" value="1345">Cayman Islands (+1345)</option>
-					<option data-countryCode="CF" value="236">Central African Republic (+236)</option>
+					<option data-countryCode="CF" value="236"
+						>Central African Republic (+236)</option
+					>
 					<option data-countryCode="CL" value="56">Chile (+56)</option>
 					<option data-countryCode="CN" value="86">China (+86)</option>
 					<option data-countryCode="CO" value="57">Colombia (+57)</option>
@@ -252,7 +249,8 @@
 					<option data-countryCode="RU" value="7">Russia (+7)</option>
 					<option data-countryCode="RW" value="250">Rwanda (+250)</option>
 					<option data-countryCode="SM" value="378">San Marino (+378)</option>
-					<option data-countryCode="ST" value="239">Sao Tome &amp; Principe (+239)</option>
+					<option data-countryCode="ST" value="239">Sao Tome &amp; Principe (+239)</option
+					>
 					<option data-countryCode="SA" value="966">Saudi Arabia (+966)</option>
 					<option data-countryCode="SN" value="221">Senegal (+221)</option>
 					<option data-countryCode="CS" value="381">Serbia (+381)</option>
@@ -280,12 +278,15 @@
 					<option data-countryCode="TH" value="66">Thailand (+66)</option>
 					<option data-countryCode="TG" value="228">Togo (+228)</option>
 					<option data-countryCode="TO" value="676">Tonga (+676)</option>
-					<option data-countryCode="TT" value="1868">Trinidad &amp; Tobago (+1868)</option>
+					<option data-countryCode="TT" value="1868">Trinidad &amp; Tobago (+1868)</option
+					>
 					<option data-countryCode="TN" value="216">Tunisia (+216)</option>
 					<option data-countryCode="TR" value="90">Turkey (+90)</option>
 					<option data-countryCode="TM" value="7">Turkmenistan (+7)</option>
 					<option data-countryCode="TM" value="993">Turkmenistan (+993)</option>
-					<option data-countryCode="TC" value="1649">Turks &amp; Caicos Islands (+1649)</option>
+					<option data-countryCode="TC" value="1649"
+						>Turks &amp; Caicos Islands (+1649)</option
+					>
 					<option data-countryCode="TV" value="688">Tuvalu (+688)</option>
 					<option data-countryCode="UG" value="256">Uganda (+256)</option>
 					<!-- <option data-countryCode="GB" value="44">UK (+44)</option> -->
@@ -298,7 +299,9 @@
 					<option data-countryCode="VA" value="379">Vatican City (+379)</option>
 					<option data-countryCode="VE" value="58">Venezuela (+58)</option>
 					<option data-countryCode="VN" value="84">Vietnam (+84)</option>
-					<option data-countryCode="VG" value="84">Virgin Islands - British (+1284)</option>
+					<option data-countryCode="VG" value="84"
+						>Virgin Islands - British (+1284)</option
+					>
 					<option data-countryCode="VI" value="84">Virgin Islands - US (+1340)</option>
 					<option data-countryCode="WF" value="681">Wallis &amp; Futuna (+681)</option>
 					<option data-countryCode="YE" value="969">Yemen (North)(+969)</option>
@@ -325,7 +328,9 @@
 				required
 			>
 				{#each Object.keys(services) as service}
-					<option value={service} on:mouseenter={() => showNav.set(true)}>{service}</option>
+					<option value={service} on:mouseenter={() => showNav.set(true)}
+						>{service}</option
+					>
 				{/each}
 			</select>
 		</div>
@@ -350,7 +355,7 @@
 			</div>
 		{/if}
 		<div>
-			<button type="submit" class="px-4 py-2 font-bold text-white bg-blue-400 rounded"
+			<button type="submit" class="rounded bg-blue-400 px-4 py-2 font-bold text-white"
 				>Submit</button
 			>
 		</div>
@@ -358,7 +363,7 @@
 </form>
 
 <style>
-	form>div>div {
+	form > div > div {
 		@apply my-5 pl-10;
 	}
 	input {

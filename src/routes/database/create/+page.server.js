@@ -2,8 +2,8 @@ import { Sequelize } from 'sequelize';
 import { redirect } from '@sveltejs/kit';
 import { months } from '$lib/store';
 import { get } from 'svelte/store';
-import { adminMail } from "$lib/store";
-import nodemailer from "nodemailer";
+import { adminMail } from '$lib/store';
+import nodemailer from 'nodemailer';
 
 /** @type {import('./$types').Actions} */
 export const actions = {
@@ -46,7 +46,7 @@ export const actions = {
         <ul>
             <li>Name: ${formDir.name}</li>
             <li>Email: ${formDir.email}</li>
-            <li><a href="tel:${Number(formDir.countryCode) > 0 ? "+" + formDir.countryCode : formDir.countryCode}-${formDir.phone}">Phone: ${Number(formDir.countryCode) > 0 ? "+" + formDir.countryCode : formDir.countryCode}-${formDir.phone}</a></li>
+            <li><a href="tel:${Number(formDir.countryCode) > 0 ? '+' + formDir.countryCode : formDir.countryCode}-${formDir.phone}">Phone: ${Number(formDir.countryCode) > 0 ? '+' + formDir.countryCode : formDir.countryCode}-${formDir.phone}</a></li>
             <li>Company Name: ${formDir.companyName}</li>
             <li>Website: ${formDir.website}</li>
             <li>Service: ${formDir.service}</li>

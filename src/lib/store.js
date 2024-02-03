@@ -27,4 +27,4 @@ export const months = readable([
  */
 export const adminAuth = writable(true);
 
-export const adminMail = readable("example@example.com" ?? "jaipalbhanwariya6@gmail.com");
+export const adminMail = readable('example@example.com' ?? 'jaipalbhanwariya6@gmail.com');

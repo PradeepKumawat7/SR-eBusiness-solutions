@@ -22,7 +22,7 @@ import customers from '../../../models/customers';
 		let data = await cus.findAll();
 		console.log(data);
 		console.log('Connection has been established successfully.');
-	} catch (error) {
+	} /** @param {any} */ catch (error) {
 		console.error(error);
 	}
 })();
