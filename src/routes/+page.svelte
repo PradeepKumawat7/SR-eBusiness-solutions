@@ -3,22 +3,21 @@
 		`url("//images.ctfassets.net/bete4dit0n31/6NudlSgngBxw7uJR5osHKa/e90823f58ffa4dfd46fd33a3ed3659ee/industry-1.webp")`,
 		`url("//images.ctfassets.net/bete4dit0n31/3bTyxyXMHiuTiotaL2HEjh/7066fd0a0d0b9b5d8b8a833be0954eee/Industry-02.webp")`,
 		`url("//images.ctfassets.net/bete4dit0n31/1Az8yrWKtRcgMoiqd7W9E7/a5d30bf9c45bf2bdd5b20d8eab5e7abb/industry-3.webp")`,
-		`url("//images.ctfassets.net/bete4dit0n31/7p17LGR5QSdPpTUMYNBRBc/63d53ca6af41e85595b95441704c61f8/industry-4.webp")`,
 		`url("//images.ctfassets.net/bete4dit0n31/GnkyE9K7p8T2FMFUbcsQM/24ebfbd3f1689967c97c3cef8e02f179/industry-5.webp")`
 	];
 	let paragraphs = [
 		'From gorgeous websites to strategic digital advertising campaigns, we work closely with your team to showcase the best views and angles of your luxury communities to your online customers.',
 		'Take your franchise to the next level with a digital marketing strategy that amplifies your online footprint. Capture new customers on any platform, from social media networks to the biggest search engines around the world.',
 		'Get more clicks and conversions for your e-commerce store and scale your sales to record highs. Promote your brand across the web and gain new followers who spread the word for you.',
-		'Usher in the most cutting edge Web3 technology and reveal your crypto project to users throughout the digital landscape. Use proven SEO, PPC, and social media tactics to accumulate interest in your blockchain business.',
 		'Whether you operate in the B2B space or the finance industry, our experts can help you develop a cohesive digital marketing strategy that’s designed to give you a competitive advantage in your niche and tackle your most pressing business goals.'
 	];
-	let names = ['Luxury Communities', 'Franchise', 'Ecommerce', 'Crypto', 'Others'];
-	let show = [false, false, false, false, false];
+	let names = ['Luxury Communities', 'Franchise', 'Ecommerce', 'Others'];
+	let show = [false, false, false, false];
 </script>
 
 <svelte:head>
 	<link rel="manifest" href="/manifest.json" />
+	<title>Digital Marketing</title>
 </svelte:head>
 <div class="w-full overflow-hidden">
 	<section
@@ -74,17 +73,17 @@
 		{/each}
 	</section>
 </div>
-<section class="scroll-anime mb-10">
-	<div>
+<section class="lg:grid lg:grid-rows-2 mb-10 scroll-anime lg:grid-cols-2 lg:h-[30vh] xs:h-auto">
+	<div class="lg:pt-5">
 		<h1 class="text-3xl font-bold">Services we can help you with.</h1>
-		<p class="mt-20 text-lg">
+		<p class="text-lg xl:mt-16 lg:mt-10">
 			Leveraging digital marketing for any business requires a broad set of talent, tools, and
 			strength in numbers. Let our team take care of the heavy lifting while we work with you
 			to identify which services will benefit you the most and how we can maximize your reach
 			with each marketing channel.
 		</p>
 	</div>
-	<div class="text-xl">
+	<div class="pt-5 text-xl">
 		<p class="text-3xl font-bold">Services we can help you with.</p>
 		<br />
 		<ul class="grid grid-cols-2" style="list-style-type: disc;">
@@ -114,17 +113,14 @@
 		@apply h-[calc(110rem/4)] w-full;
 	}
 	.scroll-anime {
-		display: grid;
 		place-items: center;
 		align-content: start;
 		transition: all 1s;
-		height: 50vh;
 		width: 90vw;
-		grid-template-columns: repeat(2, 1fr);
 		color: aliceblue;
 		@apply ml-[5vw] bg-blue-950 pt-10;
 	}
 	.scroll-anime div {
-		@apply pl-10 pt-5 text-left;
+		@apply pl-10 text-left;
 	}
 </style>

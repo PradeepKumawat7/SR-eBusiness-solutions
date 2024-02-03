@@ -28,15 +28,15 @@
 	let selectService = '';
 </script>
 
-<form class="grid grid-cols-3 text-lg text-white" method="POST" action="/database/create?/create">
-	<div class="form-div col-span-2 grid bg-blue-950 xl:grid-cols-2">
+<form class="text-lg text-white xl:grid xl:grid-cols-3 lg:flex-row lg:flex" method="POST" action="/database/create?/create">
+	<div class="grid grid-cols-2 form-div bg-blue-950 basis-1/2">
 		<div class="grid w-auto {Object.keys(service).length > 4 ? 'grid-cols-2' : 'grid-cols-1'}">
 			{#each Object.keys(service) as box}
 				<button
 					on:focus={() => {
 						show[box] = true;
 					}}
-					class="descipt 2sm:h-8 ml-5 mt-2 bg-blue-50 text-base font-normal text-black hover:font-bold sm:h-8 sm:w-48 lg:h-16 lg:w-56 xl:h-16 xl:w-56 2xl:w-56"
+					class="mt-2 text-base font-normal text-black bg-blue-50 hover:font-bold lg:text-sm lg:ml-2 lg:h-auto lg:w-44 xl:ml-3 xl:h-16 xl:w-44 2xl:w-56"
 				>
 					{box}
 				</button>
@@ -49,7 +49,7 @@
 					<div
 						role="button"
 						tabindex="0"
-						class="descipt mt-2 flex w-[30rem] flex-row bg-cyan-600"
+						class="flex flex-row mt-2 descipt bg-cyan-600"
 						on:focus={() => handleMouseOver(box)}
 						on:mouseenter={() => handleMouseOver(box)}
 						on:mouseleave={() => handleMouseOut(box)}
@@ -60,28 +60,28 @@
 			{/each}
 		</div>
 	</div>
-	<div class="grid grid-cols-3 bg-blue-950">
+	<div class="grid grid-cols-3 bg-blue-950 basis-1/2">
 		<div>
 			<label for="name">Name: </label>
-			<input type="text" name="name" id="name" required />
+			<input type="text" name="name" id="name" required class="lg:w-24" />
 		</div>
 		<div>
 			<label for="companyName">Company Name: </label>
-			<input type="text" name="companyName" id="companyName" required />
+			<input type="text" name="companyName" id="companyName" required class="lg:w-24" />
 		</div>
 
 		<div>
 			<label for="email">Email: </label>
-			<input type="email" name="email" id="email" required />
+			<input type="email" name="email" id="email" required class="lg:w-24" />
 		</div>
 		<div>
 			<label for="website">website: </label>
-			<input type="url" name="website" id="website" required />
+			<input type="url" name="website" id="website" required class="lg:w-24" />
 		</div>
 
 		<div>
 			<label for="country-code">Country Code</label>
-			<select name="countryCode" id="country-code" class="w-64" required>
+			<select name="countryCode" id="country-code" class="w-24" required>
 				<option data-countryCode="GB" class="text-sm" value="44" Selected>UK (+44)</option>
 				<option data-countryCode="US" class="text-sm" value="1">USA (+1)</option>
 				<optgroup label="Other countries" class="text-sm">
@@ -313,7 +313,7 @@
 		</div>
 		<div>
 			<label for="phone">Phone No.</label>
-			<input type="number" name="phone" id="phone" required />
+			<input type="number" name="phone" id="phone" class="lg:w-32" required />
 		</div>
 		<div>
 			<label for="service">Service: </label>
@@ -355,7 +355,7 @@
 			</div>
 		{/if}
 		<div>
-			<button type="submit" class="rounded bg-blue-400 px-4 py-2 font-bold text-white"
+			<button type="submit" class="px-4 py-2 font-bold text-white bg-blue-400 rounded"
 				>Submit</button
 			>
 		</div>

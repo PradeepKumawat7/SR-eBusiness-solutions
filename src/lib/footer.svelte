@@ -6,8 +6,8 @@
 	let serviceList = Object.keys(services);
 </script>
 
-<footer class="h-[21rem] w-[100%] text-white">
-	<div class="mx-auto grid h-full grid-cols-4 px-4">
+<footer class="h-[21rem] w-[100%] text-white sticky bottom-0">
+	<div class="grid h-full grid-cols-4 px-4 mx-auto">
 		<div style="display: flex; align-items: center; justify-content: center">
 			<h1>Logo</h1>
 		</div>
@@ -37,7 +37,7 @@
 			</ul>
 		</div>
 		<div>
-			<div class="mb-1 mt-4 text-2xl font-bold">Services</div>
+			<div class="mt-4 mb-1 text-2xl font-bold">Services</div>
 			<ul>
 				{#each serviceList as service}
 					<li class="my-3 text-base hover:font-semibold">
