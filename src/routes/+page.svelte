@@ -1,4 +1,5 @@
 <script>
+	import "./home.css"
 	let bgImage = [
 		`url("//images.ctfassets.net/bete4dit0n31/6NudlSgngBxw7uJR5osHKa/e90823f58ffa4dfd46fd33a3ed3659ee/industry-1.webp")`,
 		`url("//images.ctfassets.net/bete4dit0n31/3bTyxyXMHiuTiotaL2HEjh/7066fd0a0d0b9b5d8b8a833be0954eee/Industry-02.webp")`,
@@ -21,7 +22,7 @@
 </svelte:head>
 <div class="w-full overflow-hidden">
 	<section
-		class="mx-auto my-5 hidden w-[90%] flex-col items-stretch justify-center overflow-hidden lg:flex lg:flex-row"
+		class="mx-auto my-5 hidden w-[90%] flex-col items-stretch justify-center overflow-hidden xs:flex xs:flex-col lg:flex lg:flex-row"
 	>
 		{#each bgImage as image, index}
 			<div
@@ -36,7 +37,7 @@
 			>
 				<div
 					style="background:linear-gradient(180deg, #000000 15%, rgba(0, 0, 0, 0) 100%)"
-					class="flex h-full flex-col justify-between px-8 py-[72px]"
+					class="justify-between flex h-full flex-col px-8 py-[72px]"
 				>
 					<div>
 						<p class="">0{index + 1}</p>
@@ -73,10 +74,10 @@
 		{/each}
 	</section>
 </div>
-<section class="lg:grid lg:grid-rows-2 mb-10 scroll-anime lg:grid-cols-2 lg:h-[30vh] xs:h-auto">
+<section class="scroll-anime mb-10 xs:h-auto lg:grid lg:h-[30vh] lg:grid-cols-2 lg:grid-rows-2">
 	<div class="lg:pt-5">
 		<h1 class="text-3xl font-bold">Services we can help you with.</h1>
-		<p class="text-lg xl:mt-16 lg:mt-10">
+		<p class="text-lg lg:mt-10 xl:mt-16">
 			Leveraging digital marketing for any business requires a broad set of talent, tools, and
 			strength in numbers. Let our team take care of the heavy lifting while we work with you
 			to identify which services will benefit you the most and how we can maximize your reach
@@ -99,28 +100,3 @@
 		</ul>
 	</div>
 </section>
-
-<style>
-	h1 {
-		@apply mb-5 text-5xl;
-	}
-	.sec-img {
-		background-color: #000;
-		transition: width 0.7s ease;
-		@apply h-[calc(110rem/4)] w-1/2 border-l border-white bg-center bg-no-repeat text-white;
-	}
-	.sec-img:hover {
-		@apply h-[calc(110rem/4)] w-full;
-	}
-	.scroll-anime {
-		place-items: center;
-		align-content: start;
-		transition: all 1s;
-		width: 90vw;
-		color: aliceblue;
-		@apply ml-[5vw] bg-blue-950 pt-10;
-	}
-	.scroll-anime div {
-		@apply pl-10 text-left;
-	}
-</style>

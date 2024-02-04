@@ -1,0 +1,45 @@
+@media screen and (min-width: 250px) {
+	.sec-img {
+		background-color: #000;
+		transition: height 0.5s ease;
+		@apply h-[calc(90rem/8)] w-full border-l border-white bg-center bg-no-repeat text-sm text-white;
+	}
+	.sec-img:hover {
+		@apply h-[calc(90rem/4)] w-full;
+	}
+}
+@media screen and (min-width: 768px) {
+	.sec-img {
+		background-color: #000;
+		transition: height 0.7s ease;
+		@apply h-[calc(100rem/8)] w-full border-l border-white bg-center bg-no-repeat text-white;
+	}
+	.sec-img:hover {
+		@apply h-[calc(100rem/4)] w-full;
+	}
+}
+@media screen and (min-width: 1024px) {
+	.sec-img {
+		background-color: #000;
+		transition: width 0.7s ease;
+		@apply h-[calc(110rem/4)] w-1/2 border-l border-white bg-center bg-no-repeat text-white;
+	}
+	.sec-img:hover {
+		@apply h-[calc(110rem/4)] w-full;
+	}
+}
+.scroll-anime {
+	place-items: center;
+	align-content: start;
+	transition: all 1s;
+	width: 90vw;
+	color: aliceblue;
+	@apply ml-[5vw] bg-blue-950 pt-10;
+}
+.scroll-anime div {
+	@apply pl-10 text-left;
+}
+
+h1 {
+	@apply mb-5 text-5xl;
+}

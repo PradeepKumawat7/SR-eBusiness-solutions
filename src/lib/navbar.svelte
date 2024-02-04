@@ -19,9 +19,11 @@
 		<div class=" w-[60%] pl-5 text-left">Name</div>
 		<div class="h-16 w-[33vw] align-middle">
 			<div class="float-right navbar-btn-div">
+				{#if $width < 600}
 				<button class="float-right mt-2 lg:text-lg xs:text-base" on:click={() => (navBtnShow = !navBtnShow)}>
 					<Fa icon={faBars} class="float-right" />
 				</button>
+				{/if}
 				<button type="button" class="mt-2 lg:text-lg xs:text-base">
 					<a href="tel:+91-{$phone}">
 						<Fa icon={faPhone} class="float-right" />
@@ -32,7 +34,7 @@
 		</div>
 	</div>
 	{#if $width > 600}
-	<div class="flex bg-blue-900 service-list 2sm:grid 2sm:grid-cols-3 sm:px-8 lg:px-16">
+	<div class="flex bg-blue-900 service-list 2sm:grid 2sm:grid-cols-3 sm:px-8 md:px-5 lg:px-12">
 		{#each Object.keys(services) as service}
 			<button
 				type="button"
@@ -40,7 +42,7 @@
 					ser = service;
 					$showNav = true;
 				}}
-				class="my-2.5 h-12 flex-1 rounded-md bg-blue-50 text-black sm:mx-1 sm:flex-1 sm:text-sm md:mx-1.5 md:text-base lg:mx-5"
+				class=" h-12 flex-1 rounded-md bg-blue-50 text-black my-2.5 sm:mx-1 sm:flex-1 sm:text-sm md:mx-1.5 md:text-base lg:mx-3"
 			>
 				{service}
 			</button>
@@ -50,7 +52,7 @@
 			on:focus={() => {
 				$showNav = false;
 			}}
-			class="my-2.5 h-12 flex-1 rounded-md bg-blue-50 text-black sm:mx-1 sm:flex-1 sm:text-sm md:mx-1.5 md:text-base lg:mx-5"
+			class="my-2.5 h-12 flex-1 rounded-md bg-blue-50 text-black sm:mx-1 sm:flex-1 sm:text-sm md:mx-1.5 md:text-base lg:mx-3"
 		>
 			Close navbar
 		</button>

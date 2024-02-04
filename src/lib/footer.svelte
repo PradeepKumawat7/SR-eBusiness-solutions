@@ -96,6 +96,7 @@
 	}
 	.insta-logo {
 		background-color: transparent;
+		height: fit-content;
 		background-image: linear-gradient(to bottom right, #f9ce34, #ee2a7b, #6228d7);
 		@apply rounded-lg p-1;
 	}

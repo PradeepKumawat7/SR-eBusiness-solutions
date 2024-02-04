@@ -28,15 +28,17 @@
 	let selectService = '';
 </script>
 
-<form class="text-lg text-white xl:grid xl:grid-cols-3 lg:flex-row lg:flex" method="POST" action="/database/create?/create">
-	<div class="grid grid-cols-2 form-div bg-blue-950 basis-1/2">
-		<div class="grid w-auto {Object.keys(service).length > 4 ? 'grid-cols-2' : 'grid-cols-1'}">
+<form class="text-lg text-white border-b-4 border-b-sky-500 lg:flex lg:flex-row bg-blue-950 xl:flex xl:flex-row md:grid md:grid-rows-2" method="POST" action="/database/create?/create">
+	<div class="grid grid-cols-2 bg-blue-950 basis-1/2 xl:basis-1/2 md:grrid md:grid-cols-2">
+		<div class="w-auto -ml-5 md:grid md:grid-cols-2 lg:grid {Object.keys(service).length >= 4 ? 'lg:grid-cols-2' : 'lg:grid-cols-1'}">
 			{#each Object.keys(service) as box}
 				<button
 					on:focus={() => {
 						show[box] = true;
 					}}
-					class="mt-2 text-base font-normal text-black bg-blue-50 hover:font-bold lg:text-sm lg:ml-2 lg:h-auto lg:w-44 xl:ml-3 xl:h-16 xl:w-44 2xl:w-56"
+					class="mt-2 text-base font-normal text-black bg-blue-50 hover:font-bold md:h-20 md:w-40
+					{"lg:text-xs lg:ml-2 lg:h-auto lg:w-[6.5rem]"}
+					xl:ml-3 xl:h-16 xl:w-32 2xl:w-36"
 				>
 					{box}
 				</button>
@@ -49,7 +51,7 @@
 					<div
 						role="button"
 						tabindex="0"
-						class="flex flex-row mt-2 descipt bg-cyan-600"
+						class="flex flex-row mt-2 descipt bg-inherit md:px-5 lg:px-0"
 						on:focus={() => handleMouseOver(box)}
 						on:mouseenter={() => handleMouseOver(box)}
 						on:mouseleave={() => handleMouseOut(box)}
@@ -60,28 +62,28 @@
 			{/each}
 		</div>
 	</div>
-	<div class="grid grid-cols-3 bg-blue-950 basis-1/2">
+	<div class="grid grid-cols-3 mr-5 bg-blue-950 basis-1/2 form-div xl:basis-1/2">
 		<div>
 			<label for="name">Name: </label>
-			<input type="text" name="name" id="name" required class="lg:w-24" />
+			<input type="text" name="name" id="name" required class="md:w-32" />
 		</div>
 		<div>
 			<label for="companyName">Company Name: </label>
-			<input type="text" name="companyName" id="companyName" required class="lg:w-24" />
+			<input type="text" name="companyName" id="companyName" required class="md:w-32" />
 		</div>
 
 		<div>
 			<label for="email">Email: </label>
-			<input type="email" name="email" id="email" required class="lg:w-24" />
+			<input type="email" name="email" id="email" required class="md:w-32" />
 		</div>
 		<div>
 			<label for="website">website: </label>
-			<input type="url" name="website" id="website" required class="lg:w-24" />
+			<input type="url" name="website" id="website" required class="md:w-32" />
 		</div>
 
 		<div>
 			<label for="country-code">Country Code</label>
-			<select name="countryCode" id="country-code" class="w-24" required>
+			<select name="countryCode" id="country-code" class="md:w-32" required>
 				<option data-countryCode="GB" class="text-sm" value="44" Selected>UK (+44)</option>
 				<option data-countryCode="US" class="text-sm" value="1">USA (+1)</option>
 				<optgroup label="Other countries" class="text-sm">
@@ -313,7 +315,7 @@
 		</div>
 		<div>
 			<label for="phone">Phone No.</label>
-			<input type="number" name="phone" id="phone" class="lg:w-32" required />
+			<input type="number" name="phone" id="phone" class="md:w-32" required />
 		</div>
 		<div>
 			<label for="service">Service: </label>
@@ -324,7 +326,7 @@
 					showNav.set(true);
 				}}
 				id="select"
-				class="w-64"
+				class="md:w-32"
 				required
 			>
 				{#each Object.keys(services) as service}
@@ -340,7 +342,7 @@
 				<select
 					name="subservice"
 					id="subservice"
-					class="w-64"
+					class="lg:w-32 md:w-28"
 					required
 					on:mouseenter={() => showNav.set(true)}
 				>
@@ -368,9 +370,12 @@
 	}
 	input {
 		border-width: 0px;
-		@apply w-40 text-black;
+		@apply text-black;
 	}
 	select {
-		@apply w-40 text-black;
+		@apply text-black;
+	}
+	.form-div > div:nth-child(3n +1) {
+		@apply -mx-3;
 	}
 </style>
