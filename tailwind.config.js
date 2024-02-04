@@ -4,6 +4,7 @@ export default {
 	theme: {
 		screens: {
 			"xs": "250px",
+			"sm": "475px",
 			'md': '768px',
 			"lg": "1024px",
 			'xl': '1280px',
@@ -11,6 +12,7 @@ export default {
 		},
 		extend: {}
 	},
+	darkMode: 'class',
 	plugins: []
 };
 

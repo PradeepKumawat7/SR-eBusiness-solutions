@@ -1,21 +1,41 @@
 @media screen and (min-width: 250px) {
-	.sec-img {
-		background-color: #000;
-		transition: height 0.5s ease;
-		@apply h-[calc(90rem/8)] w-full border-l border-white bg-center bg-no-repeat text-sm text-white;
+	h1 {
+		@apply text-xs;
 	}
-	.sec-img:hover {
+	.sec-img {
+		background-color: #fff;
+		backdrop-filter: blur(100px);
+		transition: height 0.5s ease;
+		@apply h-[calc(90rem/8)] w-full border-b border-white bg-center bg-no-repeat text-sm text-white;
+	}
+	.sec-img:focus {
+		backdrop-filter: blur(0px);
 		@apply h-[calc(90rem/4)] w-full;
+	}
+	.scroll-anime div {
+		@apply px-5 text-left;
+	}
+	.scroll-anime div > ul {
+		list-style-type: none;
 	}
 }
 @media screen and (min-width: 768px) {
 	.sec-img {
 		background-color: #000;
 		transition: height 0.7s ease;
-		@apply h-[calc(100rem/8)] w-full border-l border-white bg-center bg-no-repeat text-white;
+		@apply h-[calc(100rem/8)] w-full border-b border-white bg-center bg-no-repeat text-white;
 	}
 	.sec-img:hover {
 		@apply h-[calc(100rem/4)] w-full;
+	}
+	h1 {
+		@apply mb-5 text-3xl;
+	}
+	.scroll-anime div {
+		@apply px-10 text-left;
+	}
+	.scroll-anime div > ul {
+		list-style-type: disc;
 	}
 }
 @media screen and (min-width: 1024px) {
@@ -27,6 +47,22 @@
 	.sec-img:hover {
 		@apply h-[calc(110rem/4)] w-full;
 	}
+	h1 {
+		@apply mb-5 text-5xl;
+	}
+}
+@media screen and (min-width: 1536px) {
+	.sec-img {
+		background-color: #000;
+		transition: width 0.7s ease;
+		@apply h-[calc(110rem/4)] w-1/2 border-l border-white bg-center bg-no-repeat text-white;
+	}
+	.sec-img:hover {
+		@apply h-[calc(110rem/4)] w-full;
+	}
+	h1 {
+		@apply mb-5 text-5xl;
+	}
 }
 .scroll-anime {
 	place-items: center;
@@ -34,12 +70,5 @@
 	transition: all 1s;
 	width: 90vw;
 	color: aliceblue;
-	@apply ml-[5vw] bg-blue-950 pt-10;
-}
-.scroll-anime div {
-	@apply pl-10 text-left;
-}
-
-h1 {
-	@apply mb-5 text-5xl;
+	@apply mx-[5vw] bg-blue-950 pt-5;
 }

@@ -1,0 +1,45 @@
+@media (min-width: 250px) {
+	.div-center {
+		@apply my-2.5 flex justify-center text-sm font-normal;
+	}
+	.insta-logo {
+		background-color: transparent;
+		height: fit-content;
+		background-image: linear-gradient(to bottom right, #f9ce34, #ee2a7b, #6228d7);
+		@apply rounded-lg p-0.5;
+	}
+}
+@media (min-width: 768px) {
+	.insta-logo {
+		background-color: transparent;
+		height: fit-content;
+		background-image: linear-gradient(to bottom right, #f9ce34, #ee2a7b, #6228d7);
+		@apply rounded-lg p-1;
+	}
+	.div-center {
+		@apply my-2.5 flex justify-center text-lg font-normal;
+	}
+}
+
+footer {
+	background-color: transparent;
+	background-image: radial-gradient(closest-corner, hsl(221, 97%, 24%) 10%, #003 90%);
+	box-shadow: 0 -5px 100px 0 rgba(0, 0, 0, 0.2);
+	@apply text-center;
+}
+button {
+	appearance: none;
+}
+.div-center .div-2 {
+	justify-content: center;
+	align-items: center;
+	@apply ml-2.5 flex font-normal;
+}
+.div-center .div-2:hover {
+	justify-content: center;
+	align-items: center;
+	@apply ml-2.5 flex font-bold;
+}
+.div-center:hover {
+	@apply font-bold;
+}

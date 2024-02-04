@@ -39,8 +39,8 @@
 					style="background:linear-gradient(180deg, #000000 15%, rgba(0, 0, 0, 0) 100%)"
 					class="justify-between flex h-full flex-col px-8 py-[72px]"
 				>
-					<div>
-						<p class="">0{index + 1}</p>
+					<div class="hideIt">
+						<p>0{index + 1}</p>
 						<h2 class="cursor-pointer text-[28px] font-bold">
 							{names[index]}
 						</h2>
@@ -74,20 +74,19 @@
 		{/each}
 	</section>
 </div>
-<section class="scroll-anime mb-10 xs:h-auto lg:grid lg:h-[30vh] lg:grid-cols-2 lg:grid-rows-2">
-	<div class="lg:pt-5">
-		<h1 class="text-3xl font-bold">Services we can help you with.</h1>
-		<p class="text-lg lg:mt-10 xl:mt-16">
+<section class="scroll-anime mb-10 xs:pb-5 xs:text-sm sm:h-[30rem] md:h-[35rem] lg:h-[30rem] lg:grid lg:grid-cols-2 lg:grid-rows-2">
+	<div class="md:pt-3">
+		<h1 class="font-bold xs:text-2xl">Services we can help you with.</h1>
+		<p class="xs:text-sm sm:text-lg md:mt-7 lg:mt-10 xl:mt-16">
 			Leveraging digital marketing for any business requires a broad set of talent, tools, and
 			strength in numbers. Let our team take care of the heavy lifting while we work with you
 			to identify which services will benefit you the most and how we can maximize your reach
 			with each marketing channel.
 		</p>
 	</div>
-	<div class="pt-5 text-xl">
-		<p class="text-3xl font-bold">Services we can help you with.</p>
-		<br />
-		<ul class="grid grid-cols-2" style="list-style-type: disc;">
+	<div class="pt-5 md:text-xl xs:mr-5 sm:mr-0">
+		<p class="font-bold sm:text-2xl xs:text-xl md:mt-7">Services we can help you with.</p>
+		<ul class="grid grid-cols-2">
 			<li>SEO Services</li>
 			<li>Local SEO</li>
 			<li>Enterprise SEO</li>
