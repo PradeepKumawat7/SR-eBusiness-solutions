@@ -18,13 +18,15 @@
 	 * @type { string }
 	 */
 	let password;
+
 	async function handleSubmit() {
 		disabled = true;
 		const formData = new URLSearchParams();
 		formData.append('name', name);
 		formData.append('email', email);
 		formData.append('password', password);
-		const res = await fetch('/admin/login', {
+
+		const res = await fetch('/admin/login?/verify', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/x-www-form-urlencoded',
@@ -32,6 +34,7 @@
 			},
 			body: formData
 		});
+		console.log(res);
 		let out = await res.json();
 		if (!(out.type === 'redirect')) {
 			const result = JSON.parse(out.data)[1];
@@ -46,9 +49,7 @@
 			declared = true;
 			adminConfirm = true;
 			console.log($adminAuth);
-			setTimeout(() => {
-				goto('/admin/dashboard');
-			}, 1000);
+			goto('/admin/dashboard');
 		}
 	}
 </script>
@@ -61,7 +62,7 @@
 		<div class="div-center">
 			<h1>Login</h1>
 		</div>
-		<div class="div-center mt-5">
+		<div class="mt-5 div-center xs:mx-5 sm:mx-0">
 			<form on:submit|preventDefault={handleSubmit}>
 				<div class="form-group">
 					<label for="name" class="form-label">Name</label>

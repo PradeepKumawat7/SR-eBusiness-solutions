@@ -43,13 +43,13 @@
 			<div class="mt-4 mb-1 text-2xl font-bold">Services</div>
 			<ul>
 				{#each serviceList as service}
-					<li class="font-normal md:my-3 xs:my-1 div-center">
+					<li class="md:my-3 xs:my-1 div-center">
 						{service}
 					</li>
 				{/each}
 			</ul>
 		</div>
-		<div class="py-16">
+		<div class="xs:py-5 sm:py-16">
 			<div class="mb-1 text-2xl font-bold">Website</div>
 			<ul>
 				<li class="div-center">

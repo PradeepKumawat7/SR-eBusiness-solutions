@@ -327,21 +327,20 @@
 </form>
 
 <style>
+	:root {
+		--blue-980: rgb(10 20 84 / 1);
+	}
 	input {
 		border-width: 0px;
-        background-color: transparent;
-        background-image: linear-gradient(closest-corner, hsl(221, 97%, 24%) 10%, #003 90%);
-		@apply text-white w-full outline-0 border-2 border-blue-300;
+		@apply text-white w-full outline-0 border-2 border-blue-300 bg-[var(--blue-980)];
 	}
 	input:hover {
 		@apply border-4 border-blue-600;
 	}
 	select {
-        background-color: transparent;
-        background-image: linear-gradient(closest-corner, hsl(221, 97%, 24%) 10%, #003 90%);
-		@apply text-white w-full outline-0 border-2 border-blue-300;
+		@apply text-white w-full outline-0 border-2 border-blue-300 bg-[var(--blue-980)];
 	}
-    label {
+	label {
 		@apply text-white font-bold;
 	}
 	form > div > div {

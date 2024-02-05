@@ -115,7 +115,7 @@
 								</button>
 							</h2>
 							<div id="accordion-collapse-body-{index + 1}-{subIndex + 1}" class="hidden" aria-labelledby="accordion-collapse-heading-{index + 1}-{subIndex + 1}">
-								<button class="w-full h-full appearance-none" on:click={() => goto("/form")}>
+								<button class="w-full h-full appearance-none" on:focus={() => goto("/form")}>
 									<div class="p-5 text-sm bg-gray-900 border border-b-0 border-gray-700">
 										<h1 class="mb-2 text-gray-400">
 											{services[service][subservice].head}

@@ -5,8 +5,9 @@ import { redirect } from '@sveltejs/kit';
  * @type { import('./$types').Actions }
  */
 export const actions = {
-	default: async ({ request }) => {
+	verify: async ({ request }) => {
 		const body = await request.formData();
+		console.log(body);
 		/**
 		 * @type {string | FormDataEntryValue | null }
 		 */
@@ -33,9 +34,10 @@ export const actions = {
 		 * @type {any}
 		 */
 		let data = await seq.query('SELECT * FROM admins;');
+		console.log(data);
 
 		/**
-		 * @type {{email: string, password: string}}
+		 * @type {{name: string, email: string, password: string}[]}
 		 */
 		let first = data[0];
 		let success = 0;
@@ -43,8 +45,9 @@ export const actions = {
 			if (
 				email.toLowerCase() == first[index].email.toLowerCase() &&
 				password == first[index].password &&
-				name.toLowerCase() == first[index].name.toLowerCase()
+				name.trim().toLowerCase() == first[index].name.toLowerCase()
 			) {
+				console.log("success");
 				success = 1;
 				break;
 			}
