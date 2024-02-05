@@ -11,6 +11,7 @@
 	let ser = '';
 	import { services } from '$lib';
 	import { phone } from './store';
+	import { goto } from '$app/navigation';
 
 	let navBtnShow = false;
 	let navShowHeight = "h-0";
@@ -29,12 +30,12 @@
 	});
 
 	function toggleAccordion(event) {
-    const targetId = event.currentTarget.dataset.accordionTarget;
-    const targetPanel = document.querySelector(targetId);
-    targetPanel.classList.toggle('hidden');
+		const targetId = event.currentTarget.dataset.accordionTarget;
+		const targetPanel = document.querySelector(targetId);
+		targetPanel.classList.toggle('hidden');
 
-    const expanded = !event.currentTarget.getAttribute('aria-expanded') === 'true';
-    event.currentTarget.setAttribute('aria-expanded', expanded);
+		const expanded = !event.currentTarget.getAttribute('aria-expanded') === 'true';
+		event.currentTarget.setAttribute('aria-expanded', expanded);
 	}
 </script>
 
@@ -114,19 +115,21 @@
 								</button>
 							</h2>
 							<div id="accordion-collapse-body-{index + 1}-{subIndex + 1}" class="hidden" aria-labelledby="accordion-collapse-heading-{index + 1}-{subIndex + 1}">
-								<div class="p-5 text-sm bg-gray-900 border border-b-0 border-gray-700">
-									<h1 class="mb-2 text-gray-400">
-										{services[service][subservice].head}
-									</h1>
-									<p class="mb-2 text-gray-400">
-										{services[service][subservice].description}
-									</p>
-									<ul class="grid grid-cols-2 mb-2 text-gray-400" style="list-style-type: disc;">
-										{#each services[service][subservice].points as listData}
+								<button class="w-full h-full appearance-none" on:click={() => goto("/form")}>
+									<div class="p-5 text-sm bg-gray-900 border border-b-0 border-gray-700">
+										<h1 class="mb-2 text-gray-400">
+											{services[service][subservice].head}
+										</h1>
+										<p class="mb-2 text-gray-400">
+											{services[service][subservice].description}
+										</p>
+										<ul class="grid grid-cols-2 mb-2 text-gray-400" style="list-style-type: disc;">
+											{#each services[service][subservice].points as listData}
 											<li>{listData}</li>
-										{/each}
-									</ul>
-								</div>
+											{/each}
+										</ul>
+									</div>
+								</button>
 							</div>
 						{/each}
 					</div>

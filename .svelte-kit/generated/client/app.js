@@ -12,20 +12,23 @@ export const nodes = [
 	() => import('./nodes/8'),
 	() => import('./nodes/9'),
 	() => import('./nodes/10'),
-	() => import('./nodes/11')
+	() => import('./nodes/11'),
+	() => import('./nodes/12'),
+	() => import('./nodes/13')
 ];
 
 export const server_loads = [];
 
 export const dictionary = {
-		"/": [4],
-		"/admin": [5,[2]],
-		"/admin/dashboard": [~6,[2]],
-		"/admin/login": [~7,[2]],
-		"/contact-us": [~8,[3]],
-		"/database": [~9],
-		"/database/create": [~10],
-		"/database/delete/[id]": [~11]
+		"/": [5],
+		"/admin": [6,[2]],
+		"/admin/dashboard": [~7,[2]],
+		"/admin/login": [~8,[2]],
+		"/contact-us": [~9,[3]],
+		"/database": [~10],
+		"/database/create": [~11],
+		"/database/delete/[id]": [~12],
+		"/form": [13,[4]]
 	};
 
 export const hooks = {

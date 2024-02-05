@@ -22,5 +22,6 @@
 	],
 	"/database/delete/[id]": [
 		"src/routes/database/delete/[id]/+page.server.js"
-	]
+	],
+	"/form": []
 }
