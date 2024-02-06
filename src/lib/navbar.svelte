@@ -44,14 +44,12 @@
 		<div class=" w-[60%] pl-5 text-left">Name</div>
 		<div class="h-16 w-[33vw] align-middle">
 			<div class="float-right navbar-btn-div">
-				{#if width < 768}
 				<button class="float-right mt-2 lg:text-lg xs:text-base"
 					on:click={() => {
 						navBtnShow = !navBtnShow;
 						navShowHeight === "h-0" ? navShowHeight = "h-auto" : navShowHeight = "h-0"}}>
 					<Fa icon={faBars} class="float-right" />
 				</button>
-				{/if}
 				<button type="button" class="mt-2 lg:text-lg xs:text-base">
 					<a href="tel:+91-{$phone}">
 						<Fa icon={faPhone} class="float-right" />
@@ -61,29 +59,61 @@
 		</div>
 	</div>
 	{#if width > 768}
-		<div class="flex bg-blue-900 service-list md:px-5 lg:px-12">
-			{#each Object.keys(services) as service}
-				<button
-					type="button"
-					on:focus={() => {
-						ser = service;
-						$showNav = true;
-					}}
-					class="h-12 flex-1 rounded-md bg-blue-50 text-black my-2.5 sm:mx-0.5 sm:px-2 sm:flex-1 sm:text-sm md:mx-1.5 md:text-base lg:mx-3"
-				>
-					{service}
-				</button>
-			{/each}
-			<button
-				type="button"
-				on:focus={() => {
-					$showNav = false;
-				}}
-				class="my-2.5 h-12 flex-1 rounded-md bg-blue-50 text-black sm:mx-1 sm:flex-1 sm:text-sm md:mx-1.5 md:text-base lg:mx-3"
-			>
-				Close navbar
-			</button>
+		{#if navBtnShow}
+		<div class="flex bg-gray-900 service-list">
+			<div id="accordion-collapse" data-accordion="collapse">
+				{#each Object.keys(services) as service, index}
+				<h2 id="accordion-collapse-heading-{index}">
+					<button type="button" class="flex items-center justify-between w-screen gap-3 p-5 font-medium text-gray-400 border border-b-0 border-gray-700 rounded-t-xl focus:ring-gray-800 hover:bg-gray-800"
+						on:click={toggleAccordion}
+						data-accordion-target="#accordion-collapse-body-{index + 1}"
+						aria-expanded="true" aria-controls="accordion-collapse-body-{index + 1}">
+						<span>{service}</span>
+						<svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+							<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+						</svg>
+					</button>
+				</h2>
+				<div id="accordion-collapse-body-{index + 1}" class="hidden" aria-labelledby="accordion-collapse-heading-{index + 1}">
+					<div class="grid grid-cols-3 p-5 text-sm bg-gray-900 border border-b-0 border-gray-700">
+						{#each Object.keys(services[service]) as subservice, subIndex}
+						<div class="flex flex-col h-auto">
+							<h2 id="accordion-collapse-heading-{index}" class="h-12">
+								<button type="button" class="flex items-center justify-between w-full h-10 p-5 text-lg font-medium text-gray-400 border border-b-0 border-gray-700 gap-x-3 rounded-t-xl focus:ring-gray-800 hover:bg-gray-800"
+								on:click={toggleAccordion}
+								data-accordion-target="#accordion-collapse-body-{index + 1}-{subIndex + 1}"
+								aria-expanded="true" aria-controls="accordion-collapse-body-{index + 1}-{subIndex + 1}">
+									<span>{subservice}</span>
+									<svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+										<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+									</svg>
+								</button>
+							</h2>
+							<div id="accordion-collapse-body-{index + 1}-{subIndex + 1}" class="hidden" aria-labelledby="accordion-collapse-heading-{index + 1}-{subIndex + 1}">
+								<button class="w-full h-full appearance-none" on:focus={() => {goto("/form"); navBtnShow = false;}}>
+									<div class="p-5 text-sm bg-gray-900 border border-b-0 border-gray-700">
+										<h1 class="mb-2 text-gray-400">
+											{services[service][subservice].head}
+										</h1>
+										<p class="mb-2 text-gray-400">
+											{services[service][subservice].description}
+										</p>
+										<ul class="grid grid-cols-2 mb-2 text-gray-400" style="list-style-type: disc;">
+											{#each services[service][subservice].points as listData}
+											<li>{listData}</li>
+											{/each}
+										</ul>
+									</div>
+								</button>
+							</div>
+						</div>
+						{/each}
+					</div>
+				</div>
+				{/each}
+			</div>
 		</div>
+		{/if}
 	{:else}
 		{#if navBtnShow}
 		<div class="flex bg-gray-900 xs:w-full service-list">
