@@ -335,12 +335,12 @@
 		</div>
 	{:else}
 	<div>
-		<div class="grid grid-cols-2 mr-5 space-y-20 form-div bg-blue-950">
+		<div class="grid grid-rows-5 mr-5 space-y-20 form-div bg-blue-950">
 			<div>
 				<label for="name">Name: </label>
 				<input type="text" name="name" id="name" required class="h-10" />
 			</div>
-			<div>
+			<div class="h-full">
 				<label for="companyName">Company Name: </label>
 				<input type="text" name="companyName" id="companyName" required class="h-10" />
 			</div>
@@ -641,12 +641,15 @@
 				</div>
 			{/if}
 		</div>
-		<button
+		<div class="pb-10">
+
+			<button
 			type="submit"
 			class="ml-[40%] rounded bg-blue-400 px-4 py-2 font-bold text-white"
-		>
-			Submit</button
-		>
+			>
+			Submit
+			</button>
+		</div>
 	</div>
 	{/if}
 </form>
