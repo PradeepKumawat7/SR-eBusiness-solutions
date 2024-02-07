@@ -4,6 +4,16 @@
 	import { services } from '$lib';
 	import { faGithub, faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
 	import Fa from 'svelte-fa';
+	import { onMount } from "svelte";
+
+	onMount(() => {
+		if (typeof window !== 'undefined') {
+			// Now it's safe to use the window object
+			width = window.innerWidth;
+		}
+	});
+
+	let width = 0;
 	let serviceList = Object.keys(services);
 </script>
 
@@ -17,23 +27,23 @@
 			<ul style="list-style-type: none;" class="dev-comp-info">
 				<li class="div-center">
 					<div class="p-1 bg-white rounded-full">
-						<Fa icon={faGithub} size="2x" color="black" />
+						<Fa icon={faGithub} size={(width > 786 ? "xl" : "2x" )} color="black" />
 					</div>
 					<div class="div-2"><a href="https://github.com/BhJaipal/digital-marketing">Github</a></div>
 				</li>
 				<li class="div-center">
-					<Fa icon={faFacebook} size="2x" color="white" />
+					<Fa icon={faFacebook} size={width > 786 ? "lg" : "2x" } color="white" />
 					<div class="div-2">Facebook</div>
 				</li>
 				<li class="div-center">
 					<div class="insta-logo">
-						<Fa icon={faInstagram} size="2x" class="insta-logo" primaryColor="white" />
+						<Fa icon={faInstagram} size={width > 786 ? "lg" : "2x" } class="insta-logo" primaryColor="white" />
 					</div>
 					<div class="div-2">Instagram</div>
 				</li>
 				<li class="div-center">
 					<div class="insta-logo">
-						<Fa icon={faInstagram} size="2x" class="insta-logo" primaryColor="white" />
+						<Fa icon={faInstagram} size={width > 786 ? "lg" : "2x" } class="insta-logo" primaryColor="white" />
 					</div>
 					<div class="div-2"><a href="https://instagram.com/jaipalbh7">@jaipalbh7 (Developer)</a></div>
 				</li>
@@ -72,6 +82,9 @@
 					>
 						Admin login
 					</button>
+				</li>
+				<li class="div-center">
+					<button on:click={() => goto('/form')}>Form</button>
 				</li>
 			</ul>
 		</div>

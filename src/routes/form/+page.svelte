@@ -335,7 +335,7 @@
 		</div>
 	{:else}
 	<div>
-		<div class="grid grid-rows-5 mr-5 space-y-20 form-div bg-blue-950">
+		<div class="grid grid-rows-5 mr-5 space-y-20 bg-[rgb(10 40 120 / 1)] form-div">
 			<div>
 				<label for="name">Name: </label>
 				<input type="text" name="name" id="name" required class="h-10" />
