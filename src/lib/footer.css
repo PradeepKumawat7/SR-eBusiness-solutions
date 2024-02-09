@@ -1,6 +1,6 @@
 @media (min-width: 250px) {
 	.div-center {
-		@apply my-2.5 flex justify-center bg-transparent text-sm font-normal;
+		@apply my-2.5 flex justify-center bg-inherit text-sm font-normal;
 	}
 	.insta-logo {
 		background-color: transparent;

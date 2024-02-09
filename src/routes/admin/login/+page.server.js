@@ -34,7 +34,6 @@ export const actions = {
 		 * @type {any}
 		 */
 		let data = await seq.query('SELECT * FROM admins;');
-		console.log(data);
 
 		/**
 		 * @type {{name: string, email: string, password: string}[]}

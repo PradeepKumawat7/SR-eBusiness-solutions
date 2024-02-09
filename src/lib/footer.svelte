@@ -83,7 +83,7 @@
 						Admin login
 					</button>
 				</li>
-				<li class="div-center">
+				<li class="bg-inherit div-center">
 					<button on:click={() => goto('/form')}>Form</button>
 				</li>
 			</ul>

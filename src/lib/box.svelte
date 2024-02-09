@@ -20,7 +20,7 @@
 	</ul>
 </div>
 
-<style>
+<style scoped>
 	.bg-blue-925 {
 		--tw-bg-opacity: 1;
 		background-color: rgb(15 50 120 / var(--tw-bg-opacity));

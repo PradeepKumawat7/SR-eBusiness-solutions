@@ -86,11 +86,54 @@
 				{/each}
 			</tbody>
 		</table>
+		{#each data.data as Customer}
+			<div class="customer">
+				<div class="grid grid-cols-2">
+					<div>Name: {Customer.name}</div>
+					<div>Company Name: {Customer.companyName}</div>
+				</div>
+				<div class="grid grid-cols-2">
+					<div>Phone No.: {Number(Customer.countryCode) > 0 ? '+' + Customer.countryCode : Customer.countryCode}-{Customer.phone}</div>
+					<div>Email: {Customer.email}</div>
+				</div>
+				<div class="grid grid-cols-3">
+					<div>Website: <a href="{Customer.website}" class="underline" target="_blank">{Customer.website}</a></div>
+					<div>Service: {Customer.service}</div>
+					<div>Sub service: {Customer.subservice}</div>
+				</div>
+				<div class="grid grid-cols-3">
+					<div class="underline">Created at: {@html Customer.createdAt.replace(" ", "<br />")}</div>
+					<div class="underline">Updated at: {@html Customer.updatedAt.replace(" ", "<br />")}</div>
+					<div>
+						<button
+								class="w-16 h-16"
+								on:click={() => {
+									confirm('Are you sure to delete this customer?')
+										? goto('/database/delete/' + Customer.id)
+										: null;
+								}}
+							>
+								<FaLayers size="3x">
+									<Fa icon={faTrash} style="box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.2);" color="rgb(96 165 250)" scale={0.4} />
+								</FaLayers>
+							</button>
+					</div>
+				</div>
+			</div>
+		{/each}
 	</div>
 	{/if}
 <!-- {/if} -->
 
-<style>
+<style scoped>
+	.customer {
+		box-shadow: 10px 10px 10px rgba(100, 100, 100, 0.2);
+		text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+		@apply bg-blue-800 rounded-3xl mx-[20%] my-5 font-bold pl-10 py-10 text-blue-500 text-2xl border-8 border-l-blue-400 border-t-blue-400 border-transparent border-b-0 border-r-0;
+	}
+	.customer > div {
+		@apply my-5;
+	}
 	table {
 		@apply mx-[10%] w-[80%] text-lg;
 	}

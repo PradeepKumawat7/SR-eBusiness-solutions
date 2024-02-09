@@ -364,7 +364,7 @@
 	</div>
 </form>
 
-<style>
+<style scoped>
 	form > div > div {
 		@apply my-5 pl-10;
 	}
