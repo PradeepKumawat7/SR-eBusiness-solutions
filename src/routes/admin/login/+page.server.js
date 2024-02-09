@@ -7,7 +7,6 @@ import { redirect } from '@sveltejs/kit';
 export const actions = {
 	verify: async ({ request }) => {
 		const body = await request.formData();
-		console.log(body);
 		/**
 		 * @type {string | FormDataEntryValue | null }
 		 */
@@ -46,7 +45,6 @@ export const actions = {
 				password == first[index].password &&
 				name.trim().toLowerCase() == first[index].name.toLowerCase()
 			) {
-				console.log("success");
 				success = 1;
 				break;
 			}
