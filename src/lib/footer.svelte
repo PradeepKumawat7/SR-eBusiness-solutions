@@ -1,5 +1,4 @@
 <script>
-	import "./footer.css"
 	import { goto } from '$app/navigation';
 	import { services } from '$lib';
 	import { faGithub, faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
@@ -90,3 +89,6 @@
 		</div>
 	</div>
 </footer>
+<style scoped>
+	@import url("./footer.css");
+</style>
