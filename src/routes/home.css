@@ -3,13 +3,14 @@
 		@apply text-xs;
 	}
 	.sec-img {
+		filter: grayscale(100%);
 		background-color: #fff;
 		backdrop-filter: blur(100px);
 		transition: height 0.5s ease;
 		@apply h-[calc(90rem/8)] w-full border-b border-white bg-center bg-no-repeat text-sm text-white;
 	}
 	.sec-img:focus {
-		backdrop-filter: blur(0px);
+		filter: grayscale(0%);
 		@apply h-[calc(90rem/4)] w-full;
 	}
 	.scroll-anime div {
@@ -23,9 +24,10 @@
 	.sec-img {
 		background-color: #000;
 		transition: height 0.7s ease;
-		@apply h-[calc(100rem/8)] w-full border-b border-white bg-center bg-no-repeat text-white;
+		@apply h-[calc(100rem/8)] w-full border-b-0 border-l border-white bg-center bg-no-repeat text-white;
 	}
 	.sec-img:hover {
+		filter: grayscale(0%);
 		@apply h-[calc(100rem/4)] w-full;
 	}
 	h1 {

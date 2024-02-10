@@ -60,7 +60,7 @@
 	</div>
 	{#if width > 768}
 		{#if navBtnShow}
-		<div class="flex pl-10 bg-gray-900 service-list">
+		<div class="flex bg-gray-900 service-list">
 			<div id="accordion-collapse" data-accordion="collapse">
 				{#each Object.keys(services) as service, index}
 				<h2 id="accordion-collapse-heading-{index}">
@@ -78,7 +78,7 @@
 					<div class="grid grid-cols-3 p-5 text-sm bg-gray-900 border border-b-0 border-gray-700">
 						{#each Object.keys(services[service]) as subservice, subIndex}
 						<div class="flex flex-col h-auto">
-							<h2 id="accordion-collapse-heading-{index}" class="h-12 pl-10">
+							<h2 id="accordion-collapse-heading-{index}" class="h-12">
 								<button type="button" class="flex items-center justify-between w-full h-10 p-5 text-lg font-medium text-gray-400 border border-b-0 border-gray-700 gap-x-3 rounded-t-xl focus:ring-gray-800 hover:bg-gray-800"
 								on:click={toggleAccordion}
 								data-accordion-target="#accordion-collapse-body-{index + 1}-{subIndex + 1}"
@@ -89,7 +89,7 @@
 									</svg>
 								</button>
 							</h2>
-							<div id="accordion-collapse-body-{index + 1}-{subIndex + 1}" class="hidden pl-10" aria-labelledby="accordion-collapse-heading-{index + 1}-{subIndex + 1}">
+							<div id="accordion-collapse-body-{index + 1}-{subIndex + 1}" class="hidden " aria-labelledby="accordion-collapse-heading-{index + 1}-{subIndex + 1}">
 								<button class="w-full h-full appearance-none" on:focus={() => {goto("/form"); navBtnShow = false;}}>
 									<div class="p-5 text-sm bg-gray-900 border border-b-0 border-gray-700">
 										<h1 class="mb-2 text-gray-400">

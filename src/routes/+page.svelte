@@ -1,5 +1,4 @@
 <script>
-	import "./home.css"
 	let bgImage = [
 		`url("//images.ctfassets.net/bete4dit0n31/6NudlSgngBxw7uJR5osHKa/e90823f58ffa4dfd46fd33a3ed3659ee/industry-1.webp")`,
 		`url("//images.ctfassets.net/bete4dit0n31/3bTyxyXMHiuTiotaL2HEjh/7066fd0a0d0b9b5d8b8a833be0954eee/Industry-02.webp")`,
@@ -99,3 +98,6 @@
 		</ul>
 	</div>
 </section>
+<style scoped>
+	@import url(./home.css);
+</style>
