@@ -26,25 +26,27 @@
 			<ul style="list-style-type: none;" class="dev-comp-info">
 				<li class="div-center">
 					<div class="p-1 bg-white rounded-full">
-						<Fa icon={faGithub} size={(width > 786 ? "xl" : "2x" )} color="black" />
+						<a href="https://github.com/BhJaipal/digital-marketing">
+							<Fa icon={faGithub} size={(width > 786 ? "xl" : "2x" )} color="black" />
+						</a>
 					</div>
-					<div class="div-2"><a href="https://github.com/BhJaipal/digital-marketing">Github</a></div>
+					<div class="div-2"></div>
 				</li>
 				<li class="div-center">
 					<Fa icon={faFacebook} size={width > 786 ? "lg" : "2x" } color="white" />
-					<div class="div-2">Facebook</div>
+					<div class="div-2"></div>
 				</li>
 				<li class="div-center">
 					<div class="insta-logo">
 						<Fa icon={faInstagram} size={width > 786 ? "lg" : "2x" } class="insta-logo" primaryColor="white" />
 					</div>
-					<div class="div-2">Instagram</div>
+					<div class="div-2"></div>
 				</li>
 				<li class="div-center">
 					<div class="insta-logo">
 						<Fa icon={faInstagram} size={width > 786 ? "lg" : "2x" } class="insta-logo" primaryColor="white" />
 					</div>
-					<div class="div-2"><a href="https://instagram.com/jaipalbh7">@jaipalbh7 (Developer)</a></div>
+					<div class="div-2"><a href="https://instagram.com/jaipalbh7">@jaipalbh7</a></div>
 				</li>
 			</ul>
 		</div>
