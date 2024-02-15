@@ -1,8 +1,8 @@
 <script>
-	import tallBuilding from "../lib/images/tall-buildings.jpg"
-	import industry3 from "../lib/images/industry-3.webp"
-	import industry2 from "../lib/images/Industry-02.webp"
-	import mobile from "../lib/images/th-2320976346.jpeg"
+	import tallBuilding from '../lib/images/tall-buildings.jpg';
+	import industry3 from '../lib/images/industry-3.webp';
+	import industry2 from '../lib/images/Industry-02.webp';
+	import mobile from '../lib/images/th-2320976346.jpeg';
 	let bgImage = [
 		`url("${industry2}")`,
 		`url("${tallBuilding}")`,
@@ -21,7 +21,7 @@
 
 <svelte:head>
 	<title>Digital Marketing</title>
-	<meta name="title" content="SR eBusiness Solutions">
+	<meta name="title" content="SR eBusiness Solutions" />
 </svelte:head>
 <div class="w-full overflow-hidden">
 	<section
@@ -40,7 +40,7 @@
 			>
 				<div
 					style="background:linear-gradient(180deg, #000000 15%, rgba(0, 0, 0, 0) 100%)"
-					class="justify-between flex h-full flex-col px-8 py-[72px]"
+					class="flex h-full flex-col justify-between px-8 py-[72px]"
 				>
 					<div class="hideIt">
 						<p>0{index + 1}</p>
@@ -77,7 +77,9 @@
 		{/each}
 	</section>
 </div>
-<section class="scroll-anime mb-10 xs:pb-5 xs:text-sm sm:h-[30rem] md:h-[35rem] lg:h-[30rem] lg:grid lg:grid-cols-2 lg:grid-rows-2">
+<section
+	class="scroll-anime mb-10 xs:pb-5 xs:text-sm sm:h-[30rem] md:h-[35rem] lg:grid lg:h-[30rem] lg:grid-cols-2 lg:grid-rows-2"
+>
 	<div class="md:pt-3">
 		<h1 class="font-bold xs:text-2xl">Services we can help you with.</h1>
 		<p class="xs:text-sm sm:text-lg md:mt-7 lg:mt-10 xl:mt-16">
@@ -87,8 +89,8 @@
 			with each marketing channel.
 		</p>
 	</div>
-	<div class="pt-5 md:text-xl xs:mr-5 sm:mr-0">
-		<p class="font-bold sm:text-2xl xs:text-xl md:mt-7">Services we can help you with.</p>
+	<div class="pt-5 xs:mr-5 sm:mr-0 md:text-xl">
+		<p class="font-bold xs:text-xl sm:text-2xl md:mt-7">Services we can help you with.</p>
 		<ul class="grid grid-cols-2">
 			<li>SEO Services</li>
 			<li>Local SEO</li>
@@ -102,6 +104,7 @@
 		</ul>
 	</div>
 </section>
+
 <style scoped>
 	@import url(./home.css);
 </style>

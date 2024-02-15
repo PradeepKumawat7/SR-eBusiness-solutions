@@ -28,16 +28,24 @@
 	let selectService = '';
 </script>
 
-<form class="text-lg text-white border-b-4 border-b-sky-500 lg:flex lg:flex-row bg-blue-950 xl:flex xl:flex-row md:grid md:grid-rows-2" method="POST" action="/database/create?/create">
-	<div class="grid grid-cols-2 bg-blue-950 basis-1/2 xl:basis-1/2 md:grrid md:grid-cols-2">
-		<div class="w-auto -ml-5 md:grid md:grid-cols-2 lg:grid {Object.keys(service).length >= 4 ? 'lg:grid-cols-2' : 'lg:grid-cols-1'}">
+<form
+	class="border-b-4 border-b-sky-500 bg-blue-950 text-lg text-white md:grid md:grid-rows-2 lg:flex lg:flex-row xl:flex xl:flex-row"
+	method="POST"
+	action="/database/create?/create"
+>
+	<div class="md:grrid grid basis-1/2 grid-cols-2 bg-blue-950 md:grid-cols-2 xl:basis-1/2">
+		<div
+			class="-ml-5 w-auto md:grid md:grid-cols-2 lg:grid {Object.keys(service).length >= 4
+				? 'lg:grid-cols-2'
+				: 'lg:grid-cols-1'}"
+		>
 			{#each Object.keys(service) as box}
 				<button
 					on:focus={() => {
 						show[box] = true;
 					}}
-					class="mt-2 text-base font-normal text-black bg-blue-50 hover:font-bold md:h-20 md:w-40
-					{"lg:text-xs lg:ml-2 lg:h-auto lg:w-[6.5rem]"}
+					class="mt-2 bg-blue-50 text-base font-normal text-black hover:font-bold md:h-20 md:w-40
+					{'lg:ml-2 lg:h-auto lg:w-[6.5rem] lg:text-xs'}
 					xl:ml-3 xl:h-16 xl:w-32 2xl:w-36"
 				>
 					{box}
@@ -51,7 +59,7 @@
 					<div
 						role="button"
 						tabindex="0"
-						class="flex flex-row mt-2 descipt bg-inherit md:px-5 lg:px-0"
+						class="descipt mt-2 flex flex-row bg-inherit md:px-5 lg:px-0"
 						on:focus={() => handleMouseOver(box)}
 						on:mouseenter={() => handleMouseOver(box)}
 						on:mouseleave={() => handleMouseOut(box)}
@@ -62,7 +70,7 @@
 			{/each}
 		</div>
 	</div>
-	<div class="grid grid-cols-3 mr-5 bg-blue-950 basis-1/2 form-div xl:basis-1/2">
+	<div class="form-div mr-5 grid basis-1/2 grid-cols-3 bg-blue-950 xl:basis-1/2">
 		<div>
 			<label for="name">Name: </label>
 			<input type="text" name="name" id="name" required class="md:w-32" />
@@ -342,7 +350,7 @@
 				<select
 					name="subservice"
 					id="subservice"
-					class="lg:w-32 md:w-28"
+					class="md:w-28 lg:w-32"
 					required
 					on:mouseenter={() => showNav.set(true)}
 				>
@@ -357,7 +365,7 @@
 			</div>
 		{/if}
 		<div>
-			<button type="submit" class="px-4 py-2 font-bold text-white bg-blue-400 rounded"
+			<button type="submit" class="rounded bg-blue-400 px-4 py-2 font-bold text-white"
 				>Submit</button
 			>
 		</div>
@@ -375,7 +383,7 @@
 	select {
 		@apply text-black;
 	}
-	.form-div > div:nth-child(3n +1) {
+	.form-div > div:nth-child(3n + 1) {
 		@apply -mx-3;
 	}
 </style>

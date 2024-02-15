@@ -18,7 +18,7 @@
 </script>
 
 <div class="mt-10 text-center">
-	<div class="xs:flex-col flex text-center lg:flex-row">
+	<div class="flex text-center xs:flex-col lg:flex-row">
 		<div class="w-[45%] align-middle">
 			<div
 				class="form-box border-b-none border-r-none mx-[10%] h-auto border-4 border-l-blue-400 border-t-blue-400 px-10 pb-10 pt-10 text-lg"

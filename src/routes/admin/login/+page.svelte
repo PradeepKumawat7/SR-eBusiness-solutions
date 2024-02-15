@@ -62,7 +62,7 @@
 		<div class="div-center">
 			<h1>Login</h1>
 		</div>
-		<div class="mt-5 bg-gray-300 div-center xs:mx-5 sm:mx-0">
+		<div class="div-center mt-5 bg-gray-300 xs:mx-5 sm:mx-0">
 			<form on:submit|preventDefault={handleSubmit}>
 				<div class="form-group">
 					<label for="name" class="form-label">Name</label>
@@ -85,7 +85,7 @@
 				<div class="div-center">
 					<button
 						type="submit"
-						class={`rounded px-4 py-2 font-bold text-white border-transparent ml-0 hover:bg-blue-700 ${
+						class={`ml-0 rounded border-transparent px-4 py-2 font-bold text-white hover:bg-blue-700 ${
 							disabled ? 'bg-blue-300' : 'bg-blue-500'
 						}`}
 						{disabled}

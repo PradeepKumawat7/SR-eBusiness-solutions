@@ -3,7 +3,7 @@
 	import { services } from '$lib';
 	import { faGithub, faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
 	import Fa from 'svelte-fa';
-	import { onMount } from "svelte";
+	import { onMount } from 'svelte';
 
 	onMount(() => {
 		if (typeof window !== 'undefined') {
@@ -16,8 +16,8 @@
 	let serviceList = Object.keys(services);
 </script>
 
-<footer class="xs:h-full sm:h-[21rem] w-[100%] text-white sticky bottom-0">
-	<div class="h-full px-4 mx-auto xs:flex sm:grid xs:flex-col sm:grid-cols-4">
+<footer class="sticky bottom-0 w-[100%] text-white xs:h-full sm:h-[21rem]">
+	<div class="mx-auto h-full px-4 xs:flex xs:flex-col sm:grid sm:grid-cols-4">
 		<div style="display: flex; align-items: center; justify-content: center">
 			<h1 class=" xs:mt-5 sm:mt-0">SR eBusiness Solutions</h1>
 		</div>
@@ -25,36 +25,48 @@
 			<div class="mb-[1rem] mt-4 text-2xl font-bold">Connect With Us</div>
 			<ul style="list-style-type: none;" class="dev-comp-info">
 				<li class="div-center">
-					<div class="p-1 bg-white rounded-full">
+					<div class="rounded-full bg-white p-1">
 						<a href="https://github.com/BhJaipal/digital-marketing">
-							<Fa icon={faGithub} size={(width > 786 ? "xl" : "2x" )} color="black" />
+							<Fa icon={faGithub} size={width > 786 ? 'xl' : '2x'} color="black" />
 						</a>
 					</div>
 					<div class="div-2"></div>
 				</li>
 				<li class="div-center">
-					<Fa icon={faFacebook} size={width > 786 ? "lg" : "2x" } color="white" />
+					<Fa icon={faFacebook} size={width > 786 ? 'lg' : '2x'} color="white" />
 					<div class="div-2"></div>
 				</li>
 				<li class="div-center">
 					<div class="insta-logo">
-						<Fa icon={faInstagram} size={width > 786 ? "lg" : "2x" } class="insta-logo" primaryColor="white" />
+						<Fa
+							icon={faInstagram}
+							size={width > 786 ? 'lg' : '2x'}
+							class="insta-logo"
+							primaryColor="white"
+						/>
 					</div>
 					<div class="div-2"></div>
 				</li>
 				<li class="div-center">
 					<div class="insta-logo">
-						<Fa icon={faInstagram} size={width > 786 ? "lg" : "2x" } class="insta-logo" primaryColor="white" />
+						<Fa
+							icon={faInstagram}
+							size={width > 786 ? 'lg' : '2x'}
+							class="insta-logo"
+							primaryColor="white"
+						/>
 					</div>
-					<div class="div-2"><a href="https://instagram.com/jaipalbh7">@jaipalbh7</a></div>
+					<div class="div-2">
+						<a href="https://instagram.com/jaipalbh7">@jaipalbh7</a>
+					</div>
 				</li>
 			</ul>
 		</div>
 		<div>
-			<div class="mt-4 mb-1 text-2xl font-bold">Services</div>
+			<div class="mb-1 mt-4 text-2xl font-bold">Services</div>
 			<ul>
 				{#each serviceList as service}
-					<li class="md:my-3 xs:my-1 div-center">
+					<li class="div-center xs:my-1 md:my-3">
 						{service}
 					</li>
 				{/each}
@@ -84,13 +96,14 @@
 						Admin login
 					</button>
 				</li>
-				<li class="bg-inherit div-center">
+				<li class="div-center bg-inherit">
 					<button on:click={() => goto('/form')}>Form</button>
 				</li>
 			</ul>
 		</div>
 	</div>
 </footer>
+
 <style scoped>
-	@import url("./footer.css");
+	@import url('./footer.css');
 </style>
