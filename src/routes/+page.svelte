@@ -1,9 +1,13 @@
 <script>
+	import tallBuilding from "../lib/images/tall-buildings.jpg"
+	import industry3 from "../lib/images/industry-3.webp"
+	import industry2 from "../lib/images/Industry-02.webp"
+	import mobile from "../lib/images/th-2320976346.jpeg"
 	let bgImage = [
-		`url("https://images.ctfassets.net/bete4dit0n31/3bTyxyXMHiuTiotaL2HEjh/7066fd0a0d0b9b5d8b8a833be0954eee/Industry-02.webp")`,
-		`url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fjooinn.com%2Fimages%2Ftall-buildings-14.jpg&f=1&nofb=1&ipt=2b1ee5a46db138d9fa98133b82b2beb8399a020d4fb1d4736e879ce46c7c8609&ipo=images")`,
-		`url("https://images.ctfassets.net/bete4dit0n31/1Az8yrWKtRcgMoiqd7W9E7/a5d30bf9c45bf2bdd5b20d8eab5e7abb/industry-3.webp")`,
-		`url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.1opBboIIuD72RZ7v8gssnQHaE8%26pid%3DApi&f=1&ipt=0a1cf598a51c78b7b37db4be886634d70cae444451ba3d57a151129146e1d287&ipo=images")`
+		`url("${industry2}")`,
+		`url("${tallBuilding}")`,
+		`url("${industry3}")`,
+		`url("${mobile}")`
 	];
 	let paragraphs = [
 		'From gorgeous websites to strategic digital advertising campaigns, we work closely with your team to showcase the best views and angles of your luxury communities to your online customers.',
