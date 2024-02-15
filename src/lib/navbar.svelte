@@ -22,13 +22,15 @@
 	let width;
 
 	onMount(() => {
-		console.log(window);
 		if (typeof window !== 'undefined') {
 			// Now it's safe to use the window object
 			width = (window.innerWidth);
 		}
 	});
 
+	/**
+	 * @param { import('svelte').CustomEvent<HTMLButtonElement> } event
+	 */
 	function toggleAccordion(event) {
 		const targetId = event.currentTarget.dataset.accordionTarget;
 		const targetPanel = document.querySelector(targetId);
@@ -41,10 +43,10 @@
 
 <nav class="w-full text-3xl font-bold text-white bg-blue-980">
 	<div class="flex flex-row h-16 pt-3 align-middle navbar-display">
-		<div class=" w-[60%] pl-5 text-left">Name</div>
-		<div class="h-16 w-[33vw] align-middle">
-			<div class="float-right navbar-btn-div">
-				<button class="float-right mt-2 lg:text-lg xs:text-base"
+		<div class=" w-[60%] pl-5 text-left overflow-hidden">SR eBusiness</div>
+		<div class="float-right w-full h-16 mr-10 align-middle">
+			<div class="grid float-right grid-cols-2 xs:basis-3 lg:basis-1/2 navbar-btn-div">
+				<button class="mt-2 lg:text-lg xs:text-base"
 					on:click={() => {
 						navBtnShow = !navBtnShow;
 						navShowHeight === "h-0" ? navShowHeight = "h-auto" : navShowHeight = "h-0"}}>
@@ -64,7 +66,7 @@
 			<div id="accordion-collapse" data-accordion="collapse">
 				{#each Object.keys(services) as service, index}
 				<h2 id="accordion-collapse-heading-{index}">
-					<button type="button" class="flex items-center justify-between w-screen gap-3 p-5 font-medium text-gray-400 border border-b-0 border-gray-700 rounded-t-xl focus:ring-gray-800 hover:bg-gray-800"
+					<button type="button" class="flex items-center justify-between w-screen p-5 font-medium text-gray-400 border border-b-0 border-gray-700 rounded-t-xl focus:ring-gray-800 hover:bg-gray-800"
 						on:click={toggleAccordion}
 						data-accordion-target="#accordion-collapse-body-{index + 1}"
 						aria-expanded="true" aria-controls="accordion-collapse-body-{index + 1}">
@@ -75,7 +77,7 @@
 					</button>
 				</h2>
 				<div id="accordion-collapse-body-{index + 1}" class="hidden" aria-labelledby="accordion-collapse-heading-{index + 1}">
-					<div class="grid grid-cols-3 p-5 text-sm bg-gray-900 border border-b-0 border-gray-700">
+					<div class="grid grid-cols-3 p-5 text-sm bg-gray-900 border border-b-0 border-gray-700 gap-x-3">
 						{#each Object.keys(services[service]) as subservice, subIndex}
 						<div class="flex flex-col h-auto">
 							<h2 id="accordion-collapse-heading-{index}" class="h-12">

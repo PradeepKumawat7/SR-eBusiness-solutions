@@ -19,9 +19,9 @@
 <footer class="xs:h-full sm:h-[21rem] w-[100%] text-white sticky bottom-0">
 	<div class="h-full px-4 mx-auto xs:flex sm:grid xs:flex-col sm:grid-cols-4">
 		<div style="display: flex; align-items: center; justify-content: center">
-			<h1>Logo</h1>
+			<h1 class=" xs:mt-5 sm:mt-0">SR eBusiness Solutions</h1>
 		</div>
-		<div style="margin-top: 3rem">
+		<div style="margin-top: 1rem">
 			<div class="mb-[1rem] mt-4 text-2xl font-bold">Connect With Us</div>
 			<ul style="list-style-type: none;" class="dev-comp-info">
 				<li class="div-center">
