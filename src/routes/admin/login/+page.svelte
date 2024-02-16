@@ -57,12 +57,12 @@
 <svelte:head>
 	<title>Admin Login</title>
 </svelte:head>
-<div>
+<div class="xl:mb-12">
 	<div class="h-[50vh] w-full">
 		<div class="div-center">
 			<h1>Login</h1>
 		</div>
-		<div class="div-center mt-5 bg-gray-300 xs:mx-5 sm:mx-0">
+		<div class="mt-5 bg-white div-center xs:mx-5 sm:mx-0">
 			<form on:submit|preventDefault={handleSubmit}>
 				<div class="form-group">
 					<label for="name" class="form-label">Name</label>
