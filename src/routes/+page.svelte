@@ -1,13 +1,9 @@
 <script>
-	import tallBuilding from '../lib/images/tall-buildings.jpg';
-	import industry3 from '../lib/images/industry-3.webp';
-	import industry2 from '../lib/images/Industry-02.webp';
-	import mobile from '../lib/images/th-2320976346.jpeg';
 	let bgImage = [
-		`url("${industry2}")`,
-		`url("${tallBuilding}")`,
-		`url("${industry3}")`,
-		`url("${mobile}")`
+		`url("/assets/Industry-02.webp")`,
+		`url("/assets/tall-buildings.jpg")`,
+		`url("/assets/industry-3.webp")`,
+		`url("/assets/mobile.jpeg")`
 	];
 	let paragraphs = [
 		'From gorgeous websites to strategic digital advertising campaigns, we work closely with your team to showcase the best views and angles of your luxury communities to your online customers.',
