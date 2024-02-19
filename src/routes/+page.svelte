@@ -1,9 +1,9 @@
 <script>
 	let bgImage = [
-		`url("/assets/Industry-02.webp")`,
-		`url("/assets/tall-buildings.jpg")`,
-		`url("/assets/industry-3.webp")`,
-		`url("/assets/mobile.jpeg")`
+		`url("/assets/luxury.jpg")`,
+		`url("/assets/franchise.jpg")`,
+		`url("/assets/e-commerce.webp")`,
+		`url("/assets/others.jpeg")`
 	];
 	let paragraphs = [
 		'From gorgeous websites to strategic digital advertising campaigns, we work closely with your team to showcase the best views and angles of your luxury communities to your online customers.',
@@ -16,7 +16,7 @@
 </script>
 
 <svelte:head>
-	<title>Digital Marketing</title>
+	<title>SR eBusiness Solutions</title>
 	<meta name="title" content="SR eBusiness Solutions" />
 </svelte:head>
 <div class="w-full overflow-hidden">
