@@ -17,15 +17,17 @@
 </script>
 
 <footer class="sticky bottom-0 w-[100%] text-white xs:h-full sm:h-[21rem]">
-	<div class="mx-auto h-full px-4 xs:flex xs:flex-col sm:grid sm:grid-cols-4">
+	<div class="h-full px-4 mx-auto xs:flex xs:flex-col sm:grid sm:grid-cols-4">
 		<div style="display: flex; align-items: center; justify-content: center">
-			<h1 class=" xs:mt-5 sm:mt-0">SR eBusiness Solutions</h1>
+			<div class=" xs:mt-5 sm:mt-0">
+				<img src="/logo-footer.svg" alt="logo">
+			</div>
 		</div>
 		<div style="margin-top: 1rem">
 			<div class="mb-[1rem] mt-4 text-2xl font-bold">Connect With Us</div>
 			<ul style="list-style-type: none;" class="dev-comp-info">
 				<li class="div-center">
-					<div class="rounded-full bg-white p-1">
+					<div class="p-1 bg-white rounded-full">
 						<a href="https://github.com/BhJaipal/digital-marketing">
 							<Fa icon={faGithub} size={width > 786 ? 'xl' : '2x'} color="black" />
 						</a>
@@ -38,32 +40,21 @@
 				</li>
 				<li class="div-center">
 					<div class="insta-logo">
-						<Fa
-							icon={faInstagram}
-							size={width > 786 ? 'lg' : '2x'}
-							class="insta-logo"
-							primaryColor="white"
-						/>
+						<a href="https://instagram.com/jaipalbh7">
+							<Fa
+								icon={faInstagram}
+								size={width > 786 ? 'lg' : '2x'}
+								class="insta-logo"
+								primaryColor="white"
+							/>
+						</a>
 					</div>
 					<div class="div-2"></div>
-				</li>
-				<li class="div-center">
-					<div class="insta-logo">
-						<Fa
-							icon={faInstagram}
-							size={width > 786 ? 'lg' : '2x'}
-							class="insta-logo"
-							primaryColor="white"
-						/>
-					</div>
-					<div class="div-2">
-						<a href="https://instagram.com/jaipalbh7">@jaipalbh7</a>
-					</div>
 				</li>
 			</ul>
 		</div>
 		<div>
-			<div class="mb-1 mt-4 text-2xl font-bold">Services</div>
+			<div class="mt-4 mb-1 text-2xl font-bold">Services</div>
 			<ul>
 				{#each serviceList as service}
 					<li class="div-center xs:my-1 md:my-3">

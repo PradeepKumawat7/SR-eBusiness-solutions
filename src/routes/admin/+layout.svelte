@@ -3,7 +3,7 @@
 </script>
 
 <div class="overflow-x-hidden bg-gray-200">
-	<div class="pb-5">
+	<div class="lg:pb-5 xs:p-7">
 		<slot />
 	</div>
 </div>

@@ -48,7 +48,6 @@
 			adminAuth.set(true);
 			declared = true;
 			adminConfirm = true;
-			console.log($adminAuth);
 			goto('/admin/dashboard');
 		}
 	}
@@ -62,7 +61,7 @@
 		<div class="div-center">
 			<h1>Login</h1>
 		</div>
-		<div class="mt-5 bg-white div-center xs:mx-5 sm:mx-0">
+		<div class="mt-5 lg:bg-white div-center xs:mx-5 sm:mx-0">
 			<form on:submit|preventDefault={handleSubmit}>
 				<div class="form-group">
 					<label for="name" class="form-label">Name</label>
