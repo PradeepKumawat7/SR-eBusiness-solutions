@@ -41,13 +41,13 @@
 	}
 </script>
 
-<nav class="w-full font-bold text-white xs:text-2xl lg:text-3xl bg-blue-980">
-	<div class="flex flex-row h-16 pt-3 align-middle navbar-display">
-		<div class="w-full pl-5 -mt-10 overflow-hidden text-left lg:w-auto">
-			<img src="/logo-nav.svg" alt="logo" class="w-full h-[80%] mt-[5%] align-middle" />
+<nav class="bg-blue-980 w-full font-bold text-white xs:text-2xl lg:text-3xl">
+	<div class="navbar-display flex h-16 flex-row pt-3 align-middle">
+		<div class="-mt-10 w-full overflow-hidden pl-5 text-left lg:w-auto">
+			<img src="/logo-nav.svg" alt="logo" class="mt-[5%] h-[80%] w-full align-middle" />
 		</div>
-		<div class="float-right w-full h-16 mr-10 align-middle">
-			<div class="grid float-right grid-cols-2 navbar-btn-div xs:basis-3 lg:basis-1/2">
+		<div class="float-right mr-10 h-16 w-full align-middle">
+			<div class="navbar-btn-div float-right grid grid-cols-2 xs:basis-3 lg:basis-1/2">
 				<button
 					class="mt-2 xs:text-base lg:text-lg"
 					on:click={() => {
@@ -69,13 +69,13 @@
 	</div>
 	{#if width > 768}
 		{#if navBtnShow}
-			<div class="flex bg-gray-900 service-list">
+			<div class="service-list flex bg-gray-900">
 				<div id="accordion-collapse" data-accordion="collapse">
 					{#each Object.keys(services) as service, index}
 						<h2 id="accordion-collapse-heading-{index}">
 							<button
 								type="button"
-								class="flex items-center justify-between w-screen p-5 font-medium text-gray-400 border border-b-0 border-gray-700 rounded-t-xl hover:bg-gray-800 focus:ring-gray-800"
+								class="flex w-screen items-center justify-between rounded-t-xl border border-b-0 border-gray-700 p-5 font-medium text-gray-400 hover:bg-gray-800 focus:ring-gray-800"
 								on:click={toggleAccordion}
 								data-accordion-target="#accordion-collapse-body-{index + 1}"
 								aria-expanded="true"
@@ -84,7 +84,7 @@
 								<span>{service}</span>
 								<svg
 									data-accordion-icon
-									class="w-3 h-3 rotate-180 shrink-0"
+									class="h-3 w-3 shrink-0 rotate-180"
 									aria-hidden="true"
 									xmlns="http://www.w3.org/2000/svg"
 									fill="none"
@@ -106,14 +106,14 @@
 							aria-labelledby="accordion-collapse-heading-{index + 1}"
 						>
 							<div
-								class="grid grid-cols-3 p-5 text-sm bg-gray-900 border border-b-0 border-gray-700 gap-x-3"
+								class="grid grid-cols-3 gap-x-3 border border-b-0 border-gray-700 bg-gray-900 p-5 text-sm"
 							>
 								{#each Object.keys(services[service]) as subservice, subIndex}
-									<div class="flex flex-col h-auto">
+									<div class="flex h-auto flex-col">
 										<h2 id="accordion-collapse-heading-{index}" class="h-12">
 											<button
 												type="button"
-												class="flex items-center justify-between w-full h-10 p-5 text-lg font-medium text-gray-400 border border-b-0 border-gray-700 gap-x-3 rounded-t-xl hover:bg-gray-800 focus:ring-gray-800"
+												class="flex h-10 w-full items-center justify-between gap-x-3 rounded-t-xl border border-b-0 border-gray-700 p-5 text-lg font-medium text-gray-400 hover:bg-gray-800 focus:ring-gray-800"
 												on:click={toggleAccordion}
 												data-accordion-target="#accordion-collapse-body-{index +
 													1}-{subIndex + 1}"
@@ -124,7 +124,7 @@
 												<span>{subservice}</span>
 												<svg
 													data-accordion-icon
-													class="w-3 h-3 rotate-180 shrink-0"
+													class="h-3 w-3 shrink-0 rotate-180"
 													aria-hidden="true"
 													xmlns="http://www.w3.org/2000/svg"
 													fill="none"
@@ -147,14 +147,14 @@
 												1}-{subIndex + 1}"
 										>
 											<button
-												class="w-full h-full appearance-none"
+												class="h-full w-full appearance-none"
 												on:focus={() => {
 													goto('/form');
 													navBtnShow = false;
 												}}
 											>
 												<div
-													class="p-5 text-sm bg-gray-900 border border-b-0 border-gray-700"
+													class="border border-b-0 border-gray-700 bg-gray-900 p-5 text-sm"
 												>
 													<h1 class="mb-2 text-gray-400">
 														{services[service][subservice].head}
@@ -163,7 +163,7 @@
 														{services[service][subservice].description}
 													</p>
 													<ul
-														class="grid grid-cols-2 mb-2 text-gray-400"
+														class="mb-2 grid grid-cols-2 text-gray-400"
 														style="list-style-type: disc;"
 													>
 														{#each services[service][subservice].points as listData}
@@ -182,13 +182,13 @@
 			</div>
 		{/if}
 	{:else if navBtnShow}
-		<div class="flex bg-gray-900 service-list xs:w-full">
+		<div class="service-list flex bg-gray-900 xs:w-full">
 			<div id="accordion-collapse" data-accordion="collapse">
 				{#each Object.keys(services) as service, index}
 					<h2 id="accordion-collapse-heading-{index}">
 						<button
 							type="button"
-							class="flex items-center justify-between w-screen gap-3 p-5 font-medium text-gray-400 border border-b-0 border-gray-700 rounded-t-xl hover:bg-gray-800 focus:ring-gray-800"
+							class="flex w-screen items-center justify-between gap-3 rounded-t-xl border border-b-0 border-gray-700 p-5 font-medium text-gray-400 hover:bg-gray-800 focus:ring-gray-800"
 							on:click={toggleAccordion}
 							data-accordion-target="#accordion-collapse-body-{index + 1}"
 							aria-expanded="true"
@@ -197,7 +197,7 @@
 							<span>{service}</span>
 							<svg
 								data-accordion-icon
-								class="w-3 h-3 rotate-180 shrink-0"
+								class="h-3 w-3 shrink-0 rotate-180"
 								aria-hidden="true"
 								xmlns="http://www.w3.org/2000/svg"
 								fill="none"
@@ -218,12 +218,12 @@
 						class="hidden"
 						aria-labelledby="accordion-collapse-heading-{index + 1}"
 					>
-						<div class="p-5 text-sm bg-gray-900 border border-b-0 border-gray-700">
+						<div class="border border-b-0 border-gray-700 bg-gray-900 p-5 text-sm">
 							{#each Object.keys(services[service]) as subservice, subIndex}
 								<h2 id="accordion-collapse-heading-{index}">
 									<button
 										type="button"
-										class="flex items-center justify-between w-full gap-3 p-5 text-lg font-medium text-gray-400 border border-b-0 border-gray-700 rounded-t-xl hover:bg-gray-800 focus:ring-gray-800"
+										class="flex w-full items-center justify-between gap-3 rounded-t-xl border border-b-0 border-gray-700 p-5 text-lg font-medium text-gray-400 hover:bg-gray-800 focus:ring-gray-800"
 										on:click={toggleAccordion}
 										data-accordion-target="#accordion-collapse-body-{index +
 											1}-{subIndex + 1}"
@@ -234,7 +234,7 @@
 										<span>{subservice}</span>
 										<svg
 											data-accordion-icon
-											class="w-3 h-3 rotate-180 shrink-0"
+											class="h-3 w-3 shrink-0 rotate-180"
 											aria-hidden="true"
 											xmlns="http://www.w3.org/2000/svg"
 											fill="none"
@@ -257,14 +257,14 @@
 										1}-{subIndex + 1}"
 								>
 									<button
-										class="w-full h-full appearance-none"
+										class="h-full w-full appearance-none"
 										on:focus={() => {
 											goto('/form');
 											navBtnShow = false;
 										}}
 									>
 										<div
-											class="p-5 text-sm bg-gray-900 border border-b-0 border-gray-700"
+											class="border border-b-0 border-gray-700 bg-gray-900 p-5 text-sm"
 										>
 											<h1 class="mb-2 text-gray-400">
 												{services[service][subservice].head}
@@ -273,7 +273,7 @@
 												{services[service][subservice].description}
 											</p>
 											<ul
-												class="grid grid-cols-2 mb-2 text-gray-400"
+												class="mb-2 grid grid-cols-2 text-gray-400"
 												style="list-style-type: disc;"
 											>
 												{#each services[service][subservice].points as listData}

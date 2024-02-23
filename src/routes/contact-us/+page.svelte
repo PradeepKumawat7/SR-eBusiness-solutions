@@ -31,17 +31,17 @@
 </script>
 
 <div class="mt-10 text-center">
-	<div class="flex text-center xs:flex-col lg:flex-row xs:gap-10 lg:gap-0">
-		<div class="lg:w-[45%] xs:w-[95%] align-middle">
+	<div class="flex text-center xs:flex-col xs:gap-10 lg:flex-row lg:gap-0">
+		<div class="align-middle xs:w-[95%] lg:w-[45%]">
 			<div
-				class="form-box border-b-none border-r-none xs:mx-[5%] lg:mx-[10%] h-auto border-4 border-l-blue-400 border-t-blue-400 px-10 pb-10 pt-10 text-lg"
+				class="form-box border-b-none border-r-none h-auto border-4 border-l-blue-400 border-t-blue-400 px-10 pb-10 pt-10 text-lg xs:mx-[5%] lg:mx-[10%]"
 			>
 				<form method="POST">
 					<div class="flex xs:flex-col lg:flex-row">
-						<div class="grid lg:grid-cols-2 xs:grid-rows-2">
+						<div class="grid xs:grid-rows-2 lg:grid-cols-2">
 							<label for="name">Name: </label>{#if width > 1024}
-							<br />
-						{/if}
+								<br />
+							{/if}
 							<input
 								type="text"
 								name="name"
@@ -50,11 +50,11 @@
 								bind:value={data.name}
 							/>
 						</div>
-						<div class="grid lg:grid-cols-2 xs:grid-rows-2 xs:mt-10 lg:mt-0">
+						<div class="grid xs:mt-10 xs:grid-rows-2 lg:mt-0 lg:grid-cols-2">
 							<label for="companyName">Company Name: </label>
 							{#if width > 1024}
-							<br />
-						{/if}
+								<br />
+							{/if}
 							<input
 								type="text"
 								name="companyName"
@@ -66,11 +66,11 @@
 					</div>
 					<br />
 					<div class="flex xs:flex-col lg:flex-row">
-						<div class="grid lg:grid-cols-2 xs:grid-rows-2 xs:mt-2 lg:mt-0">
+						<div class="grid xs:mt-2 xs:grid-rows-2 lg:mt-0 lg:grid-cols-2">
 							<label for="email">Email: </label>
 							{#if width > 1024}
-							<br />
-						{/if}
+								<br />
+							{/if}
 							<input
 								type="email"
 								name="email"
@@ -79,11 +79,11 @@
 								bind:value={data.email}
 							/>
 						</div>
-						<div class="grid lg:grid-cols-2 xs:grid-rows-2 xs:mt-5 lg:mt-0">
+						<div class="grid xs:mt-5 xs:grid-rows-2 lg:mt-0 lg:grid-cols-2">
 							<label for="country-code">Country Code</label>
 							{#if width > 1024}
-							<br />
-						{/if}
+								<br />
+							{/if}
 							<select
 								name="countryCode"
 								bind:value={data.countryCode}
@@ -545,11 +545,11 @@
 					</div>
 					<br />
 					<div class="flex xs:flex-col lg:flex-row">
-						<div class="grid lg:grid-cols-2 xs:grid-rows-2 xs:mt-2 lg:mt-0">
+						<div class="grid xs:mt-2 xs:grid-rows-2 lg:mt-0 lg:grid-cols-2">
 							<label for="phone">Phone</label>
 							{#if width > 1024}
-							<br />
-						{/if}
+								<br />
+							{/if}
 							<input
 								type="number"
 								placeholder="2363632368"
@@ -559,11 +559,11 @@
 								required
 							/>
 						</div>
-						<div class="grid lg:grid-cols-2 xs:grid-rows-2 xs:mt-4 lg:mt-0">
+						<div class="grid xs:mt-4 xs:grid-rows-2 lg:mt-0 lg:grid-cols-2">
 							<label for="website">Website</label>
 							{#if width > 1024}
-							<br />
-						{/if}
+								<br />
+							{/if}
 							<input
 								type="url"
 								name="website"
@@ -574,15 +574,15 @@
 						</div>
 					</div>
 					{#if width > 1024}
-							<br />
-						{/if}
-					<div class="xs:flex lg:grid lg:grid-cols-2 xs:flex-col xs:mt-4 lg:mt-0">
+						<br />
+					{/if}
+					<div class="xs:mt-4 xs:flex xs:flex-col lg:mt-0 lg:grid lg:grid-cols-2">
 						<label for="message">How can I help you?</label>
 						{#if width > 1024}
 							<br />
 						{/if}
 						<textarea
-							class="lg:w-[34rem] xs:w-[100%] border-2 border-gray-500 text-base focus:border-0"
+							class="border-2 border-gray-500 text-base focus:border-0 xs:w-[100%] lg:w-[34rem]"
 							name="message"
 							id="message"
 							rows="5"
@@ -593,7 +593,7 @@
 					<br />
 					<div class="grid justify-center" style="align-items: center;">
 						<button
-							class="w-40 px-4 py-2 text-lg font-bold text-white bg-blue-500 rounded hover:bg-blue-600"
+							class="w-40 rounded bg-blue-500 px-4 py-2 text-lg font-bold text-white hover:bg-blue-600"
 							>Submit</button
 						>
 					</div>
@@ -603,7 +603,9 @@
 		<div>
 			<div class="text-left">
 				<div class="w-[50rem] text-left">
-					<div class="section-part xs:ml-[2.5%] h-[21rem] p-10 xs:h-auto xs:focus:h-auto lg:hover:h-[23rem] xs:w-[40%] lg:w-[45rem] xs:focus:p-5 lg:hover:p-14">
+					<div
+						class="section-part h-[21rem] p-10 xs:ml-[2.5%] xs:h-auto xs:w-[40%] xs:focus:h-auto xs:focus:p-5 lg:w-[45rem] lg:hover:h-[23rem] lg:hover:p-14"
+					>
 						<h1>About Us</h1>
 						<p class="mt-5 xs:text-base lg:text-2xl">
 							Our website making aim is, we want to make website for show the client
@@ -614,11 +616,14 @@
 						</p>
 					</div>
 					<div
-						class="section-part mt-10 xs:h-auto lg:h-[18rem] xs:ml-[2.5%] xs:p-4 lg:p-5 xs:pl-5 lg:pl-10 lg:hover:h-[20rem] xs:w-[40%] lg:w-[47rem] xs:focus:p-4 xs:focus:pl-6 lg:hover:p-8 lg:hover:pl-12"
+						class="section-part mt-10 xs:ml-[2.5%] xs:h-auto xs:w-[40%] xs:p-4 xs:pl-5 xs:focus:p-4 xs:focus:pl-6 lg:h-[18rem] lg:w-[47rem] lg:p-5 lg:pl-10 lg:hover:h-[20rem] lg:hover:p-8 lg:hover:pl-12"
 						id="contact"
 					>
 						<h1>Contact Us</h1>
-						<ul style="list-style-type: none;" class="grid xs:grid-rows-2 lg:grid-cols-2">
+						<ul
+							style="list-style-type: none;"
+							class="grid xs:grid-rows-2 lg:grid-cols-2"
+						>
 							<li>
 								<div class="xs:text-lg lg:text-2xl">
 									<Fa class="float-left mr-2" icon={faPhone} />Phone Number
