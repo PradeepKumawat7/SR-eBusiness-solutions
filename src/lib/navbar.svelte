@@ -43,11 +43,26 @@
 
 <nav class="bg-blue-980 w-full font-bold text-white xs:text-2xl lg:text-3xl">
 	<div class="navbar-display flex h-16 flex-row pt-3 align-middle">
-		<div class="-mt-10 w-full overflow-hidden pl-5 text-left lg:w-auto">
-			<img src="/logo-nav.svg" alt="logo" class="mt-[5%] h-[80%] w-full align-middle" />
+		<div
+			class="-mt-10 {width > 1024
+				? 'w-full'
+				: 'w-2/3'} overflow-hidden pl-5 text-left lg:w-auto"
+		>
+			<img
+				src={width > 1024 ? '/logo.jpeg' : '/logo-nav.svg'}
+				alt="logo"
+				class="{width > 1024
+					? 'ml-20 mt-[5%] w-1/3'
+					: 'ml-[-5%] mt-[10%] w-full'} h-[80%] align-middle"
+			/>
 		</div>
-		<div class="float-right mr-10 h-16 w-full align-middle">
-			<div class="navbar-btn-div float-right grid grid-cols-2 xs:basis-3 lg:basis-1/2">
+		<div class="mr-10 {width > 1024 ? 'grid w-full grid-cols-2' : 'w-1/3'} h-16 align-middle">
+			{#if width > 1024}
+				<div class="text-center text-5xl">SR E-Business Solutions</div>
+			{/if}
+			<div
+				class="navbar-btn-div float-right mb-5 mr-5 grid grid-cols-2 xs:basis-3 lg:basis-1/3"
+			>
 				<button
 					class="mt-2 xs:text-base lg:text-lg"
 					on:click={() => {

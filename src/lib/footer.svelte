@@ -25,7 +25,7 @@
 	<div class="mx-auto h-full px-4 xs:flex xs:flex-col sm:grid sm:grid-cols-4">
 		<div style="display: flex; align-items: center; justify-content: center">
 			<div class=" xs:mt-5 sm:mt-0">
-				<img src="/logo-footer.svg" alt="logo" />
+				<img src="/logo.jpeg" alt="logo" />
 			</div>
 		</div>
 		<div style="margin-top: 1rem">
