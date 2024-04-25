@@ -2,20 +2,8 @@
 	.div-center {
 		@apply my-2.5 flex justify-center bg-inherit text-sm font-normal;
 	}
-	.insta-logo {
-		background-color: transparent;
-		height: fit-content;
-		background-image: linear-gradient(to bottom right, #f9ce34, #ee2a7b, #6228d7);
-		@apply rounded-lg p-0.5;
-	}
 }
 @media (min-width: 768px) {
-	.insta-logo {
-		background-color: transparent;
-		height: fit-content;
-		background-image: linear-gradient(to bottom right, #f9ce34, #ee2a7b, #6228d7);
-		@apply rounded-lg p-0.5;
-	}
 	.div-center {
 		@apply my-2.5 flex justify-center bg-transparent text-lg font-normal;
 	}

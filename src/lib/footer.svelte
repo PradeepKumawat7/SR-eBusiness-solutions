@@ -1,7 +1,12 @@
 <script>
 	import { goto } from '$app/navigation';
 	import { services } from '$lib';
-	import { faGithub, faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
+	import {
+		faGithub,
+		faFacebook,
+		faInstagram,
+		faLinkedin
+	} from '@fortawesome/free-brands-svg-icons';
 	import Fa from 'svelte-fa';
 	import { onMount } from 'svelte';
 
@@ -40,9 +45,9 @@
 				</li>
 				<li class="div-center">
 					<div class="insta-logo">
-						<a href="https://instagram.com/jaipalbh7">
+						<a href="https://www.linkedin.com/company/sr-e-business-solutions">
 							<Fa
-								icon={faInstagram}
+								icon={faLinkedin}
 								size={width > 786 ? 'lg' : '2x'}
 								class="insta-logo"
 								primaryColor="white"
