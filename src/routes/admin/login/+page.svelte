@@ -61,7 +61,7 @@
 		<div class="div-center">
 			<h1>Login</h1>
 		</div>
-		<div class="mt-5 lg:bg-white div-center xs:mx-5 sm:mx-0">
+		<div class="div-center mt-5 xs:mx-5 sm:mx-0 lg:bg-white">
 			<form on:submit|preventDefault={handleSubmit}>
 				<div class="form-group">
 					<label for="name" class="form-label">Name</label>

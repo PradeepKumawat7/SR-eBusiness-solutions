@@ -16,7 +16,7 @@
 </svelte:head>
 {#if !$adminAuth}
 	<div
-		class="w-1/2 p-10 mt-10 mb-10 text-3xl font-bold text-gray-700 border-2 border-gray-500 rounded div-center md"
+		class="div-center md mb-10 mt-10 w-1/2 rounded border-2 border-gray-500 p-10 text-3xl font-bold text-gray-700"
 	>
 		You have not logged in yet<br />
 		Redirecting to <code>/admin/login</code>
@@ -24,7 +24,7 @@
 {:else if data.data.length == 0}
 	<div class="flex justify-center">
 		<div
-			class="w-1/2 p-10 mt-10 mb-10 text-3xl font-bold text-gray-700 border-2 border-gray-500 rounded div-center md"
+			class="div-center md mb-10 mt-10 w-1/2 rounded border-2 border-gray-500 p-10 text-3xl font-bold text-gray-700"
 		>
 			<p>
 				No data found<br />
@@ -67,7 +67,7 @@
 					</div>
 					<div>
 						<button
-							class="w-16 h-16"
+							class="h-16 w-16"
 							on:click={() => {
 								confirm('Are you sure to delete this customer?')
 									? goto('/database/delete/' + Customer.id)
