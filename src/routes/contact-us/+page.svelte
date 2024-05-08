@@ -29,7 +29,9 @@
 		}
 	});
 </script>
-
+<svelte:head>
+    <title>Contact and About Us</title>
+</svelte:head>
 <div class="mt-10 text-center">
 	<div class="flex text-center xs:flex-col xs:gap-10 lg:flex-row lg:gap-0">
 		<div class="align-middle xs:w-[95%] lg:w-[45%]">
