@@ -4,6 +4,7 @@ import { months } from '$lib/store';
 import { get } from 'svelte/store';
 import { adminMail } from '$lib/store';
 import nodemailer from 'nodemailer';
+import { env } from "$env/dynamic/private";
 
 /** @type {import('./$types').Actions} */
 export const actions = {
@@ -63,7 +64,7 @@ export const actions = {
 			service: 'gmail',
 			auth: {
 				user: 'jaipalbhanwariya001@gmail.com',
-				pass: 'qhpy lmyh kdjc xxws'
+				pass: env.SECRET_PASS
 			}
 		});
 		/**
