@@ -8,14 +8,11 @@
 		faLinkedin
 	} from '@fortawesome/free-brands-svg-icons';
 	import Fa from 'svelte-fa';
-	import { onMount } from 'svelte';
+	import { browser } from '$app/environment';
 
-	onMount(() => {
-		if (typeof window !== 'undefined') {
-			// Now it's safe to use the window object
-			width = window.innerWidth;
-		}
-	});
+	$: if (browser) {
+		width = window.innerWidth;
+	}
 
 	let width = 0;
 	let serviceList = Object.keys(services);

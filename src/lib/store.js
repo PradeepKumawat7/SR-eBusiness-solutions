@@ -27,6 +27,6 @@ export const months = readable([
  */
 export const adminAuth = writable(true);
 
-export const adminMail = readable("Srbusinesssoltions@gmail.com");
+export const adminMail = readable("srbusinesssolutions@gmail.com");
 
 export const width = readable(900);
