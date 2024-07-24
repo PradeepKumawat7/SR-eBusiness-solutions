@@ -3,7 +3,7 @@
 	import { faPhone } from '@fortawesome/free-solid-svg-icons';
 	import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 	import { adminMail, phone } from '$lib/store';
-	import { onMount } from 'svelte';
+	import { browser } from '$app/environment';
 	/**
 	 * @type { { name: string, email: string, phone: string, message: string, countryCode: string, companyName: string, website: string } }
 	 */
@@ -22,26 +22,27 @@
 	 */
 	let width;
 
-	onMount(() => {
-		if (typeof window !== 'undefined') {
-			// Now it's safe to use the window object
-			width = window.innerWidth;
-		}
-	});
+	$: if (browser) {
+		width = window.innerWidth;
+	}
 </script>
+
 <svelte:head>
-    <title>Contact and About Us</title>
+	<title>Contact and About Us</title>
 </svelte:head>
 <div class="mt-10 text-center">
-	<div class="flex text-center xs:flex-col xs:gap-10 lg:flex-row lg:gap-0">
-		<div class="align-middle xs:w-[95%] lg:w-[45%]">
+	<div class="flex text-center xs:flex-col xs:gap-10 lg:flex-col 2xl:flex-row 2xl:gap-0">
+		<div class="text-nowrap align-middle xs:w-[95%] 2xl:w-[45%]">
 			<div
 				class="form-box border-b-none border-r-none h-auto border-4 border-l-blue-400 border-t-blue-400 px-10 pb-10 pt-10 text-lg xs:mx-[5%] lg:mx-[10%]"
 			>
 				<form method="POST">
-					<div class="flex xs:flex-col lg:flex-row">
+					<div
+						class="flex xs:flex-col md:flex-row md:gap-x-5 lg:gap-x-0 2xl:flex-row 2xl:gap-x-5"
+					>
 						<div class="grid xs:grid-rows-2 lg:grid-cols-2">
-							<label for="name">Name: </label>{#if width > 1024}
+							<label for="name">Name: </label>
+							{#if width > 1500 || width > 768 || width < 1024}
 								<br />
 							{/if}
 							<input
@@ -52,9 +53,11 @@
 								bind:value={data.name}
 							/>
 						</div>
-						<div class="grid xs:mt-10 xs:grid-rows-2 lg:mt-0 lg:grid-cols-2">
+						<div
+							class="grid xs:mt-10 xs:grid-rows-2 lg:mt-0 lg:grid-cols-2 2xl:gap-x-5"
+						>
 							<label for="companyName">Company Name: </label>
-							{#if width > 1024}
+							{#if width > 1024 || width > 768 || width < 1024}
 								<br />
 							{/if}
 							<input
@@ -67,10 +70,12 @@
 						</div>
 					</div>
 					<br />
-					<div class="flex xs:flex-col lg:flex-row">
+					<div
+						class="flex xs:flex-col md:flex-row md:gap-x-5 lg:gap-x-0 2xl:flex-row 2xl:gap-x-5"
+					>
 						<div class="grid xs:mt-2 xs:grid-rows-2 lg:mt-0 lg:grid-cols-2">
 							<label for="email">Email: </label>
-							{#if width > 1024}
+							{#if width > 1024 || width > 768 || width < 1024}
 								<br />
 							{/if}
 							<input
@@ -83,7 +88,7 @@
 						</div>
 						<div class="grid xs:mt-5 xs:grid-rows-2 lg:mt-0 lg:grid-cols-2">
 							<label for="country-code">Country Code</label>
-							{#if width > 1024}
+							{#if width > 1024 || width > 768 || width < 1024}
 								<br />
 							{/if}
 							<select
@@ -546,10 +551,12 @@
 						</div>
 					</div>
 					<br />
-					<div class="flex xs:flex-col lg:flex-row">
+					<div
+						class="flex xs:flex-col md:flex-row md:gap-x-5 lg:gap-x-0 2xl:flex-row 2xl:gap-x-5"
+					>
 						<div class="grid xs:mt-2 xs:grid-rows-2 lg:mt-0 lg:grid-cols-2">
 							<label for="phone">Phone</label>
-							{#if width > 1024}
+							{#if width > 1024 || width > 768 || width < 1024}
 								<br />
 							{/if}
 							<input
@@ -563,7 +570,7 @@
 						</div>
 						<div class="grid xs:mt-4 xs:grid-rows-2 lg:mt-0 lg:grid-cols-2">
 							<label for="website">Website</label>
-							{#if width > 1024}
+							{#if width > 1024 || width > 768 || width < 1024}
 								<br />
 							{/if}
 							<input
@@ -584,7 +591,7 @@
 							<br />
 						{/if}
 						<textarea
-							class="border-2 border-gray-500 text-base focus:border-0 xs:w-[100%] lg:w-[34rem]"
+							class="border-2 border-gray-500 text-base focus:border-0 xs:w-[100%] lg:w-[200%]"
 							name="message"
 							id="message"
 							rows="5"
@@ -606,7 +613,7 @@
 			<div class="text-left">
 				<div class="w-[50rem] text-left">
 					<div
-						class="section-part h-[21rem] p-10 xs:ml-[2.5%] xs:h-auto xs:w-[40%] xs:focus:h-auto xs:focus:p-5 lg:w-[45rem] lg:hover:h-[23rem] lg:hover:p-14"
+						class="section-part h-[21rem] p-10 xs:ml-[2.5%] xs:h-auto xs:w-[40%] xs:focus:h-auto xs:focus:p-5 sm:w-[90vw] lg:w-[45rem] lg:hover:h-[23rem] lg:hover:p-14"
 					>
 						<h1>About Us</h1>
 						<p class="mt-5 xs:text-base lg:text-2xl">
@@ -618,7 +625,7 @@
 						</p>
 					</div>
 					<div
-						class="section-part mt-10 xs:ml-[2.5%] xs:h-auto xs:w-[40%] xs:p-4 xs:pl-5 xs:focus:p-4 xs:focus:pl-6 lg:h-[18rem] lg:w-[47rem] lg:p-5 lg:pl-10 lg:hover:h-[20rem] lg:hover:p-8 lg:hover:pl-12"
+						class="section-part mt-10 xs:ml-[2.5%] xs:h-auto xs:w-[40%] xs:p-4 xs:pl-5 xs:focus:p-4 xs:focus:pl-6 sm:w-[90vw] lg:h-[18rem] lg:w-[47rem] lg:p-5 lg:pl-10 lg:hover:h-[20rem] lg:hover:p-8 lg:hover:pl-12"
 						id="contact"
 					>
 						<h1>Contact Us</h1>
@@ -633,7 +640,7 @@
 								</div>
 							</li>
 							<li>
-								<div class="xs:text-lg lg:text-2xl">
+								<div class="overflow-hidden text-ellipsis xs:text-lg lg:text-2xl">
 									<Fa class="float-left mr-2" icon={faEnvelope} />Email Us
 									<a href="mailto:{$adminMail}">{$adminMail}</a>
 								</div>
@@ -646,7 +653,7 @@
 	</div>
 </div>
 
-<style>
+<style scoped>
 	.section-part {
 		border-left: 5px solid skyblue;
 		box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);

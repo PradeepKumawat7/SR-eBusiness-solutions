@@ -3,7 +3,6 @@
 	import Login from '$lib/login.svelte';
 	import { faPhone, faBars } from '@fortawesome/free-solid-svg-icons';
 	import { showNav } from '$lib';
-	import { onMount } from 'svelte';
 
 	/**
 	 * @type { string }
@@ -12,6 +11,7 @@
 	import { services } from '$lib';
 	import { phone } from './store';
 	import { goto } from '$app/navigation';
+	import { browser } from '$app/environment';
 
 	let navBtnShow = false;
 	let navShowHeight = 'h-0';
@@ -21,21 +21,19 @@
 	 */
 	let width;
 
-	onMount(() => {
-		if (typeof window !== 'undefined') {
-			// Now it's safe to use the window object
-			width = window.innerWidth;
-		}
-	});
+	$: if (browser) {
+		width = window.innerWidth;
+	}
 
 	/**
-	 * @param { import('svelte').CustomEvent<HTMLButtonElement> } event
+	 * @param { any } event
 	 */
 	function toggleAccordion(event) {
 		const targetId = event.currentTarget.dataset.accordionTarget;
 		const targetPanel = document.querySelector(targetId);
 		targetPanel.classList.toggle('hidden');
 
+		// @ts-ignore
 		const expanded = !event.currentTarget.getAttribute('aria-expanded') === 'true';
 		event.currentTarget.setAttribute('aria-expanded', expanded);
 	}
@@ -53,15 +51,24 @@
 				alt="logo"
 				class="{width > 1024
 					? 'ml-20 mt-[5%] w-1/3'
-					: 'ml-[-5%] mt-[10%] w-full'} h-[80%] align-middle"
+					: width > 400
+						? 'ml-[-25%] mt-[3%] w-full'
+						: 'ml-[-5%] mt-[10%] w-full'} h-[80%] align-middle"
 			/>
 		</div>
-		<div class="mr-10 {width > 1024 ? 'grid w-full grid-cols-2' : 'w-1/3'} h-16 align-middle">
+		<div
+			class="{width > 1024
+				? 'mr-10 grid w-full grid-cols-2'
+				: 'mr-5 w-1/3'} h-16 align-middle"
+		>
 			{#if width > 1024}
-				<div class="text-center text-5xl">SR E-Business Solutions</div>
+				<div class="w-full text-nowrap text-center text-3xl">SR E-Business Solutions</div>
 			{/if}
 			<div
-				class="navbar-btn-div float-right mb-5 mr-5 grid grid-cols-2 xs:basis-3 lg:basis-1/3"
+				class="navbar-btn-div float-right mb-5 mr-5 grid grid-cols-2 xs:basis-3 lg:basis-1/3 {width >
+				1024
+					? 'gap-x-5'
+					: 'gap-x-2'}"
 			>
 				<button
 					class="mt-2 xs:text-base lg:text-lg"

@@ -18,7 +18,6 @@ import customers from '../../../models/customers';
 		 */
 		let cus = customers(seq, Sequelize.DataTypes);
 
-		console.log(cus);
 		let data = await cus.findAll();
 		console.log(data);
 		console.log('Connection has been established successfully.');

@@ -1,14 +1,11 @@
 <script>
 	import './form.css';
-	import { onMount } from 'svelte';
 	import { services, showNav } from '$lib';
+	import { browser } from '$app/environment';
 
-	onMount(() => {
-		if (typeof window !== 'undefined') {
-			// Now it's safe to use the window object
-			width = window.innerWidth;
-		}
-	});
+	$: if (browser) {
+		width = window.innerWidth;
+	}
 
 	let width = 0;
 	let selectService = '';
@@ -18,7 +15,7 @@
 	<title>Customer Form</title>
 </svelte:head>
 <form action="/database/create?/create" method="post">
-	{#if width < 768}
+	{#if width < 1536}
 		<div class="form-div mr-5 grid">
 			<div>
 				<label for="name">Name: </label>
@@ -335,7 +332,7 @@
 		</div>
 	{:else}
 		<div>
-			<div class="bg-[rgb(10 40 120 / 1)] form-div mr-5 grid grid-rows-5 space-y-20">
+			<div class="2xl:bg-[rgb(10 40 120 / 1)] form-div mr-5 grid grid-rows-5 space-y-20">
 				<div>
 					<label for="name">Name: </label>
 					<input type="text" name="name" id="name" required class="h-10" />
@@ -625,7 +622,7 @@
 				</div>
 				<div>
 					<label for="phone">Phone No.</label>
-					<input type="number" name="phone" id="phone" class="md:w-32" required />
+					<input type="number" name="phone" id="phone" class="w-32" required />
 				</div>
 				<div>
 					<label for="service">Service: </label>

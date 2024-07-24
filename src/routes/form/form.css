@@ -22,7 +22,7 @@
 		@apply bg-blue-950;
 	}
 }
-@media (min-width: 786px) {
+@media (min-width: 1536px) {
 	form > div {
 		box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.5);
 	}
